@@ -1,0 +1,19 @@
+{
+    "data": {
+        "team": "Afturelding Mosfellsbaer",
+        "matches_played": 4,
+        "won": 3,
+        "draw": 1,
+        "lost": 0,
+        "goals_scored": 8,
+        "goals_conceived": 4,
+        "points": 10,
+        "matches_played_as_away_team": 3,
+        "won_as_away_team": 2,
+        "draw_as_away_team": 1,
+        "lost_as_away_team": 0,
+        "goals_scored_as_away_team": 7,
+        "goals_conceived_as_away_team": 4,
+        "points_as_away_team": 7
+    }
+}

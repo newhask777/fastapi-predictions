@@ -1,0 +1,35 @@
+{
+    "data": [
+        {
+            "id": 99999,
+            "start_date": "2020-07-01T18:30:00",
+            "federation": "UEFA",
+            "season": "2019 - 2020",
+            "competition_cluster": "Spain",
+            "competition_name": "Primera Division",
+            "home_team": "Deportivo Alaves",
+            "away_team": "Granada CF",
+            "result": "0 - 2",
+            "is_expired": true,
+            "last_update_at": "2020-07-01T13:12:34.400000",
+            "available_markets": [
+                "classic"
+            ],
+            "prediction_per_market": {
+                "classic": {
+                    "status": "lost",
+                    "prediction": "1X",
+                    "probabilities": {},
+                    "odds": {
+                        "1": 2.269,
+                        "X": 3.037,
+                        "2": 3.649,
+                        "1X": 1.281,
+                        "X2": 1.623,
+                        "12": 1.373
+                    }
+                }
+            }
+        }
+    ]
+}

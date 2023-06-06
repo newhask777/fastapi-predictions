@@ -1,0 +1,19 @@
+{
+    "data": {
+        "team": "Grindavik",
+        "matches_played": 4,
+        "won": 3,
+        "draw": 1,
+        "lost": 0,
+        "goals_scored": 5,
+        "goals_conceived": 0,
+        "points": 10,
+        "matches_played_as_home_team": 2,
+        "won_as_home_team": 1,
+        "draw_as_home_team": 1,
+        "lost_as_home_team": 0,
+        "goals_scored_as_home_team": 1,
+        "goals_conceived_as_home_team": 0,
+        "points_as_home_team": 4
+    }
+}
