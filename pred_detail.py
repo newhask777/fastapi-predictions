@@ -1,16 +1,22 @@
 import requests
 import json
+from db.database import engine, SessionLocal, Base
+from sqlalchemy.orm import Session
+from pydantic import BaseModel
+from db.models import Prediction
 
-url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions/99999"
 
-headers = {
-	"X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",
-	"X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
-}
+def get_detail_stat(id: int):
+	url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions/253959"
 
-response = requests.get(url, headers=headers)
+	headers = {
+		"X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",
+		"X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
+	}
 
-with open('Football Prediction/json/pred_detail.json', 'w', encoding='utf-8') as f:
-    json.dump(response.json(), f, indent=4, ensure_ascii=False)
+	response = requests.get(url, headers=headers).json()
 
-print(response.json())
+	with open('json/pred_detail.json', 'w', encoding='utf-8') as f:
+		json.dump(response, f, indent=4, ensure_ascii=False)
+
+	db = SessionLocal()

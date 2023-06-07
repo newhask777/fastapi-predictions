@@ -3,6 +3,8 @@ from sqlalchemy.orm import relationship, Mapped
 from db.database import Base
 from typing import Dict
 
+
+
 class Prediction(Base):
     __tablename__ = "predictions"
 
@@ -22,3 +24,10 @@ class Prediction(Base):
     start_date = Column(String)
     last_update_at = Column(String)
     odds = Column(JSON)
+
+    
+
+class Detail(Base):
+    __tablename__ = 'details'
+
+    id = Column(Integer, primary_key=True, index=True)

@@ -1,13 +1,13 @@
 import requests
 import json
-from db.database import engine, SessionLocal
+from db.database import engine, SessionLocal, Base
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from db.models import Prediction
+from db import models
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {"market":"classic","iso_date":"2023-06-05","federation":"UEFA"}
+querystring = {"market":"classic","iso_date":"2023-06-07","federation":"UEFA"}
 
 headers = {
 	"X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",
@@ -18,11 +18,14 @@ events = requests.get(url, headers=headers, params=querystring).json()
 
 with open('json/predictions.json', 'w', encoding='utf-8') as f:
     json.dump(events, f, indent=4, ensure_ascii=False)
-  
-db = SessionLocal()
 
+db = SessionLocal() 
+
+db.query(models.Prediction).delete()
+db.commit()
+  
 for event in events["data"]:
-	game = Prediction()
+	game = models.Prediction()
 
 	game.home_team = event['home_team']
 	game.away_team = event['away_team']
