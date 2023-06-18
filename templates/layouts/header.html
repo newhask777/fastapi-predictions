@@ -1,0 +1,63 @@
+<!-- HEADER -->
+<header class=" bg-white">
+    <div class="content grid grid-rows-12 grid-flow-col gap-1 flex flex-row items-start p-2 ml-20 mr-20">
+        <!-- HEADER LOGO -->
+        <div class="header_logo col-span-1 pl-6 pr-2 flex">
+            <a href="" class="flex">
+                <img src="{{ url_for('static', path='assets/images/logo.png') }}" alt="" class="w-4 h-4 mb-auto mt-auto">
+                <div class="logo_text text-sm font-bold">
+                    <span class="ml-2">Football</span>
+                </div>
+            </a>
+           
+        </div>
+        <!-- END LOGO -->
+        <!-- HEADER MENU -->
+        <div class="col-span-4 mt-auto mb-auto pl-2 pr-2 ml-2 mr-2 pl-4 pr-4">
+            <div class="">
+                <ul class="flex text-sm font-bold">
+                    <li class="pl-2 pr-2"><a href="">Home</a></li>
+                    <li class="pl-2 pr-2"><a href="">Predictions</a></li>
+                    <li class="pl-2 pr-2"><a href="">About</a></li>
+                    <li class="pl-2 pr-2"><a href="">Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- END MENU -->
+        <!-- HEADER AUTH -->
+        <div class="header_auth col-span-1 mb-auto mt-auto pl-2 pr-2">
+            <div class="flex justify-center">
+                <div class="flex">
+                    <div class=" ml-2 mr-2 mb-auto mt-auto">
+                        <a href="">
+                            <img src="{{ url_for('static', path='/assets/images/settings.png') }}" alt="" class="w-5 h-5 inline-block m-auto">
+                        </a>   
+                        <!-- <span>Aut</span> -->
+                    </div>
+                    <div class="ml-2 mr-2 mb-auto mt-auto">
+                        <a href="">
+                            <img src="{{ url_for('static', path='/assets/images/bell.png') }}" alt="" class="w-5 h-5 inline-block m-auto">
+                        </a>
+                        <!-- <span>Aut</span> -->
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="ml-2 mr-2 mb-auto mt-auto2">
+                        <a href="">
+                            <img src="{{ url_for('static', path='/assets/images/avatar.png') }}" alt="" class="w-6 h-6 inline-block m-auto">
+                            <span class="text-xs font-bold">Username</span>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            
+           
+            
+        </div>
+        <!-- END AUTH -->
+    </div>   
+</header>
+<!-- END HEADER -->

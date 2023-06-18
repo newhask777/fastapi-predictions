@@ -1,0 +1,7 @@
+.countries img{
+    display: none;
+}
+
+.countries li a:hover > img{
+    display: inline-block;
+}

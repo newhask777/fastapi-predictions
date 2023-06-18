@@ -7,12 +7,13 @@ from starlette.responses import RedirectResponse
 from starlette import status
 
 from routers import predictions
+from routers import home
 
 
 
 app = FastAPI()
 app.include_router(predictions.router)
-# app.include_router(coupons.router)
+app.include_router(home.router)
 
 models.Base.metadata.create_all(bind=engine)
 

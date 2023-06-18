@@ -11,11 +11,12 @@ from sqlalchemy.orm import Session
 
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+import json
 
 # define router
 router = APIRouter(
-    prefix='/predictions',
-    tags=['predictions'],
+    prefix='/home',
+    tags=['home'],
     responses={404: {"description": "Not found"}}
 )
 
@@ -35,20 +36,14 @@ def get_db():
 
 
 # router all
-@router.get('/')
+@router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     games = db.query(models.Prediction).all()
-    # return templates.TemplateResponse("predictions.html", {"request": request, "games": games})
-    return games
 
-# get single
-@router.get('/{id}', response_class=HTMLResponse)
-async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
+    with open('sofascore/json/all.json', 'r' ,encoding='utf-8') as f:
+        games = json.load(f)
+    # print(games)
 
-    game = db.query(models.Prediction).filter(models.Prediction.id == id).first()
-    print(game)
+    return templates.TemplateResponse("home.html", {"request": request, "games": games['events']})
 
-    # call function to make request and save to db
-    
 
-    return templates.TemplateResponse("detail.html", {"request": request, "game": game})
