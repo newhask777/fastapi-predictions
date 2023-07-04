@@ -9,8 +9,6 @@ from starlette import status
 from routers import predictions
 from routers import home
 
-
-
 app = FastAPI()
 app.include_router(predictions.router)
 app.include_router(home.router)
@@ -21,4 +19,6 @@ app.mount("/statis", StaticFiles(directory="static"), name="static")
 
 @app.get('/')
 async def root():
+    
     return {"data": "start"}
+    

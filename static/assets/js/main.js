@@ -1,75 +1,107 @@
-// League
 $(function () {
-    var body = $('#right_sidebar_body');
 
-    $('#liga_arr_down').hide()
+var acc = document.getElementsByClassName("cart_expand");
+var i;
 
-    $('#right_sidebar_header').on("click", function(){
-        body.slideToggle();
 
-        if( $('#liga_arr_up').css('display') != 'none' )  { 
-            /*success*/ 
-            $('#liga_arr_up').hide()
-            $('#liga_arr_down').show()
-        } 
-        else { 
-            /*does not have*/ 
-            $('#liga_arr_up').show()
-            $('#liga_arr_down').hide()
-        }
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+    this.parentElement.style.backgroundColor = '#f5f5f5';
+   
+    this.classList.toggle("active");
 
-    });
- });
+    var panel = this.parentElement.nextElementSibling;
+    if (panel.style.display === "block") {
+        panel.style.display = "none";
+      
+    } else {
+        panel.style.display = "block";
+    }
+  });
+}
 
- // Matches
-$(function () {
-    var matches_body = $('#cart_league_body');
-
-    $('#matches_arr_down').hide()
-
-    $('#cart_league_header').on("click", function(){
-        matches_body.slideToggle();
-
-        if( $('#matshes_arr_up').css('display') != 'none' )  { 
-            /*success*/ 
-            $('#matshes_arr_up').hide()
-            $('#matches_arr_down').show()
-            $('#cart_league_header').css('background-color', '#e5e7eb')
-        } 
-        else { 
-            /*does not have*/ 
-            $('#matshes_arr_up').show()
-            $('#matches_arr_down').hide()
-            $('#cart_league_header').css('background-color', '')
-        }
-
-    });
 });
+
+//  $(function () {
+//     var matches_body = $('#cart_league_body');
+
+//     $('#content').on("click", function(event){
+
+//         header = event.target;
+        
+//         if(header.className == 'cart_expand flex justify-between w-full'){
+//             body = header.parentElement.nextElementSibling;
+
+//             if(body.style.display === "block"){
+//                 body.style.display = "none";
+//             }
+
+//             $('#content').on("click", function(event){
+
+//                 if(body.style.display === "none"){
+                    
+//                     if(header.className == 'cart_expand flex justify-between w-full'){
+                        
+//                         body.style.display = "block";
+//                     }  
+//                 }
+
+//             })
+//         }
+//     })    
+// });
+
+
+
+// Matches
+// $(function () {
+//     var matches_body = $('#cart_league_body');
+
+//     $('#matches_arr_down').hide()
+
+//     $('#cart_league_header').on("click", function(){
+//         matches_body.slideToggle();
+
+//         if( $('#matshes_arr_up').css('display') != 'none' )  { 
+//             /*success*/ 
+//             $('#matshes_arr_up').hide()
+//             $('#matches_arr_down').show()
+//             $('#cart_league_header').css('background-color', '#e5e7eb')
+//         } 
+//         else { 
+//             /*does not have*/ 
+//             $('#matshes_arr_up').show()
+//             $('#matches_arr_down').hide()
+//             $('#cart_league_header').css('background-color', '')
+//         }
+
+//     });
+// });
 
  // Matches2
- $(function () {
-    var matches_body = $('#cart_league_body2');
+//  $(function () {
+//     var matches_body = $('#cart_league_body2');
 
-    $('#matches_arr_down2').hide()
+//     $('#matches_arr_down2').hide()
 
-    $('#cart_league_header2').on("click", function(){
-        matches_body.slideToggle();
+//     $('#cart_league_header2').on("click", function(){
+//         matches_body.slideToggle();
 
-        if( $('#matshes_arr_up2').css('display') != 'none' )  { 
-            /*success*/ 
-            $('#matshes_arr_up2').hide()
-            $('#matches_arr_down2').show()
-            $('#cart_league_header2').css('background-color', '#e5e7eb')
-        } 
-        else { 
-            /*does not have*/ 
-            $('#matshes_arr_up2').show()
-            $('#matches_arr_down2').hide()
-            $('#cart_league_header2').css('background-color', '')
-        }
+//         if( $('#matshes_arr_up2').css('display') != 'none' )  { 
+//             /*success*/ 
+//             $('#matshes_arr_up2').hide()
+//             $('#matches_arr_down2').show()
+//             $('#cart_league_header2').css('background-color', '#e5e7eb')
+//         } 
+//         else { 
+//             /*does not have*/ 
+//             $('#matshes_arr_up2').show()
+//             $('#matches_arr_down2').hide()
+//             $('#cart_league_header2').css('background-color', '')
+//         }
 
-    });
-});
+//     });
+// });
 
 
 // H2H
