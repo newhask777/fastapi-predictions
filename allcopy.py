@@ -16,7 +16,7 @@ from sqlalchemy.orm import sessionmaker
 
 def store():
 
-    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-06-19"
+    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-05"
 
     payload = ""
     headers = {
@@ -55,59 +55,62 @@ def store():
         with Session(engine) as session:
 
                 new_event = models.Event()
-            
-                # tournament
-                new_event.tournament_name = event['tournament']['name']
-                new_event.tournament_slug = event['tournament']['slug']
-                new_event.tournament_category = event['tournament']['category']['name']
-                new_event.tournament_id = event['tournament']['category']['id']
-                new_event.tournament_flag = event['tournament']['category']['flag']
-                new_event.tournament_unique_id = event['tournament']['uniqueTournament']['id']
-                new_event.tournament_players_stat = event['tournament']['uniqueTournament']['hasEventPlayerStatistics']
-                # round
-                # new_event.round = event['roundInfo']['round']
-                # new_event.round_name = event['roundInfo']['name']
-                # winner
-                new_event.winner_code = event['winnerCode']
-                # home_team
-                new_event.home_team_name = event['homeTeam']['name']
-                new_event.home_team_shortname = event['homeTeam']['shortName']
-                new_event.home_team_code = event['homeTeam']['nameCode']
-                new_event.home_team_type = event['homeTeam']['type']
-                new_event.home_team_id = event['homeTeam']['id']
-                new_event.home_team_country_alpha2 = event['homeTeam']['country']['alpha2']
-                new_event.home_team_country_name = event['homeTeam']['country']['name']
-                new_event.home_team_primary_color = event['homeTeam']['teamColors']['primary']
-                new_event.home_team_secondary = event['homeTeam']['teamColors']['secondary']
-                new_event.home_team_text = event['homeTeam']['teamColors']['text']
-                # # home_team
-                new_event.away_team_name = event['awayTeam']['name']
-                new_event.away_team_shortname = event['awayTeam']['shortName']
-                new_event.away_team_code = event['awayTeam']['nameCode']
-                new_event.away_team_type = event['awayTeam']['type']
-                new_event.away_team_id = event['awayTeam']['id']
-                new_event.away_team_country_alpha2 = event['awayTeam']['country']['alpha2']
-                new_event.away_team_country_name = event['awayTeam']['country']['name']
-                new_event.away_team_primary_color = event['awayTeam']['teamColors']['primary']
-                new_event.away_team_secondary = event['awayTeam']['teamColors']['secondary']
-                new_event.away_team_text = event['awayTeam']['teamColors']['text']
-                # # stats
-                new_event.home_score = event['homeScore']
-                new_event.away_score = event['awayScore']
-                new_event.time = event['time']
-                new_event.changes = event['changes']
-                # event
-                new_event.has_global_highlights = event['hasGlobalHighlights']
-                # new_event.has_event_players_stat = event['hasEventPlayerStatistics']
-                # new_event.has_event_players_heat_map = event['hasEventPlayerHeatMap']
-                # new_event.detailID = event['detailId']
-                new_event.event_id = event['id']
-                new_event.start_timestamp = event['startTimestamp']
-                new_event.slug = event['slug']
-                new_event.final_result_only = event['finalResultOnly']
 
-                session.add_all([new_event])
-                session.commit()
-         
+                try:
+            
+                    # tournament
+                    new_event.tournament_name = event['tournament']['name']
+                    new_event.tournament_slug = event['tournament']['slug']
+                    new_event.tournament_category = event['tournament']['category']['name']
+                    new_event.tournament_id = event['tournament']['category']['id']
+                    new_event.tournament_flag = event['tournament']['category']['flag']
+                    new_event.tournament_unique_id = event['tournament']['uniqueTournament']['id']
+                    new_event.tournament_players_stat = event['tournament']['uniqueTournament']['hasEventPlayerStatistics']
+                    # round
+                    # new_event.round = event['roundInfo']['round']
+                    # new_event.round_name = event['roundInfo']['name']
+                    # winner
+                    new_event.winner_code = event['winnerCode']
+                    # home_team
+                    new_event.home_team_name = event['homeTeam']['name']
+                    new_event.home_team_shortname = event['homeTeam']['shortName']
+                    new_event.home_team_code = event['homeTeam']['nameCode']
+                    new_event.home_team_type = event['homeTeam']['type']
+                    new_event.home_team_id = event['homeTeam']['id']
+                    new_event.home_team_country_alpha2 = event['homeTeam']['country']['alpha2']
+                    new_event.home_team_country_name = event['homeTeam']['country']['name']
+                    new_event.home_team_primary_color = event['homeTeam']['teamColors']['primary']
+                    new_event.home_team_secondary = event['homeTeam']['teamColors']['secondary']
+                    new_event.home_team_text = event['homeTeam']['teamColors']['text']
+                    # # home_team
+                    new_event.away_team_name = event['awayTeam']['name']
+                    new_event.away_team_shortname = event['awayTeam']['shortName']
+                    new_event.away_team_code = event['awayTeam']['nameCode']
+                    new_event.away_team_type = event['awayTeam']['type']
+                    new_event.away_team_id = event['awayTeam']['id']
+                    new_event.away_team_country_alpha2 = event['awayTeam']['country']['alpha2']
+                    new_event.away_team_country_name = event['awayTeam']['country']['name']
+                    new_event.away_team_primary_color = event['awayTeam']['teamColors']['primary']
+                    new_event.away_team_secondary = event['awayTeam']['teamColors']['secondary']
+                    new_event.away_team_text = event['awayTeam']['teamColors']['text']
+                    # # stats
+                    new_event.home_score = event['homeScore']
+                    new_event.away_score = event['awayScore']
+                    new_event.time = event['time']
+                    new_event.changes = event['changes']
+                    # event
+                    new_event.has_global_highlights = event['hasGlobalHighlights']
+                    # new_event.has_event_players_stat = event['hasEventPlayerStatistics']
+                    # new_event.has_event_players_heat_map = event['hasEventPlayerHeatMap']
+                    # new_event.detailID = event['detailId']
+                    new_event.event_id = event['id']
+                    new_event.start_timestamp = event['startTimestamp']
+                    new_event.slug = event['slug']
+                    new_event.final_result_only = event['finalResultOnly']
+
+                    session.add_all([new_event])
+                    session.commit()
+                except:
+                     continue
 
 store()
