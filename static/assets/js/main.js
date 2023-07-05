@@ -1,21 +1,35 @@
 $(function () {
 
 var acc = document.getElementsByClassName("cart_expand");
+
 var i;
+
 
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
-    this.parentElement.style.backgroundColor = '#f5f5f5';
-   
-    this.classList.toggle("active");
+    // this.parentElement.style.backgroundColor = '#f5f5f5';
+ 
+
+    var up = this.getElementsByClassName('up');
+    var down = this.getElementsByClassName('down');
+
+    console.log(up[0]);
 
     var panel = this.parentElement.nextElementSibling;
+
+
     if (panel.style.display === "block") {
         panel.style.display = "none";
+        up[0].style.display = "none";
+        down[0].style.display = "block";
+        this.parentElement.classList.add("hover");
       
     } else {
         panel.style.display = "block";
+        up[0].style.display = "block";
+        down[0].style.display = "none";
+        this.parentElement.classList.remove("hover");
     }
   });
 }
