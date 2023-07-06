@@ -1,0 +1,956 @@
+{
+    "events": [
+        {
+            "tournament": {
+                "name": "Club Friendly Games",
+                "slug": "club-friendly-games",
+                "category": {
+                    "name": "World",
+                    "slug": "world",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 1468,
+                    "flag": "international"
+                },
+                "uniqueTournament": {
+                    "name": "Club Friendly Games",
+                    "slug": "club-friendly-games",
+                    "primaryColorHex": "#25497d",
+                    "secondaryColorHex": "#d38f1d",
+                    "category": {
+                        "name": "World",
+                        "slug": "world",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 1468,
+                        "flag": "international"
+                    },
+                    "userCount": 34646,
+                    "id": 853,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 86
+            },
+            "roundInfo": {
+                "round": 1
+            },
+            "customId": "cdcsowc",
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "winnerCode": 0,
+            "homeTeam": {
+                "name": "Bohemians Praha 1905",
+                "slug": "bohemians-praha-1905",
+                "shortName": "Bohemians",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 5475,
+                "nameCode": "BOH",
+                "national": false,
+                "type": 0,
+                "id": 6064,
+                "country": {
+                    "alpha2": "CZ",
+                    "name": "Czech Republic"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#074329",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                }
+            },
+            "awayTeam": {
+                "name": "FK Partizan",
+                "slug": "fk-partizan",
+                "shortName": "Partizan",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 58611,
+                "nameCode": "PAR",
+                "disabled": false,
+                "national": false,
+                "type": 0,
+                "id": 5152,
+                "country": {
+                    "alpha2": "RS",
+                    "name": "Serbia"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#000033",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                }
+            },
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688655055
+            },
+            "changes": {
+                "changes": [
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "awayScore.period1"
+                ],
+                "changeTimestamp": 1688655060
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11405936,
+            "startTimestamp": 1688652000,
+            "slug": "bohemians-praha-1905-fk-partizan",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Club Friendly Games",
+                "slug": "club-friendly-games",
+                "category": {
+                    "name": "World",
+                    "slug": "world",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 1468,
+                    "flag": "international"
+                },
+                "uniqueTournament": {
+                    "name": "Club Friendly Games",
+                    "slug": "club-friendly-games",
+                    "primaryColorHex": "#25497d",
+                    "secondaryColorHex": "#d38f1d",
+                    "category": {
+                        "name": "World",
+                        "slug": "world",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 1468,
+                        "flag": "international"
+                    },
+                    "userCount": 34646,
+                    "id": 853,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 86
+            },
+            "roundInfo": {
+                "round": 1
+            },
+            "customId": "GAswC",
+            "status": {
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
+            },
+            "winnerCode": 0,
+            "homeTeam": {
+                "name": "Brøndby IF",
+                "slug": "brondby-if",
+                "shortName": "Brøndby",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 18880,
+                "nameCode": "BRO",
+                "disabled": false,
+                "national": false,
+                "type": 0,
+                "id": 1281,
+                "country": {
+                    "alpha2": "DK",
+                    "name": "Denmark"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ffff00",
+                    "secondary": "#ffff00",
+                    "text": "#ffff00"
+                }
+            },
+            "awayTeam": {
+                "name": "Hillerød",
+                "slug": "hillerod",
+                "shortName": "Hillerød",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 1712,
+                "nameCode": "HIL",
+                "national": false,
+                "type": 0,
+                "id": 1371,
+                "country": {
+                    "alpha2": "DK",
+                    "name": "Denmark"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ff6600",
+                    "secondary": "#000000",
+                    "text": "#000000"
+                }
+            },
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "initial": 2700,
+                "max": 5400,
+                "extra": 540,
+                "currentPeriodStartTimestamp": 1688655300
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688655379
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11404837,
+            "statusTime": {
+                "prefix": "",
+                "initial": 2700,
+                "max": 5400,
+                "timestamp": 1688655300,
+                "extra": 540
+            },
+            "startTimestamp": 1688652000,
+            "slug": "hillerod-brondby-if",
+            "lastPeriod": "period2",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Club Friendly Games",
+                "slug": "club-friendly-games",
+                "category": {
+                    "name": "World",
+                    "slug": "world",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 1468,
+                    "flag": "international"
+                },
+                "uniqueTournament": {
+                    "name": "Club Friendly Games",
+                    "slug": "club-friendly-games",
+                    "primaryColorHex": "#25497d",
+                    "secondaryColorHex": "#d38f1d",
+                    "category": {
+                        "name": "World",
+                        "slug": "world",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 1468,
+                        "flag": "international"
+                    },
+                    "userCount": 34646,
+                    "id": 853,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 86
+            },
+            "roundInfo": {
+                "round": 1
+            },
+            "customId": "vWsrad",
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "winnerCode": 0,
+            "homeTeam": {
+                "name": "Lokomotiv Moscow",
+                "slug": "lokomotiv-moscow",
+                "shortName": "Lokomotiv",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 19131,
+                "nameCode": "LOK",
+                "national": false,
+                "type": 0,
+                "id": 2320,
+                "country": {
+                    "alpha2": "RU",
+                    "name": "Russia"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#19683f",
+                    "secondary": "#cf3439",
+                    "text": "#cf3439"
+                }
+            },
+            "awayTeam": {
+                "name": "Baltika Kaliningrad",
+                "slug": "baltika-kaliningrad",
+                "shortName": "Baltika",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 2716,
+                "nameCode": "KAL",
+                "national": false,
+                "type": 0,
+                "id": 7517,
+                "country": {
+                    "alpha2": "RU",
+                    "name": "Russia"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#141a47",
+                    "secondary": "#fb2c14",
+                    "text": "#fb2c14"
+                }
+            },
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688652120
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "homeScore.normaltime",
+                    "awayScore.period1",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688655051
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11378959,
+            "startTimestamp": 1688652000,
+            "slug": "baltika-kaliningrad-lokomotiv-moscow",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Paraense Série B2 - Playoff",
+                "slug": "paraense-serie-b2-playoff",
+                "category": {
+                    "name": "Brazil",
+                    "slug": "brazil",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 13,
+                    "flag": "brazil",
+                    "alpha2": "BR"
+                },
+                "uniqueTournament": {
+                    "name": "Paraense Série B2",
+                    "slug": "paraense-serie-b2",
+                    "category": {
+                        "name": "Brazil",
+                        "slug": "brazil",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 13,
+                        "flag": "brazil",
+                        "alpha2": "BR"
+                    },
+                    "userCount": 112,
+                    "id": 20348,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 114471
+            },
+            "roundInfo": {
+                "round": 29,
+                "name": "Final",
+                "slug": "final",
+                "cupRoundType": 1
+            },
+            "customId": "FdjdsjHjd",
+            "status": {
+                "code": 50,
+                "description": "Penalties",
+                "type": "inprogress"
+            },
+            "homeTeam": {
+                "name": "Paraense",
+                "slug": "paraense",
+                "shortName": "Paraense",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 49,
+                "nameCode": "PPA",
+                "national": false,
+                "type": 0,
+                "id": 399109,
+                "country": {},
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "awayTeam": {
+                "name": "Pinheirense EC",
+                "slug": "pinheirense-ec",
+                "shortName": "Pinheirense",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 41,
+                "nameCode": "PSP",
+                "national": false,
+                "type": 0,
+                "id": 397680,
+                "country": {},
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "coverage": -1,
+            "time": {},
+            "changes": {
+                "changeTimestamp": 0
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11383847,
+            "startTimestamp": 1688646653,
+            "slug": "paraense-pinheirense-ec",
+            "lastPeriod": "penalties",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Pervaya Liga",
+                "slug": "pervaya-liga",
+                "category": {
+                    "name": "Kazakhstan",
+                    "slug": "kazakhstan",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 278,
+                    "flag": "kazakhstan",
+                    "alpha2": "KZ"
+                },
+                "uniqueTournament": {
+                    "name": "First Division",
+                    "slug": "first-division",
+                    "primaryColorHex": "#234181",
+                    "secondaryColorHex": "#dfbc18",
+                    "category": {
+                        "name": "Kazakhstan",
+                        "slug": "kazakhstan",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 278,
+                        "flag": "kazakhstan",
+                        "alpha2": "KZ"
+                    },
+                    "userCount": 1478,
+                    "id": 785,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 10876
+            },
+            "roundInfo": {
+                "round": 14
+            },
+            "customId": "FIosfPod",
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "winnerCode": 0,
+            "homeTeam": {
+                "name": "Akzhayik Uralsk",
+                "slug": "akzhayik-uralsk",
+                "shortName": "Akzhayik",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 2548,
+                "nameCode": "AKU",
+                "national": false,
+                "type": 0,
+                "id": 36680,
+                "country": {
+                    "alpha2": "KZ",
+                    "name": "Kazakhstan"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#ba4260",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                }
+            },
+            "awayTeam": {
+                "name": "Yassy Turkistan",
+                "slug": "yassy-turkistan",
+                "shortName": "Yassy Turkistan",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 1011,
+                "nameCode": "YAS",
+                "national": false,
+                "type": 0,
+                "id": 412005,
+                "country": {
+                    "alpha2": "KZ",
+                    "name": "Kazakhstan"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688651940
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "homeScore.normaltime",
+                    "awayScore.period1",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688654821
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11139549,
+            "startTimestamp": 1688652000,
+            "slug": "yassy-turkistan-akzhayik-uralsk",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Lebanon Cup",
+                "slug": "lebanon-cup",
+                "category": {
+                    "name": "Lebanon",
+                    "slug": "lebanon",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 428,
+                    "flag": "lebanon",
+                    "alpha2": "LB"
+                },
+                "uniqueTournament": {
+                    "name": "Lebanon Cup",
+                    "slug": "lebanon-cup",
+                    "primaryColorHex": "#c51218",
+                    "secondaryColorHex": "#0c9e4a",
+                    "category": {
+                        "name": "Lebanon",
+                        "slug": "lebanon",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 428,
+                        "flag": "lebanon",
+                        "alpha2": "LB"
+                    },
+                    "userCount": 1322,
+                    "id": 2307,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 6053
+            },
+            "customId": "hVzbsYrKb",
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "homeTeam": {
+                "name": "Alahli Nabatiya",
+                "slug": "alahli-nabatiya",
+                "shortName": "Alahli Nabatiya",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 77,
+                "nameCode": "NAB",
+                "national": false,
+                "type": 0,
+                "id": 213398,
+                "country": {
+                    "alpha2": "LB",
+                    "name": "Lebanon"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "awayTeam": {
+                "name": "Shabab Al Sahel",
+                "slug": "shabab-al-sahel",
+                "shortName": "Al Sahel",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 1160,
+                "nameCode": "SAS",
+                "national": false,
+                "type": 0,
+                "id": 187257,
+                "country": {
+                    "alpha2": "LB",
+                    "name": "Lebanon"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#00008b",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                }
+            },
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "normaltime": 1
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "coverage": -1,
+            "time": {
+                "currentPeriodStartTimestamp": 1688652120
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "homeScore.normaltime",
+                    "awayScore.period1",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688655096
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11407082,
+            "startTimestamp": 1688652000,
+            "slug": "alahli-nabatiya-shabab-al-sahel",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Lebanon Cup",
+                "slug": "lebanon-cup",
+                "category": {
+                    "name": "Lebanon",
+                    "slug": "lebanon",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 428,
+                    "flag": "lebanon",
+                    "alpha2": "LB"
+                },
+                "uniqueTournament": {
+                    "name": "Lebanon Cup",
+                    "slug": "lebanon-cup",
+                    "primaryColorHex": "#c51218",
+                    "secondaryColorHex": "#0c9e4a",
+                    "category": {
+                        "name": "Lebanon",
+                        "slug": "lebanon",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 428,
+                        "flag": "lebanon",
+                        "alpha2": "LB"
+                    },
+                    "userCount": 1322,
+                    "id": 2307,
+                    "country": {},
+                    "hasEventPlayerStatistics": false,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 6053
+            },
+            "customId": "Trosinq",
+            "status": {
+                "code": 31,
+                "description": "Halftime",
+                "type": "inprogress"
+            },
+            "homeTeam": {
+                "name": "Al-Safa Beirut",
+                "slug": "al-safa-beirut",
+                "shortName": "Al-Safa",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 556,
+                "nameCode": "SAF",
+                "national": false,
+                "type": 0,
+                "id": 35893,
+                "country": {
+                    "alpha2": "LB",
+                    "name": "Lebanon"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#fff000",
+                    "secondary": "#0000ff",
+                    "text": "#0000ff"
+                }
+            },
+            "awayTeam": {
+                "name": "Nejmeh SC",
+                "slug": "nejmeh-sc",
+                "shortName": "Nejmeh",
+                "gender": "M",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 3140,
+                "nameCode": "NEJ",
+                "national": false,
+                "type": 0,
+                "id": 40658,
+                "country": {
+                    "alpha2": "LB",
+                    "name": "Lebanon"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#510000",
+                    "secondary": "#ffffff",
+                    "text": "#ffffff"
+                }
+            },
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "normaltime": 0
+            },
+            "coverage": -1,
+            "time": {
+                "currentPeriodStartTimestamp": 1688652120
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "homeScore.period1",
+                    "homeScore.normaltime",
+                    "awayScore.period1",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688654961
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11411258,
+            "startTimestamp": 1688652000,
+            "slug": "nejmeh-sc-al-safa-beirut",
+            "finalResultOnly": false
+        }
+    ]
+}

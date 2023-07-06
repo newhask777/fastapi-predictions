@@ -12,6 +12,10 @@ from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
+from datetime import date
+
+
+
 # define router
 router = APIRouter(
     prefix='/predictions',
@@ -35,11 +39,18 @@ def get_db():
 
 
 # router all
-@router.get('/')
+@router.get('/', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
+    today = date.today()
+    print("Today's date:", today)
     games = db.query(models.Prediction).all()
-    # return templates.TemplateResponse("predictions.html", {"request": request, "games": games})
-    return games
+
+    tournamets = db.query(models.Prediction).distinct(models.Prediction.competition_name)
+
+    return templates.TemplateResponse("predictions.html", {"request": request, "games": games, "tournamets": tournamets})
+
+
+
 
 # get single
 @router.get('/{id}', response_class=HTMLResponse)

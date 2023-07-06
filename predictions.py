@@ -7,7 +7,7 @@ from db import models
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {"market":"classic","iso_date":"2023-06-07","federation":"UEFA"}
+querystring = {"market":"classic","iso_date":"2023-07-06","federation":"UEFA"}
 
 headers = {
 	"X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",

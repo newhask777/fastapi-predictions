@@ -1,0 +1,15 @@
+{% for tournament in tournamets %}
+
+                {% include 'layouts/predictions/league_header.html' %}
+
+        <div id="cart_league_body">
+                {% for game in games %}
+                        {% if game.competition_name == tournament.competition_name %}
+                                
+                                {% include 'layouts/predictions/league_games.html' %}  
+                                      
+                        {% endif %}
+                {% endfor %}
+        </div>        
+    
+{% endfor %}

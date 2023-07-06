@@ -46,11 +46,11 @@
             },
             "customId": "AvcsHvc",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Israel U21",
                 "slug": "israel-u21",
@@ -105,26 +105,28 @@
                 "current": 0,
                 "display": 0,
                 "period1": 0,
+                "period2": 0,
                 "normaltime": 0
             },
             "awayScore": {
-                "current": 1,
-                "display": 1,
-                "period1": 0,
-                "normaltime": 0
+                "current": 3,
+                "display": 3,
+                "period1": 1,
+                "period2": 2,
+                "normaltime": 3
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572833
+                "injuryTime1": 3,
+                "injuryTime2": 4,
+                "currentPeriodStartTimestamp": 1688576635
             },
             "changes": {
                 "changes": [
-                    "awayScore.current",
-                    "awayScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type"
                 ],
-                "changeTimestamp": 1688575292
+                "changeTimestamp": 1688579599
             },
             "hasGlobalHighlights": false,
             "hasEventPlayerStatistics": true,
@@ -132,16 +134,8 @@
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11399573,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688572833,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "israel-u21-england-u21",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -190,11 +184,11 @@
             },
             "customId": "MXbsQXb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Spain U21",
                 "slug": "spain-u21",
@@ -245,13 +239,36 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 5,
+                "display": 5,
+                "period1": 2,
+                "period2": 3,
+                "normaltime": 5
+            },
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
+            },
+            "time": {
+                "injuryTime1": 1,
+                "injuryTime2": 2,
+                "currentPeriodStartTimestamp": 1688587322
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type"
+                ],
+                "changeTimestamp": 1688590169
             },
             "hasGlobalHighlights": false,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11399600,
@@ -448,11 +465,11 @@
             },
             "customId": "zwcsMLo",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Godoy Cruz",
                 "slug": "godoy-cruz",
@@ -501,13 +518,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "injuryTime1": 2,
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688588626
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688588630
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 10981627,
@@ -561,11 +606,11 @@
             },
             "customId": "uobsDcd",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Tigre",
                 "slug": "tigre",
@@ -616,16 +661,40 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
+            },
+            "time": {
+                "injuryTime1": 4,
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688591149
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type"
+                ],
+                "changeTimestamp": 1688594606
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 10981623,
+            "homeRedCards": 1,
             "startTimestamp": 1688587200,
             "slug": "tigre-banfield",
             "finalResultOnly": false
@@ -676,11 +745,11 @@
             },
             "customId": "gobsrob",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "Rosario Central",
                 "slug": "rosario-central",
@@ -731,13 +800,36 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 1,
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688594728
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type"
+                ],
+                "changeTimestamp": 1688597804
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 10981589,
@@ -791,11 +883,11 @@
             },
             "customId": "bobspob",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "Racing Club",
                 "slug": "racing-club",
@@ -846,16 +938,46 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "injuryTime1": 4,
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688603526
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688603528
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 10981601,
+            "homeRedCards": 1,
+            "awayRedCards": 1,
             "startTimestamp": 1688596200,
             "slug": "racing-club-san-lorenzo",
             "finalResultOnly": false
@@ -906,11 +1028,11 @@
             },
             "customId": "hobslob",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "River Plate",
                 "slug": "river-plate",
@@ -961,13 +1083,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 3,
+                "injuryTime2": 4,
+                "currentPeriodStartTimestamp": 1688610923
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688610926
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 10981595,
@@ -1438,9 +1588,9 @@
             },
             "customId": "kabshPi",
             "status": {
-                "code": 90,
-                "description": "Abandoned",
-                "type": "canceled"
+                "code": 60,
+                "description": "Postponed",
+                "type": "postponed"
             },
             "winnerCode": 0,
             "homeTeam": {
@@ -1506,11 +1656,9 @@
                 "changes": [
                     "status.code",
                     "status.description",
-                    "status.type",
-                    "homeScore.display",
-                    "awayScore.display"
+                    "status.type"
                 ],
-                "changeTimestamp": 1688536753
+                "changeTimestamp": 1688628934
             },
             "hasGlobalHighlights": false,
             "hasEventPlayerStatistics": false,
@@ -1821,11 +1969,11 @@
             },
             "customId": "TcAbsiHld",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "New York City FC",
                 "slug": "new-york-city-fc",
@@ -1876,13 +2024,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
+            },
+            "time": {
+                "injuryTime1": 6,
+                "injuryTime2": 6,
+                "currentPeriodStartTimestamp": 1688607476
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688607479
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 10952213,
@@ -1936,11 +2112,11 @@
             },
             "customId": "jOsHPi",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "CRB",
                 "slug": "crb",
@@ -1990,13 +2166,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 5,
+                "injuryTime2": 7,
+                "currentPeriodStartTimestamp": 1688601751
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688601755
             },
             "hasGlobalHighlights": false,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11354730,
@@ -2037,7 +2241,7 @@
                         "flag": "egypt",
                         "alpha2": "EG"
                     },
-                    "userCount": 66711,
+                    "userCount": 66785,
                     "id": 808,
                     "country": {},
                     "hasEventPlayerStatistics": true,
@@ -2053,11 +2257,11 @@
             },
             "customId": "kNcsqXq",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Al Ahly SC",
                 "slug": "al-ahly-sc",
@@ -2108,13 +2312,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 4,
+                "injuryTime2": 7,
+                "currentPeriodStartTimestamp": 1688585430
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688585432
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11300906,
@@ -4681,11 +4913,11 @@
             },
             "customId": "nOsGO",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "São Paulo",
                 "slug": "sao-paulo",
@@ -4736,13 +4968,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 4,
+                "injuryTime2": 6,
+                "currentPeriodStartTimestamp": 1688603457
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688603459
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11335832,
@@ -4798,11 +5058,11 @@
             },
             "customId": "hOsyO",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "América Mineiro",
                 "slug": "america-mineiro",
@@ -4853,13 +5113,41 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 4,
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688610264
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688610266
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11335830,
@@ -4915,11 +5203,11 @@
             },
             "customId": "rOsGuc",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Flamengo",
                 "slug": "flamengo",
@@ -4970,13 +5258,40 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 0,
+                "period2": 2,
+                "normaltime": 2
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
+            },
+            "time": {
+                "injuryTime1": 4,
+                "injuryTime2": 6,
+                "currentPeriodStartTimestamp": 1688610360
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688610403
+            },
+            "hasGlobalHighlights": true,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11335831,
@@ -5835,8 +6150,6 @@
                 "uniqueTournament": {
                     "name": "Ykkönen",
                     "slug": "ykkonen",
-                    "primaryColorHex": "#4e64ab",
-                    "secondaryColorHex": "#ed9923",
                     "category": {
                         "name": "Finland",
                         "slug": "finland",
@@ -5849,9 +6162,8 @@
                         "flag": "finland",
                         "alpha2": "FI"
                     },
-                    "userCount": 2925,
+                    "userCount": 0,
                     "id": 55,
-                    "country": {},
                     "hasEventPlayerStatistics": false,
                     "crowdsourcingEnabled": false,
                     "hasPerformanceGraphFeature": false,
@@ -6007,11 +6319,12 @@
             },
             "customId": "UUsibc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 120,
+                "description": "AP",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
+            "aggregatedWinnerCode": 1,
             "homeTeam": {
                 "name": "IFK Mariehamn",
                 "slug": "ifk-mariehamn",
@@ -6063,44 +6376,37 @@
                 }
             },
             "homeScore": {
-                "current": 0,
-                "display": 0,
+                "current": 6,
+                "display": 1,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 1,
+                "normaltime": 1,
+                "penalties": 5
             },
             "awayScore": {
-                "current": 1,
+                "current": 5,
                 "display": 1,
                 "period1": 1,
-                "normaltime": 1
+                "period2": 0,
+                "normaltime": 1,
+                "penalties": 4
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688572920
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type"
                 ],
-                "changeTimestamp": 1688572949
+                "changeTimestamp": 1688576665
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11378966,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688572920,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "ifk-mariehamn-kups",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -6151,11 +6457,12 @@
             },
             "customId": "fVsocc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
+            "aggregatedWinnerCode": 2,
             "homeTeam": {
                 "name": "KTP",
                 "slug": "ktp",
@@ -6209,41 +6516,35 @@
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "awayScore": {
-                "current": 0,
-                "display": 0,
+                "current": 2,
+                "display": 2,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 2,
+                "normaltime": 2
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574660
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574695
+                "changeTimestamp": 1688577607
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11378960,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574660,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "ac-oulu-ktp",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -6294,11 +6595,12 @@
             },
             "customId": "kVsUXi",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
+            "aggregatedWinnerCode": 2,
             "homeTeam": {
                 "name": "SalPa",
                 "slug": "salpa",
@@ -6351,41 +6653,35 @@
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "awayScore": {
-                "current": 2,
-                "display": 2,
+                "current": 3,
+                "display": 3,
                 "period1": 2,
-                "normaltime": 2
+                "period2": 1,
+                "normaltime": 3
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574840
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574844
+                "changeTimestamp": 1688577822
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11378963,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574840,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "fc-honka-salpa",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -6436,11 +6732,12 @@
             },
             "customId": "LXisLCnc",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
+            "aggregatedWinnerCode": 2,
             "homeTeam": {
                 "name": "VJS",
                 "slug": "vjs",
@@ -6493,40 +6790,37 @@
             },
             "homeScore": {
                 "current": 0,
-                "display": 0
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "awayScore": {
-                "current": 1,
-                "display": 1
+                "current": 4,
+                "display": 4,
+                "period1": 1,
+                "period2": 3,
+                "normaltime": 4
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572894
+                "currentPeriodStartTimestamp": 1688576400
             },
             "changes": {
                 "changes": [
-                    "awayScore.current",
-                    "awayScore.display",
-                    "awayScore.current",
-                    "awayScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574950
+                "changeTimestamp": 1688579456
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11378961,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688572894,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "vjs-ilves",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -8343,11 +8637,11 @@
             },
             "customId": "YEqsBRmc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "BFC Daugava Daugavpils",
                 "slug": "bfc-daugava-daugavpils",
@@ -8400,40 +8694,35 @@
                 "current": 2,
                 "display": 2,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 2,
+                "normaltime": 2
             },
             "awayScore": {
                 "current": 0,
                 "display": 0,
                 "period1": 0,
+                "period2": 0,
                 "normaltime": 0
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688572920
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688575436
+                "changeTimestamp": 1688575874
             },
-            "hasGlobalHighlights": false,
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11070059,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688572920,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "bfc-daugava-daugavpils-sk-super-nova",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -8477,11 +8766,11 @@
             },
             "customId": "HidbsEucc",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Venezuela",
                 "slug": "venezuela",
@@ -8530,11 +8819,34 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
+            },
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688598180
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688601332
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -8584,11 +8896,11 @@
             },
             "customId": "rgosqXRd",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Mexico",
                 "slug": "mexico",
@@ -8635,11 +8947,36 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 6,
+                "display": 6,
+                "period1": 4,
+                "period2": 2,
+                "normaltime": 6
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 1,
+                "currentPeriodStartTimestamp": 1688613390
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688613392
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -9205,11 +9542,11 @@
             },
             "customId": "dosVwc",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Vålerenga IF II",
                 "slug": "valerenga-if-ii",
@@ -9260,37 +9597,41 @@
             },
             "homeScore": {
                 "current": 0,
-                "display": 0
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "awayScore": {
                 "current": 2,
-                "display": 2
+                "display": 2,
+                "period1": 2,
+                "period2": 0,
+                "normaltime": 2
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572793
+                "injuryTime1": 1,
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688579457
             },
             "changes": {
                 "changes": [
-                    "cardsCode"
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574882
+                "changeTimestamp": 1688579460
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11332738,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688572793,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "vard-haugesund-valerenga-if-ii",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -9336,9 +9677,9 @@
             },
             "customId": "TkbsIGn",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
             },
             "winnerCode": 0,
             "homeTeam": {
@@ -9389,17 +9730,43 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0
+            },
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1
+            },
+            "time": {
+                "injuryTime1": 1,
+                "injuryTime2": 4,
+                "initial": 2700,
+                "max": 5400,
+                "extra": 780,
+                "currentPeriodStartTimestamp": 1688647642
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "time.injuryTime2"
+                ],
+                "changeTimestamp": 1688650451
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11041352,
+            "statusTime": {
+                "prefix": "",
+                "initial": 2700,
+                "max": 5400,
+                "timestamp": 1688647642,
+                "extra": 780
+            },
             "startTimestamp": 1688643900,
             "slug": "hougang-united-tampines-rovers",
+            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -9445,9 +9812,9 @@
             },
             "customId": "NkbsOkb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 7,
+                "description": "2nd half",
+                "type": "inprogress"
             },
             "winnerCode": 0,
             "homeTeam": {
@@ -9498,17 +9865,44 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1
+            },
+            "awayScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 1
+            },
+            "time": {
+                "injuryTime1": 1,
+                "injuryTime2": 4,
+                "initial": 2700,
+                "max": 5400,
+                "extra": 780,
+                "currentPeriodStartTimestamp": 1688647627
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688650359
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11041358,
+            "awayRedCards": 1,
+            "statusTime": {
+                "prefix": "",
+                "initial": 2700,
+                "max": 5400,
+                "timestamp": 1688647627,
+                "extra": 780
+            },
             "startTimestamp": 1688643900,
             "slug": "balestier-central-tanjong-pagar-united",
+            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -9823,11 +10217,11 @@
             },
             "customId": "vRebsBuKb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Independiente del Valle U20",
                 "slug": "independiente-del-valle-u20",
@@ -9873,13 +10267,37 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime2": 5,
+                "currentPeriodStartTimestamp": 1688590611
+            },
+            "changes": {
+                "changes": [
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
+                ],
+                "changeTimestamp": 1688590613
+            },
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11349103,
             "startTimestamp": 1688583600,
@@ -9930,11 +10348,11 @@
             },
             "customId": "oPDsvhRd",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Cerro Porteño U20",
                 "slug": "cerro-porteno-u20",
@@ -9984,13 +10402,35 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 2,
+                "period2": 2,
+                "normaltime": 4
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688598240
+            },
+            "changes": {
+                "changes": [
+                    "homeScore.period1",
+                    "homeScore.period2",
+                    "homeScore.current",
+                    "homeScore.display",
+                    "homeScore.period2",
+                    "homeScore.normaltime"
+                ],
+                "changeTimestamp": 1688605666
+            },
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11349104,
             "startTimestamp": 1688594400,
@@ -10043,11 +10483,11 @@
             },
             "customId": "FobsKob",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Nacional",
                 "slug": "nacional",
@@ -10098,13 +10538,34 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
+            "homeScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 1,
+                "period2": 3,
+                "normaltime": 4
             },
-            "hasGlobalHighlights": false,
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "injuryTime1": 2,
+                "currentPeriodStartTimestamp": 1688603588
+            },
+            "changes": {
+                "changes": [
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688603927
+            },
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11352067,
             "startTimestamp": 1688596200,
@@ -13781,7 +14242,7 @@
                 ],
                 "changeTimestamp": 1688553412
             },
-            "hasGlobalHighlights": false,
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11382961,
             "startTimestamp": 1688547600,
@@ -13910,7 +14371,7 @@
                 ],
                 "changeTimestamp": 1688553605
             },
-            "hasGlobalHighlights": false,
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11397132,
             "startTimestamp": 1688547600,
@@ -16465,11 +16926,11 @@
             },
             "customId": "RHrseCuc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "BVSC-Zugló",
                 "slug": "bvsc-zuglo",
@@ -16522,41 +16983,40 @@
             "homeScore": {
                 "current": 1,
                 "display": 1,
-                "period1": 1
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
             "awayScore": {
                 "current": 0,
                 "display": 0,
-                "period1": 0
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "time": {
                 "injuryTime1": 1,
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572952
+                "injuryTime2": 1,
+                "currentPeriodStartTimestamp": 1688575710
             },
             "changes": {
                 "changes": [
-                    "time.currentPeriodStart",
                     "status.code",
-                    "status.description"
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
                 ],
-                "changeTimestamp": 1688572956
+                "changeTimestamp": 1688575712
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11405937,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688572952,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "eger-se-bvsc-zuglo",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -16603,11 +17063,11 @@
             },
             "customId": "Rpbsfqb",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Dynamo Kyiv",
                 "slug": "dynamo-kyiv",
@@ -16659,43 +17119,38 @@
                 }
             },
             "homeScore": {
-                "current": 3,
-                "display": 3,
+                "current": 4,
+                "display": 4,
                 "period1": 2,
-                "normaltime": 2
+                "period2": 2,
+                "normaltime": 4
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574000
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688575291
+                "changeTimestamp": 1688576780
             },
-            "hasGlobalHighlights": false,
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11406182,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574000,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "dynamo-kyiv-fc-dinamo-bucuresti",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -16871,11 +17326,11 @@
             },
             "customId": "kmksWRgc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "FC Nagykanizsa",
                 "slug": "fc-nagykanizsa",
@@ -16928,39 +17383,38 @@
             "homeScore": {
                 "current": 1,
                 "display": 1,
-                "period1": 0
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
             "awayScore": {
                 "current": 0,
                 "display": 0,
-                "period1": 0
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572750
+                "currentPeriodStartTimestamp": 1688575454
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688573489
+                "changeTimestamp": 1688575458
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11403106,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688572750,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "fc-nagykanizsa-mosonmagyarovari-te",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17004,11 +17458,11 @@
             },
             "customId": "zldslELc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "FK CSKA 1948 Sofia II",
                 "slug": "fk-cska-1948-sofia-ii",
@@ -17062,40 +17516,38 @@
             "homeScore": {
                 "current": 0,
                 "display": 0,
-                "period1": 0
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "awayScore": {
-                "current": 0,
-                "display": 0,
-                "period1": 0
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688573590
+                "currentPeriodStartTimestamp": 1688576386
             },
             "changes": {
                 "changes": [
-                    "time.currentPeriodStart",
                     "status.code",
-                    "status.description"
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
                 ],
-                "changeTimestamp": 1688573595
+                "changeTimestamp": 1688576390
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11406261,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688573590,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "fk-sportist-svoge-fk-cska-1948-sofia-ii",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17142,11 +17594,11 @@
             },
             "customId": "VdcswHdc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "KF Tirana",
                 "slug": "kf-tirana",
@@ -17199,39 +17651,38 @@
             "homeScore": {
                 "current": 2,
                 "display": 2,
-                "period1": 1
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
-                "period1": 1
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688572998
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574413
+                "changeTimestamp": 1688575916
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11372865,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688572998,
-                "extra": 540
-            },
+            "homeRedCards": 1,
             "startTimestamp": 1688569200,
             "slug": "kf-tirana-fc-struga-trim-and-lum",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17278,11 +17729,11 @@
             },
             "customId": "mYsqY",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "NK Olimpija Ljubljana",
                 "slug": "nk-olimpija-ljubljana",
@@ -17333,41 +17784,40 @@
                 }
             },
             "homeScore": {
-                "current": 3,
-                "display": 3,
-                "period1": 2
+                "current": 4,
+                "display": 4,
+                "period1": 2,
+                "period2": 2,
+                "normaltime": 4
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
-                "period1": 0
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688573145
+                "currentPeriodStartTimestamp": 1688575844
             },
             "changes": {
                 "changes": [
-                    "awayScore.current",
-                    "awayScore.display"
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688573689
+                "changeTimestamp": 1688575848
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11406300,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688573145,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "nk-olimpija-ljubljana-rudar-velenje",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17414,11 +17864,11 @@
             },
             "customId": "wsgdcc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Preston North End",
                 "slug": "preston-north-end",
@@ -17471,40 +17921,35 @@
                 "current": 3,
                 "display": 3,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 3,
+                "normaltime": 3
             },
             "awayScore": {
                 "current": 0,
                 "display": 0,
                 "period1": 0,
+                "period2": 0,
                 "normaltime": 0
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688573160
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688574368
+                "changeTimestamp": 1688575879
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11364830,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688573160,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "fc-brunos-magpies-preston-north-end",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17551,11 +17996,11 @@
             },
             "customId": "uRsXdc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "SKN St. Pölten",
                 "slug": "skn-st-polten",
@@ -17609,41 +18054,35 @@
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "awayScore": {
                 "current": 0,
                 "display": 0,
                 "period1": 0,
+                "period2": 0,
                 "normaltime": 0
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688574780
+                "currentPeriodStartTimestamp": 1688577000
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
                     "time.currentPeriodStart"
                 ],
-                "changeTimestamp": 1688574792
+                "changeTimestamp": 1688577058
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11401712,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574780,
-                "extra": 540
-            },
             "startTimestamp": 1688569200,
             "slug": "maccabi-haifa-skn-st-polten",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17824,11 +18263,11 @@
             },
             "customId": "VecswZjc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "FK Pirin Blagoevgrad",
                 "slug": "fk-pirin-blagoevgrad",
@@ -17882,43 +18321,34 @@
                 "current": 0,
                 "display": 0,
                 "period1": 0,
+                "period2": 0,
                 "normaltime": 0
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688573940
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "homeScore.normaltime",
-                    "awayScore.normaltime",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688573949
+                "changeTimestamp": 1688577164
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11405729,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688573940,
-                "extra": 540
-            },
             "startTimestamp": 1688570100,
             "slug": "fk-pirin-blagoevgrad-arda-kardzhali",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -17962,11 +18392,11 @@
             },
             "customId": "zddsEkk",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "FK Napredak Kruševac",
                 "slug": "fk-napredak-krusevac",
@@ -18021,41 +18451,34 @@
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574540
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688574581
+                "changeTimestamp": 1688577273
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11401524,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574540,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "fk-napredak-krusevac-nk-istra-1961",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18099,11 +18522,11 @@
             },
             "customId": "hntsObnc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "FK Yantra Gabrovo",
                 "slug": "fk-yantra-gabrovo",
@@ -18155,43 +18578,39 @@
                 }
             },
             "homeScore": {
-                "current": 4,
-                "display": 4,
+                "current": 6,
+                "display": 6,
                 "period1": 3,
-                "normaltime": 3
+                "period2": 3,
+                "normaltime": 6
             },
             "awayScore": {
-                "current": 0,
-                "display": 0,
+                "current": 2,
+                "display": 2,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 2,
+                "normaltime": 2
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688575020
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688575322
+                "changeTimestamp": 1688577740
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11405734,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688575020,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "ofk-spartak-pleven-fk-yantra-gabrovo",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18235,11 +18654,11 @@
             },
             "customId": "pNsLP",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "HNK Hajduk Split",
                 "slug": "hnk-hajduk-split",
@@ -18291,42 +18710,38 @@
                 }
             },
             "homeScore": {
-                "current": 0,
-                "display": 0,
+                "current": 3,
+                "display": 3,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 3,
+                "normaltime": 3
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688574600
+                "currentPeriodStartTimestamp": 1688574540
             },
             "changes": {
                 "changes": [
-                    "cardsCode"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688574753
+                "changeTimestamp": 1688577278
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11397399,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574600,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "hnk-hajduk-split-mtk-budapest",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18373,11 +18788,11 @@
             },
             "customId": "PPsgrk",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "NK Osijek",
                 "slug": "nk-osijek",
@@ -18429,44 +18844,38 @@
                 }
             },
             "homeScore": {
-                "current": 0,
-                "display": 0,
+                "current": 1,
+                "display": 1,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 1,
+                "normaltime": 1
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574900
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688575368
+                "changeTimestamp": 1688578004
             },
-            "hasGlobalHighlights": false,
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11403105,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574900,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "fc-petrolul-ploiesti-nk-osijek",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18513,11 +18922,11 @@
             },
             "customId": "Qpbsadc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "SC Oțelul Galați",
                 "slug": "sc-otelul-galati",
@@ -18569,44 +18978,39 @@
                 }
             },
             "homeScore": {
-                "current": 1,
-                "display": 1,
+                "current": 2,
+                "display": 2,
                 "period1": 1,
-                "normaltime": 1
+                "period2": 1,
+                "normaltime": 2
             },
             "awayScore": {
-                "current": 0,
-                "display": 0,
+                "current": 2,
+                "display": 2,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 2,
+                "normaltime": 2
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574780
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574788
+                "changeTimestamp": 1688577562
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11406301,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574780,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "fk-vojvodina-sc-otelul-galati",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18653,11 +19057,11 @@
             },
             "customId": "rbbsIdb",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "SSV Jahn Regensburg",
                 "slug": "ssv-jahn-regensburg",
@@ -18709,46 +19113,38 @@
                 }
             },
             "homeScore": {
-                "current": 1,
-                "display": 1,
+                "current": 2,
+                "display": 2,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 2,
+                "normaltime": 2
             },
             "awayScore": {
                 "current": 1,
                 "display": 1,
                 "period1": 1,
+                "period2": 0,
                 "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574780
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display",
                     "status.code",
                     "status.description",
-                    "time.currentPeriodStart"
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688575005
+                "changeTimestamp": 1688577582
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11364758,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574780,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "sc-fortuna-koln-ssv-jahn-regensburg",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18795,11 +19191,11 @@
             },
             "customId": "eYsditc",
             "status": {
-                "code": 7,
-                "description": "2nd half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "ŠK Slovan Bratislava",
                 "slug": "sk-slovan-bratislava",
@@ -18850,43 +19246,39 @@
                 }
             },
             "homeScore": {
-                "current": 2,
-                "display": 2,
+                "current": 4,
+                "display": 4,
                 "period1": 1,
-                "normaltime": 1
+                "period2": 3,
+                "normaltime": 4
             },
             "awayScore": {
-                "current": 0,
-                "display": 0,
+                "current": 1,
+                "display": 1,
                 "period1": 0,
-                "normaltime": 0
+                "period2": 1,
+                "normaltime": 1
             },
             "time": {
-                "initial": 2700,
-                "max": 5400,
-                "extra": 540,
                 "currentPeriodStartTimestamp": 1688574360
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574609
+                "changeTimestamp": 1688577125
             },
-            "hasGlobalHighlights": false,
+            "hasGlobalHighlights": true,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11343610,
-            "statusTime": {
-                "prefix": "",
-                "initial": 2700,
-                "max": 5400,
-                "timestamp": 1688574360,
-                "extra": 540
-            },
             "startTimestamp": 1688571000,
             "slug": "fc-rapid-bucuresti-sk-slovan-bratislava",
-            "lastPeriod": "period2",
             "finalResultOnly": false
         },
         {
@@ -18933,11 +19325,11 @@
             },
             "customId": "rQsPec",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "FK Željezničar",
                 "slug": "fk-zeljeznicar",
@@ -18988,39 +19380,38 @@
                 }
             },
             "homeScore": {
-                "current": 1,
-                "display": 1
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
             },
             "awayScore": {
                 "current": 0,
-                "display": 0
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572869
+                "currentPeriodStartTimestamp": 1688576460
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688574520
+                "changeTimestamp": 1688579219
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11404420,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688572869,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "fk-zeljeznicar-kapfenberger-sv",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -19067,11 +19458,11 @@
             },
             "customId": "YobsFQac",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Panathinaikos",
                 "slug": "panathinaikos",
@@ -19123,45 +19514,37 @@
                 }
             },
             "homeScore": {
-                "current": 0,
-                "display": 0
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
             "awayScore": {
                 "current": 0,
-                "display": 0
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688573053
+                "currentPeriodStartTimestamp": 1688576700
             },
             "changes": {
                 "changes": [
-                    "time.currentPeriodStart",
                     "status.code",
                     "status.description",
                     "status.type",
-                    "homeScore.current",
-                    "homeScore.display",
-                    "awayScore.current",
-                    "awayScore.display"
+                    "homeScore.period2",
+                    "awayScore.period2"
                 ],
-                "changeTimestamp": 1688573057
+                "changeTimestamp": 1688579828
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11364833,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688573053,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "panathinaikos-fc-cska-1948-sofia",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -19208,11 +19591,11 @@
             },
             "customId": "AQsyab",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "TSV Hartberg",
                 "slug": "tsv-hartberg",
@@ -19263,39 +19646,39 @@
                 }
             },
             "homeScore": {
-                "current": 1,
-                "display": 1
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
             },
             "awayScore": {
-                "current": 0,
-                "display": 0
+                "current": 2,
+                "display": 2,
+                "period1": 0,
+                "period2": 2,
+                "normaltime": 2
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572785
+                "currentPeriodStartTimestamp": 1688576340
             },
             "changes": {
                 "changes": [
-                    "homeScore.current",
-                    "homeScore.display"
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574088
+                "changeTimestamp": 1688579069
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11367848,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688572785,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "1-fc-nurnberg-tsv-hartberg",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -19342,11 +19725,11 @@
             },
             "customId": "bpbsbqb",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "FCSB",
                 "slug": "fcsb",
@@ -19398,45 +19781,37 @@
                 }
             },
             "homeScore": {
-                "current": 0,
-                "display": 0
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
             },
             "awayScore": {
-                "current": 0,
-                "display": 0
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688574877
+                "currentPeriodStartTimestamp": 1688581410
             },
             "changes": {
                 "changes": [
+                    "time.currentPeriodStart",
                     "status.code",
                     "status.description",
-                    "status.type",
-                    "homeScore.current",
-                    "homeScore.display",
-                    "awayScore.current",
-                    "awayScore.display",
-                    "time.currentPeriodStart"
+                    "status.code",
+                    "status.description"
                 ],
-                "changeTimestamp": 1688574881
+                "changeTimestamp": 1688581413
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11364832,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688574877,
-                "extra": 540
-            },
             "startTimestamp": 1688574600,
             "slug": "fcsb-paok",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -19483,11 +19858,11 @@
             },
             "customId": "LbbsGid",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Kickers Offenbach",
                 "slug": "kickers-offenbach",
@@ -19537,45 +19912,38 @@
                 }
             },
             "homeScore": {
-                "current": 0,
-                "display": 0
+                "current": 3,
+                "display": 3,
+                "period1": 3,
+                "period2": 0,
+                "normaltime": 3
             },
             "awayScore": {
-                "current": 0,
-                "display": 0
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688574900
+                "currentPeriodStartTimestamp": 1688578500
             },
             "changes": {
                 "changes": [
                     "status.code",
                     "status.description",
                     "status.type",
-                    "homeScore.current",
-                    "homeScore.display",
-                    "awayScore.current",
-                    "awayScore.display",
-                    "time.currentPeriodStart"
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
                 ],
-                "changeTimestamp": 1688574932
+                "changeTimestamp": 1688581239
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11403110,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688574900,
-                "extra": 540
-            },
             "startTimestamp": 1688574600,
             "slug": "fortuna-dusseldorf-ii-kickers-offenbach",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -19622,11 +19990,11 @@
             },
             "customId": "fPbsmyqb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "ASC Dortmund",
                 "slug": "asc-dortmund",
@@ -19675,11 +20043,33 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 4,
+                "period2": 0,
+                "normaltime": 4
+            },
+            "awayScore": {
+                "current": 6,
+                "display": 6,
+                "period1": 5,
+                "period2": 1,
+                "normaltime": 6
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688580060
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688582772
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -19729,11 +20119,11 @@
             },
             "customId": "Ckwsjbkc",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "Eintracht Mahlsdorf",
                 "slug": "eintracht-mahlsdorf",
@@ -19782,11 +20172,31 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688582866
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688583511
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -19839,11 +20249,11 @@
             },
             "customId": "iXbsuJGb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "KV Kortrijk",
                 "slug": "kv-kortrijk",
@@ -19892,11 +20302,35 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
+            },
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688582929
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688582933
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -19949,11 +20383,11 @@
             },
             "customId": "AqcsMrQb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "SV Morlautern",
                 "slug": "sv-morlautern",
@@ -20002,11 +20436,34 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 0,
+                "period2": 3,
+                "normaltime": 3
+            },
+            "awayScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 0,
+                "period2": 3,
+                "normaltime": 3
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688580300
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688583195
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20059,11 +20516,11 @@
             },
             "customId": "dRsqvqc",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "USV Weindorf St. Anna am Aigen",
                 "slug": "usv-weindorf-st-anna-am-aigen",
@@ -20113,11 +20570,35 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 3,
+                "period2": 1,
+                "normaltime": 4
+            },
+            "awayScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 2,
+                "period2": 2,
+                "normaltime": 4
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688582387
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688582390
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20167,11 +20648,11 @@
             },
             "customId": "Wbsllb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Galatasaray",
                 "slug": "galatasaray",
@@ -20221,13 +20702,36 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 3,
+                "display": 3,
+                "period1": 3,
+                "period2": 0,
+                "normaltime": 3
+            },
+            "awayScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 1,
+                "period2": 3,
+                "normaltime": 4
+            },
+            "time": {
+                "injuryTime1": 1,
+                "injuryTime2": 4,
+                "currentPeriodStartTimestamp": 1688582864
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type"
+                ],
+                "changeTimestamp": 1688585885
             },
             "hasGlobalHighlights": false,
+            "hasEventPlayerStatistics": true,
+            "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11388537,
@@ -20276,11 +20780,11 @@
             },
             "customId": "XoFsGtrc",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "Ratingen 04/19",
                 "slug": "ratingen-0419",
@@ -20329,11 +20833,35 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
+            },
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 0,
+                "period2": 1,
+                "normaltime": 1
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688584619
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688584623
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20383,11 +20911,11 @@
             },
             "customId": "KpcsAfF",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "SC Waldgirmes",
                 "slug": "sc-waldgirmes",
@@ -20437,11 +20965,35 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 4,
+                "display": 4,
+                "period1": 3,
+                "period2": 1,
+                "normaltime": 4
+            },
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688586739
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "time.currentPeriodStart",
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688586744
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20494,11 +21046,11 @@
             },
             "customId": "zsrEo",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "Boreham Wood",
                 "slug": "boreham-wood",
@@ -20548,11 +21100,32 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688585460
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2"
+                ],
+                "changeTimestamp": 1688588236
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20605,11 +21178,11 @@
             },
             "customId": "hXswnb",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Bray Wanderers",
                 "slug": "bray-wanderers",
@@ -20659,11 +21232,33 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
+            },
+            "awayScore": {
+                "current": 5,
+                "display": 5,
+                "period1": 3,
+                "period2": 2,
+                "normaltime": 5
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688585460
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688588250
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20716,11 +21311,11 @@
             },
             "customId": "dbsjwn",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Swindon Supermarine",
                 "slug": "swindon-supermarine",
@@ -20770,11 +21365,33 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 2,
+                "display": 2,
+                "period1": 1,
+                "period2": 1,
+                "normaltime": 2
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688586480
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "awayScore.period2",
+                    "awayScore.normaltime"
+                ],
+                "changeTimestamp": 1688589408
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
@@ -20825,125 +21442,13 @@
             "roundInfo": {
                 "round": 1
             },
-            "customId": "nYskrfc",
-            "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
-            },
-            "winnerCode": 0,
-            "homeTeam": {
-                "name": "TSC Bačka Topola",
-                "slug": "tsc-backa-topola",
-                "shortName": "Bačka Topola",
-                "sport": {
-                    "name": "Football",
-                    "slug": "football",
-                    "id": 1
-                },
-                "userCount": 0,
-                "nameCode": "BAT",
-                "disabled": false,
-                "type": 0,
-                "id": 263360,
-                "country": {
-                    "alpha2": "RS",
-                    "name": "Serbia"
-                },
-                "subTeams": [],
-                "teamColors": {
-                    "primary": "#52b030",
-                    "secondary": "#52b030",
-                    "text": "#ffffff"
-                }
-            },
-            "awayTeam": {
-                "name": "NK Celje",
-                "slug": "nk-celje",
-                "shortName": "Celje",
-                "sport": {
-                    "name": "Football",
-                    "slug": "football",
-                    "id": 1
-                },
-                "userCount": 0,
-                "nameCode": "CEL",
-                "disabled": false,
-                "type": 0,
-                "id": 2413,
-                "country": {
-                    "alpha2": "SI",
-                    "name": "Slovenia"
-                },
-                "subTeams": [],
-                "teamColors": {
-                    "primary": "#52b030",
-                    "secondary": "#52b030",
-                    "text": "#ffffff"
-                }
-            },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
-            "changes": {
-                "changeTimestamp": 0
-            },
-            "hasGlobalHighlights": false,
-            "crowdsourcingDataDisplayEnabled": false,
-            "id": 11404802,
-            "startTimestamp": 1688630400,
-            "slug": "tsc-backa-topola-nk-celje",
-            "finalResultOnly": false
-        },
-        {
-            "tournament": {
-                "name": "Club Friendly Games",
-                "slug": "club-friendly-games",
-                "category": {
-                    "name": "World",
-                    "slug": "world",
-                    "sport": {
-                        "name": "Football",
-                        "slug": "football",
-                        "id": 1
-                    },
-                    "id": 1468,
-                    "flag": "international"
-                },
-                "uniqueTournament": {
-                    "name": "Club Friendly Games",
-                    "slug": "club-friendly-games",
-                    "category": {
-                        "name": "World",
-                        "slug": "world",
-                        "sport": {
-                            "name": "Football",
-                            "slug": "football",
-                            "id": 1
-                        },
-                        "id": 1468,
-                        "flag": "international"
-                    },
-                    "userCount": 0,
-                    "crowdsourcingEnabled": false,
-                    "hasPerformanceGraphFeature": false,
-                    "id": 853,
-                    "hasEventPlayerStatistics": false,
-                    "displayInverseHomeAwayTeams": false
-                },
-                "priority": 0,
-                "id": 86
-            },
-            "roundInfo": {
-                "round": 1
-            },
             "customId": "aZslZ",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 1,
             "homeTeam": {
                 "name": "FC Zürich",
                 "slug": "fc-zurich",
@@ -20992,17 +21497,309 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 5,
+                "display": 5,
+                "period1": 2,
+                "period2": 3,
+                "normaltime": 5
+            },
+            "awayScore": {
+                "current": 1,
+                "display": 1,
+                "period1": 1,
+                "period2": 0,
+                "normaltime": 1
+            },
+            "time": {
+                "currentPeriodStartTimestamp": 1688645160
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.period2",
+                    "homeScore.normaltime",
+                    "awayScore.period2"
+                ],
+                "changeTimestamp": 1688648195
             },
             "hasGlobalHighlights": false,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11356914,
             "startTimestamp": 1688641200,
             "slug": "schaffhausen-fc-zurich",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Club Friendly Games",
+                "slug": "club-friendly-games",
+                "category": {
+                    "name": "World",
+                    "slug": "world",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 1468,
+                    "flag": "international"
+                },
+                "uniqueTournament": {
+                    "name": "Club Friendly Games",
+                    "slug": "club-friendly-games",
+                    "category": {
+                        "name": "World",
+                        "slug": "world",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 1468,
+                        "flag": "international"
+                    },
+                    "userCount": 0,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 853,
+                    "hasEventPlayerStatistics": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 86
+            },
+            "customId": "eqpsGEr",
+            "status": {
+                "code": 6,
+                "description": "1st half",
+                "type": "inprogress"
+            },
+            "winnerCode": 0,
+            "homeTeam": {
+                "name": "FK Radnički 1923",
+                "slug": "fk-radnicki-1923",
+                "shortName": "Radnički 1923",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 0,
+                "nameCode": "RAD",
+                "disabled": false,
+                "type": 0,
+                "id": 43981,
+                "country": {
+                    "alpha2": "RS",
+                    "name": "Serbia"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "awayTeam": {
+                "name": "Balzan F.C.",
+                "slug": "balzan-fc",
+                "shortName": "Balzan",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 0,
+                "nameCode": "BAL",
+                "type": 0,
+                "id": 38304,
+                "country": {
+                    "alpha2": "MT",
+                    "name": "Malta"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "homeScore": {
+                "current": 0,
+                "display": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0
+            },
+            "time": {
+                "initial": 0,
+                "max": 2700,
+                "extra": 540,
+                "currentPeriodStartTimestamp": 1688648587
+            },
+            "changes": {
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type",
+                    "homeScore.current",
+                    "homeScore.display",
+                    "awayScore.current",
+                    "awayScore.display",
+                    "time.currentPeriodStart"
+                ],
+                "changeTimestamp": 1688648591
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11407280,
+            "statusTime": {
+                "prefix": "",
+                "initial": 0,
+                "max": 2700,
+                "timestamp": 1688648587,
+                "extra": 540
+            },
+            "startTimestamp": 1688648400,
+            "slug": "fk-radnicki-1923-balzanc",
+            "lastPeriod": "period1",
+            "finalResultOnly": false
+        },
+        {
+            "tournament": {
+                "name": "Club Friendly Games",
+                "slug": "club-friendly-games",
+                "category": {
+                    "name": "World",
+                    "slug": "world",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 1468,
+                    "flag": "international"
+                },
+                "uniqueTournament": {
+                    "name": "Club Friendly Games",
+                    "slug": "club-friendly-games",
+                    "category": {
+                        "name": "World",
+                        "slug": "world",
+                        "sport": {
+                            "name": "Football",
+                            "slug": "football",
+                            "id": 1
+                        },
+                        "id": 1468,
+                        "flag": "international"
+                    },
+                    "userCount": 0,
+                    "crowdsourcingEnabled": false,
+                    "hasPerformanceGraphFeature": false,
+                    "id": 853,
+                    "hasEventPlayerStatistics": false,
+                    "displayInverseHomeAwayTeams": false
+                },
+                "priority": 0,
+                "id": 86
+            },
+            "roundInfo": {
+                "round": 1
+            },
+            "customId": "YhbsUOb",
+            "status": {
+                "code": 6,
+                "description": "1st half",
+                "type": "inprogress"
+            },
+            "winnerCode": 0,
+            "homeTeam": {
+                "name": "KV Oostende",
+                "slug": "kv-oostende",
+                "shortName": "Oostende",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 0,
+                "nameCode": "OOS",
+                "type": 0,
+                "id": 4494,
+                "country": {
+                    "alpha2": "BE",
+                    "name": "Belgium"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "awayTeam": {
+                "name": "RC Sporting Charleroi",
+                "slug": "rc-sporting-charleroi",
+                "shortName": "Charleroi",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "userCount": 0,
+                "nameCode": "RCH",
+                "type": 0,
+                "id": 2898,
+                "country": {
+                    "alpha2": "BE",
+                    "name": "Belgium"
+                },
+                "subTeams": [],
+                "teamColors": {
+                    "primary": "#52b030",
+                    "secondary": "#52b030",
+                    "text": "#ffffff"
+                }
+            },
+            "homeScore": {
+                "current": 1,
+                "display": 1
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0
+            },
+            "time": {
+                "initial": 0,
+                "max": 2700,
+                "extra": 540,
+                "currentPeriodStartTimestamp": 1688648635
+            },
+            "changes": {
+                "changes": [
+                    "homeScore.current",
+                    "homeScore.display"
+                ],
+                "changeTimestamp": 1688649476
+            },
+            "hasGlobalHighlights": false,
+            "crowdsourcingDataDisplayEnabled": false,
+            "id": 11406307,
+            "statusTime": {
+                "prefix": "",
+                "initial": 0,
+                "max": 2700,
+                "timestamp": 1688648635,
+                "extra": 540
+            },
+            "startTimestamp": 1688648400,
+            "slug": "kv-oostende-rc-sporting-charleroi",
+            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -21049,11 +21846,11 @@
             },
             "customId": "oYcswXo",
             "status": {
-                "code": 6,
-                "description": "1st half",
-                "type": "inprogress"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 2,
             "homeTeam": {
                 "name": "Denmark",
                 "slug": "denmark",
@@ -21107,26 +21904,28 @@
                 "current": 0,
                 "display": 0,
                 "period1": 0,
+                "period2": 0,
                 "normaltime": 0
             },
             "awayScore": {
-                "current": 1,
-                "display": 1,
+                "current": 2,
+                "display": 2,
                 "period1": 1,
-                "normaltime": 1
+                "period2": 1,
+                "normaltime": 2
             },
             "time": {
-                "initial": 0,
-                "max": 2700,
-                "extra": 540,
-                "currentPeriodStartTimestamp": 1688572981
+                "injuryTime1": 1,
+                "injuryTime2": 4,
+                "currentPeriodStartTimestamp": 1688576702
             },
             "changes": {
                 "changes": [
-                    "awayScore.period1",
-                    "awayScore.normaltime"
+                    "status.code",
+                    "status.description",
+                    "status.type"
                 ],
-                "changeTimestamp": 1688573717
+                "changeTimestamp": 1688579658
             },
             "hasGlobalHighlights": true,
             "hasEventPlayerStatistics": true,
@@ -21134,16 +21933,8 @@
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,
             "id": 11331932,
-            "statusTime": {
-                "prefix": "",
-                "initial": 0,
-                "max": 2700,
-                "timestamp": 1688572981,
-                "extra": 540
-            },
             "startTimestamp": 1688572800,
             "slug": "denmark-spain",
-            "lastPeriod": "period1",
             "finalResultOnly": false
         },
         {
@@ -21190,11 +21981,11 @@
             },
             "customId": "dmpsiNec",
             "status": {
-                "code": 0,
-                "description": "Not started",
-                "type": "notstarted"
+                "code": 100,
+                "description": "Ended",
+                "type": "finished"
             },
-            "winnerCode": 0,
+            "winnerCode": 3,
             "homeTeam": {
                 "name": "Switzerland",
                 "slug": "switzerland",
@@ -21244,13 +22035,35 @@
                     "text": "#ffffff"
                 }
             },
-            "homeScore": {},
-            "awayScore": {},
-            "time": {},
+            "homeScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "awayScore": {
+                "current": 0,
+                "display": 0,
+                "period1": 0,
+                "period2": 0,
+                "normaltime": 0
+            },
+            "time": {
+                "injuryTime1": 0,
+                "injuryTime2": 6,
+                "currentPeriodStartTimestamp": 1688580228
+            },
             "changes": {
-                "changeTimestamp": 0
+                "changes": [
+                    "status.code",
+                    "status.description",
+                    "status.type"
+                ],
+                "changeTimestamp": 1688583304
             },
             "hasGlobalHighlights": false,
+            "hasEventPlayerStatistics": true,
             "hasEventPlayerHeatMap": true,
             "detailId": 1,
             "crowdsourcingDataDisplayEnabled": false,

@@ -9,11 +9,13 @@ from starlette import status
 from routers import predictions
 from routers import home
 from routers import api
+from routers import live
 
 app = FastAPI()
 app.include_router(predictions.router)
 app.include_router(home.router)
 app.include_router(api.router)
+app.include_router(live.router)
 
 models.Base.metadata.create_all(bind=engine)
 
