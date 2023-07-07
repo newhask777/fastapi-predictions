@@ -4,10 +4,11 @@ from db.database import engine, SessionLocal, Base
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from db import models
+from datetime import date, datetime
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {"market":"classic","iso_date":"2023-07-06","federation":"UEFA"}
+querystring = {"market":"classic","iso_date":"2023-07-07","federation":"UEFA"}
 
 headers = {
 	"X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",
@@ -21,10 +22,16 @@ with open('json/predictions.json', 'w', encoding='utf-8') as f:
 
 db = SessionLocal() 
 
-db.query(models.Prediction).delete()
-db.commit()
+# db.query(models.Prediction).delete()
+# db.commit()
   
 for event in events["data"]:
+        
+	dates = event['start_date'].split('T')
+	dates = dates[0]
+        
+	print(dates)
+
 	game = models.Prediction()
 
 	game.home_team = event['home_team']
@@ -40,6 +47,7 @@ for event in events["data"]:
 	game.season = event['season']
 	game.result = event['result']
 	game.start_date = event['start_date']
+	game.date = dates
 	game.last_update_at = event['last_update_at']
 	game.odds = event['odds']
         

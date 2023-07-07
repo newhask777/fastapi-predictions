@@ -1,8 +1,8 @@
-from sqlalchemy import Boolean, String, Integer, Column, ForeignKey, JSON
+from sqlalchemy import Boolean, String, Integer, Column, ForeignKey, JSON, DateTime
 from sqlalchemy.orm import relationship, Mapped
 from db.database import Base
 from typing import Dict
-
+import datetime
 
 
 class Prediction(Base):
@@ -21,7 +21,8 @@ class Prediction(Base):
     is_expired = Column(Boolean)
     season = Column(String)
     result = Column(String)
-    start_date = Column(String)
+    start_date = Column(DateTime, default=datetime.datetime.utcnow)
+    date = Column(String)
     last_update_at = Column(String)
     odds = Column(JSON)
 
