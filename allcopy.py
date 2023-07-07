@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
+from datetime import datetime
 
 def store():
 
@@ -56,8 +56,12 @@ def store():
 
                 new_event = models.Event()
 
-                try:
-            
+                date = str(datetime.fromtimestamp(event['startTimestamp']))
+
+                dates = date.split(' ')
+                dates = dates[0]
+
+                try:          
                     # tournament
                     new_event.tournament_name = event['tournament']['name']
                     new_event.tournament_slug = event['tournament']['slug']
@@ -105,6 +109,7 @@ def store():
                     # new_event.detailID = event['detailId']
                     new_event.event_id = event['id']
                     new_event.start_timestamp = event['startTimestamp']
+                    new_event.date = dates
                     new_event.slug = event['slug']
                     new_event.final_result_only = event['finalResultOnly']
 

@@ -169,30 +169,6 @@
             }
         },
         {
-            "home_team": "Isloch Minsk Raion",
-            "away_team": "FC Minsk",
-            "id": 256189,
-            "market": "classic",
-            "competition_name": "Premier League",
-            "prediction": "12",
-            "competition_cluster": "Belarus",
-            "status": "pending",
-            "federation": "UEFA",
-            "is_expired": false,
-            "season": "2023",
-            "result": "",
-            "start_date": "2023-07-07T16:30:00",
-            "last_update_at": "2023-07-07T08:11:17.897571",
-            "odds": {
-                "1": 1.84,
-                "X": 3.72,
-                "2": 4.11,
-                "1X": 1.22,
-                "X2": 1.96,
-                "12": 1.27
-            }
-        },
-        {
             "home_team": "Derry City",
             "away_team": "Sligo Rovers",
             "id": 256199,
@@ -313,30 +289,6 @@
             }
         },
         {
-            "home_team": "Akranes",
-            "away_team": "Njardvik",
-            "id": 256197,
-            "market": "classic",
-            "competition_name": "First Division",
-            "prediction": "1",
-            "competition_cluster": "Iceland",
-            "status": "pending",
-            "federation": "UEFA",
-            "is_expired": false,
-            "season": "2023",
-            "result": "",
-            "start_date": "2023-07-07T20:15:00",
-            "last_update_at": "2023-07-07T08:11:17.897571",
-            "odds": {
-                "1": 1.25,
-                "X": 5.725,
-                "2": 8.15,
-                "1X": 1.05,
-                "X2": 3.55,
-                "12": 1.09
-            }
-        },
-        {
             "home_team": "Waterford",
             "away_team": "Longford Town",
             "id": 256205,
@@ -430,6 +382,30 @@
                 "1X": 1.27,
                 "X2": 1.795,
                 "12": 1.295
+            }
+        },
+        {
+            "home_team": "Akranes",
+            "away_team": "Njardvik",
+            "id": 256197,
+            "market": "classic",
+            "competition_name": "First Division",
+            "prediction": "1",
+            "competition_cluster": "Iceland",
+            "status": "pending",
+            "federation": "UEFA",
+            "is_expired": false,
+            "season": "2023",
+            "result": "",
+            "start_date": "2023-07-07T20:15:00",
+            "last_update_at": "2023-07-07T11:07:30.733797",
+            "odds": {
+                "1": 1.257,
+                "X": 5.65,
+                "2": 7.85,
+                "1X": 1.06,
+                "X2": 3.5,
+                "12": 1.103
             }
         }
     ]

@@ -17,6 +17,8 @@ from fastapi.templating import Jinja2Templates
 import json
 import requests
 
+from datetime import date
+
 # define router
 router = APIRouter(
     prefix='/home',
@@ -45,10 +47,26 @@ def object_as_dict(obj):
 # router all
 @router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
-    games = db.query(models.Event).all()
-    # print(games)
+    today = str(date.today())
+
+    games = db.query(models.Event).filter(models.Event.date == today).all()
     
-    tournamets = db.query(models.Event).distinct(models.Event.tournament_name)
+    tournamets = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
+    for tournament in tournamets:
+        print(object_as_dict(tournament))
+
+    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
+
+
+
+# router by date
+@router.get('/date/{td}', response_class=HTMLResponse)
+async def get_all(request: Request, td: str, db: Session = Depends(get_db)):
+    today = str(date.today())
+
+    games = db.query(models.Event).filter(models.Event.date == td).all()
+    
+    tournamets = db.query(models.Event).filter(models.Event.date == td).distinct(models.Event.tournament_name)
 
     for tournament in tournamets:
         print(object_as_dict(tournament))
