@@ -40,7 +40,7 @@ def store():
 
     # print(response)
 
-    with open('sofascore/json/live.json', 'w', encoding='utf-8') as f:
+    with open('json/live.json', 'w', encoding='utf-8') as f:
         json.dump(response, f, indent=4, ensure_ascii=False)
 
 

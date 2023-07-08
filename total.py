@@ -20,11 +20,11 @@ headers = {
 
 
 
-url = 'https://api.sofascore.com/api/v1/event/11080977/h2h'
+url = 'https://api.sofascore.com/api/v1/event/11080977/highlights'
 
 response = requests.request("GET", url, headers=headers).json()
 
 print(response)
 
-with open('json/h2h.json', 'w', encoding='utf-8') as f:
+with open('json/highlights.json', 'w', encoding='utf-8') as f:
     json.dump(response, f, indent=4, ensure_ascii=False)

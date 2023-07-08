@@ -22,8 +22,8 @@ with open('json/predictions.json', 'w', encoding='utf-8') as f:
 
 db = SessionLocal() 
 
-# db.query(models.Prediction).delete()
-# db.commit()
+db.query(models.Prediction).delete()
+db.commit()
   
 for event in events["data"]:
         
@@ -40,7 +40,7 @@ for event in events["data"]:
 	game.market = event['market']
 	game.competition_name = event['competition_name']
 	game.prediction = event['prediction']
-	game.competition_cluster = event['competition_cluster']
+	game.competition_cluster = event['competition_cluster'].lower()
 	game.status = event['status']
 	game.federation = event['federation']
 	game.is_expired = event['is_expired']

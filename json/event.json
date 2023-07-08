@@ -1,0 +1,214 @@
+{
+    "event": {
+        "tournament": {
+            "name": "Vysshaya League",
+            "slug": "vysshaya-league",
+            "category": {
+                "name": "Belarus",
+                "slug": "belarus",
+                "sport": {
+                    "name": "Football",
+                    "slug": "football",
+                    "id": 1
+                },
+                "id": 91,
+                "flag": "belarus",
+                "alpha2": "BY"
+            },
+            "uniqueTournament": {
+                "name": "Vysshaya Liga",
+                "slug": "vysshaya-liga",
+                "primaryColorHex": "#113d43",
+                "secondaryColorHex": "#268795",
+                "category": {
+                    "name": "Belarus",
+                    "slug": "belarus",
+                    "sport": {
+                        "name": "Football",
+                        "slug": "football",
+                        "id": 1
+                    },
+                    "id": 91,
+                    "flag": "belarus",
+                    "alpha2": "BY"
+                },
+                "userCount": 5984,
+                "id": 169,
+                "country": {},
+                "hasEventPlayerStatistics": false,
+                "crowdsourcingEnabled": false,
+                "hasPerformanceGraphFeature": true,
+                "displayInverseHomeAwayTeams": false
+            },
+            "priority": 0,
+            "competitionType": 1,
+            "id": 616
+        },
+        "season": {
+            "name": "Vysshaya Liga 2023",
+            "year": "2023",
+            "editor": false,
+            "id": 49103
+        },
+        "roundInfo": {
+            "round": 15
+        },
+        "customId": "eWcspjr",
+        "status": {
+            "code": 100,
+            "description": "Ended",
+            "type": "finished"
+        },
+        "winnerCode": 3,
+        "homeTeam": {
+            "name": "FC Isloch Minsk Region",
+            "slug": "fc-isloch-minsk-region",
+            "shortName": "Isloch",
+            "gender": "M",
+            "sport": {
+                "name": "Football",
+                "slug": "football",
+                "id": 1
+            },
+            "userCount": 2477,
+            "manager": {
+                "name": "Dmitriy Komarovskiy",
+                "slug": "dmitriy-komarovskiy",
+                "shortName": "D. Komarovskiy",
+                "id": 799881,
+                "country": {
+                    "alpha2": "BY",
+                    "name": "Belarus"
+                }
+            },
+            "venue": {
+                "city": {
+                    "name": "Molodechno"
+                },
+                "stadium": {
+                    "name": "City Stadium",
+                    "capacity": 4800
+                },
+                "id": 32209,
+                "country": {
+                    "alpha2": "BY",
+                    "name": "Belarus"
+                }
+            },
+            "foundationDate": {},
+            "nameCode": "ISL",
+            "disabled": false,
+            "national": false,
+            "type": 0,
+            "id": 42965,
+            "country": {
+                "alpha2": "BY",
+                "name": "Belarus"
+            },
+            "subTeams": [],
+            "fullName": "FC Isloch Minsk Region",
+            "teamColors": {
+                "primary": "#ffffff",
+                "secondary": "#0078ff",
+                "text": "#0078ff"
+            },
+            "foundationDateTimestamp": 1181088000
+        },
+        "awayTeam": {
+            "name": "FC Minsk",
+            "slug": "fc-minsk",
+            "shortName": "Minsk",
+            "gender": "M",
+            "sport": {
+                "name": "Football",
+                "slug": "football",
+                "id": 1
+            },
+            "userCount": 1822,
+            "manager": {
+                "name": "Sergei Yaromko",
+                "slug": "sergei-yaromko",
+                "shortName": "S. Yaromko",
+                "id": 794848,
+                "country": {
+                    "alpha2": "BY",
+                    "name": "Belarus"
+                }
+            },
+            "venue": {
+                "city": {
+                    "name": "Minsk"
+                },
+                "stadium": {
+                    "name": "Stadion FK Minsk",
+                    "capacity": 3000
+                },
+                "id": 12750,
+                "country": {
+                    "alpha2": "BY",
+                    "name": "Belarus"
+                }
+            },
+            "foundationDate": {},
+            "nameCode": "MIN",
+            "national": false,
+            "type": 0,
+            "id": 7304,
+            "country": {
+                "alpha2": "BY",
+                "name": "Belarus"
+            },
+            "subTeams": [],
+            "fullName": "FC Minsk",
+            "teamColors": {
+                "primary": "#026ce2",
+                "secondary": "#026ce2",
+                "text": "#026ce2"
+            },
+            "foundationDateTimestamp": 975542400
+        },
+        "homeScore": {
+            "current": 0,
+            "display": 0,
+            "period1": 0,
+            "period2": 0,
+            "normaltime": 0
+        },
+        "awayScore": {
+            "current": 0,
+            "display": 0,
+            "period1": 0,
+            "period2": 0,
+            "normaltime": 0
+        },
+        "time": {
+            "injuryTime1": 1,
+            "injuryTime2": 3,
+            "currentPeriodStartTimestamp": 1688824228
+        },
+        "changes": {
+            "changes": [
+                "status.code",
+                "status.description",
+                "status.type",
+                "homeScore.period2",
+                "homeScore.normaltime",
+                "awayScore.period2",
+                "awayScore.normaltime",
+                "time.currentPeriodStart"
+            ],
+            "changeTimestamp": 1688824232
+        },
+        "hasGlobalHighlights": true,
+        "crowdsourcingDataDisplayEnabled": false,
+        "id": 11080977,
+        "defaultPeriodCount": 2,
+        "defaultPeriodLength": 45,
+        "currentPeriodStartTimestamp": 1688824228,
+        "startTimestamp": 1688817600,
+        "slug": "fc-minsk-fc-isloch-minsk-region",
+        "finalResultOnly": false,
+        "fanRatingEvent": false,
+        "showTotoPromo": false
+    }
+}

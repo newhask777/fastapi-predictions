@@ -40,36 +40,31 @@ def get_db():
     finally:
         db.close()
 
-def object_as_dict(obj):
-    return {c.key: getattr(obj, c.key)
-            for c in inspect(obj).mapper.column_attrs}
-
 # router all
 @router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
-
-    games = db.query(models.Event).filter(models.Event.date == today).all()
     
+    games = db.query(models.Event).filter(models.Event.date == today).all()
     tournamets = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
-    for tournament in tournamets:
-        print(object_as_dict(tournament))
 
     return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
+
+
+# router by event
+@router.get('/event/{id}', response_class=HTMLResponse)
+async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
+    print(id)
+  
+    return templates.TemplateResponse("detail.html", {"request": request})
 
 
 
 # router by date
 @router.get('/date/{td}', response_class=HTMLResponse)
 async def get_all(request: Request, td: str, db: Session = Depends(get_db)):
-    today = str(date.today())
-
     games = db.query(models.Event).filter(models.Event.date == td).all()
-    
     tournamets = db.query(models.Event).filter(models.Event.date == td).distinct(models.Event.tournament_name)
-
-    for tournament in tournamets:
-        print(object_as_dict(tournament))
 
     return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
 

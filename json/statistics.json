@@ -1,0 +1,20 @@
+{
+    "statistics": [
+        {
+            "period": "ALL",
+            "groups": [
+                {
+                    "groupName": "TVData",
+                    "statisticsItems": [
+                        {
+                            "name": "Corner kicks",
+                            "home": "7",
+                            "away": "3",
+                            "compareCode": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

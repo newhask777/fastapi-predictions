@@ -9,6 +9,7 @@ from fastapi import Depends, APIRouter, Request, Form
 from db import models
 from db.database import engine
 from sqlalchemy.orm import Session
+from db.database import engine, SessionLocal, Base
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -49,6 +50,12 @@ def store():
     # models.Base.metadata.create_all(engine)
 
     # Session = sessionmaker(bind=engine)
+
+    db = SessionLocal() 
+
+    db.query(models.Event).delete()
+    db.commit()
+  
 
     for event in response['events']:
 
