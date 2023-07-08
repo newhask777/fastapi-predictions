@@ -1,10 +1,7 @@
 $(function () {
 
 var acc = document.getElementsByClassName("cart_expand");
-
 var i;
-
-
 
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
