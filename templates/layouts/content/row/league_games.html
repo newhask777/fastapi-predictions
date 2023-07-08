@@ -1,16 +1,16 @@
     <!-- item 1-->
-    <div class="league_games_item flex flex-row justify-between border-b pb-2 bg-white p-3 hover:bg-gray-100">
+    <div class="league_games_item flex flex-row justify-between border-b pb-2 bg-white p-3 hover:bg-gray-100 relative">
 
         <!-- Time & Star -->
         <div class="w-1/6 flex flex-row">           
             <div class="home_team">
-                <span class="star inline-block align-middle ">
-                    <a href="" class="hover:bg-lime-200">
-                        <img src="{{ url_for('static', path='/assets/images/star.svg') }}" alt="" class="align-middle inline-block">
-                    </a>
+                <span id="star" class="star inline-block align-middle hover:bg-lime-400 cursor-pointer">
+                   
+                        <!-- <img src="{{ url_for('static', path='/assets/images/star.svg') }}" alt="" class="align-middle inline-block pointer"> -->
+                        <i class="fa-regular fa-star "></i>
                   
                 </span>
-                <span class="star inline-block align-middle">
+                <span id="star_yellow" class="star_yellow inline-block align-middle">
                     <a href="">
 
                         <img src="{{ url_for('static', path='/assets/images/star_yellow.svg') }}" alt="" class="align-middle inline-block hidden">
@@ -18,7 +18,7 @@
                   
                 </span>
                 <span class="time ml-4 inline-block align-middle pt-1 text-xs font-bold">
-                   23:00
+                   {{ game.time }}
                 </span>
             </div>
         </div>

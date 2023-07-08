@@ -16,7 +16,7 @@ from datetime import datetime
 
 def store():
 
-    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-05"
+    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-08"
 
     payload = ""
     headers = {
@@ -57,9 +57,12 @@ def store():
                 new_event = models.Event()
 
                 date = str(datetime.fromtimestamp(event['startTimestamp']))
+                # print(date)
 
-                dates = date.split(' ')
-                dates = dates[0]
+                date = date.split(' ')
+                dates = date[0]
+                time = date[1][:-3]
+              
 
                 try:          
                     # tournament
@@ -110,6 +113,7 @@ def store():
                     new_event.event_id = event['id']
                     new_event.start_timestamp = event['startTimestamp']
                     new_event.date = dates
+                    new_event.time = time
                     new_event.slug = event['slug']
                     new_event.final_result_only = event['finalResultOnly']
 

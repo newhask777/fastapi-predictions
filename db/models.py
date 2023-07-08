@@ -83,6 +83,7 @@ class Event(Base):
     event_id = Column(Integer, index=True)
     start_timestamp = Column(String)
     date = Column(String)
+    time = Column(String)
     slug = Column(String)
     final_result_only = Column(Boolean)
 

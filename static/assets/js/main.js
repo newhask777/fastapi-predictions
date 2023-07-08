@@ -9,32 +9,43 @@ var i;
 for (i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function() {
     // this.parentElement.style.backgroundColor = '#f5f5f5';
- 
+    
 
-    var up = this.getElementsByClassName('up');
-    var down = this.getElementsByClassName('down');
+        var up = this.getElementsByClassName('up');
+        var down = this.getElementsByClassName('down');
 
-    console.log(up[0]);
+        console.log(up[0]);
 
-    var panel = this.parentElement.nextElementSibling;
+        var panel = this.parentElement.nextElementSibling;
 
 
-    if (panel.style.display === "block") {
-        panel.style.display = "none";
-        up[0].style.display = "none";
-        down[0].style.display = "block";
-        this.parentElement.classList.add("hover");
-      
-    } else {
-        panel.style.display = "block";
-        up[0].style.display = "block";
-        down[0].style.display = "none";
-        this.parentElement.classList.remove("hover");
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+            up[0].style.display = "none";
+            down[0].style.display = "block";
+            this.parentElement.classList.add("hover");
+        
+        } else {
+            panel.style.display = "block";
+            up[0].style.display = "block";
+            down[0].style.display = "none";
+            this.parentElement.classList.remove("hover");
+        }
+    });
     }
-  });
-}
 
 });
+
+$(function () {
+    const stars = document.getElementsByClassName('star');
+
+        for (i = 0; i < stars.length; i++) {
+            stars[i].addEventListener("click", function() {
+                alert('hi')
+        } 
+    )}
+});
+
 
 //  $(function () {
 //     var matches_body = $('#cart_league_body');
