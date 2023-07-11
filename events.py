@@ -17,7 +17,7 @@ from datetime import datetime
 
 def store():
 
-    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-08"
+    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-10"
 
     payload = ""
     headers = {
@@ -41,7 +41,7 @@ def store():
 
     # print(response)
 
-    with open('sofascore/json/all.json', 'w', encoding='utf-8') as f:
+    with open('json/all.json', 'w', encoding='utf-8') as f:
         json.dump(response, f, indent=4, ensure_ascii=False)
 
 
@@ -118,6 +118,7 @@ def store():
                     # new_event.has_event_players_heat_map = event['hasEventPlayerHeatMap']
                     # new_event.detailID = event['detailId']
                     new_event.event_id = event['id']
+                    new_event.status = event['status']['type']
                     new_event.start_timestamp = event['startTimestamp']
                     new_event.date = dates
                     new_event.time = time

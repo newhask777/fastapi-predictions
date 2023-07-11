@@ -18,7 +18,12 @@
                   
                 </span>
                 <span class="time ml-4 inline-block align-middle pt-1 text-xs font-bold">
-                   {{ game.time }}
+                    {% if game.status == 'notstarted' %}
+                        {{ game.time }} 
+                    {% else %}
+                        {{ game.status }}
+                    {% endif %}
+                    
                 </span>
             </div>
         </div>

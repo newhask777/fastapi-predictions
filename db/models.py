@@ -23,6 +23,7 @@ class Prediction(Base):
     result = Column(String)
     start_date = Column(DateTime, default=datetime.datetime.utcnow)
     date = Column(String)
+    time = Column(String)
     last_update_at = Column(String)
     odds = Column(JSON)
 
@@ -85,5 +86,6 @@ class Event(Base):
     date = Column(String)
     time = Column(String)
     slug = Column(String)
+    status = Column(String)
     final_result_only = Column(Boolean)
 
