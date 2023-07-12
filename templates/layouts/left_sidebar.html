@@ -4,21 +4,21 @@
         <div class="p-2 pl-2 pr-2  rounded-t-md">
             <div class="flex ml-auto mr-auto pl-4 pr-4">
                 <img src="{{ url_for('static', path='/assets/images/logo.png') }}" alt="" class="w-4 h-4 mt-auto mb-auto">
-                <span class="ml-2 text-sm font-bold mt-auto mb-auto">Popular Leagues</span> 
+                <span class="ml-2 text-sm font-bold mt-auto mb-auto">Today Leagues</span> 
             </div>       
         </div>
 
         <ul class="ml-6 mr-6  mt-4 border-l border-r text-xs  font-bold">
 
-            {% for tournamet in tournamets %}
+            {% for league in leagues %}
 
             <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="/league/{{ tournamet.tournament_unique_id }}" class="flex">
+                <a href="/league/{{ league.tournament_unique_id }}" class="flex">
                     <img class="w-5 mt-auto mb-auto rounded-full bg-gray-200" 
-                    src="https://api.sofascore.app/api/v1/unique-tournament/{{ tournamet.tournament_unique_id }}/image/dark" 
+                    src="https://api.sofascore.app/api/v1/unique-tournament/{{ league.tournament_unique_id }}/image/dark" 
                     alt="">
                     <span class="ml-2">
-                        {{tournamet.tournament_category}}
+                        {{league.tournament_category}}
                     </span>
                     
                 </a>

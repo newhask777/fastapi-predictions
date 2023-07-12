@@ -44,30 +44,34 @@ def get_db():
         db.close()
 
 
-# router all
+# router live all
 @router.get('/', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
+
+    leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
     games = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
-    tournamets = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
+    tournaments = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
+    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues":leagues})
 
 
+
+# live test
 @router.get('/test', response_class=HTMLResponse)
 async def test(request: Request):
     
     return templates.TemplateResponse("test.html", {"request": request})
 
 
-# router all
+# router live api
 @router.get('/api')
 async def get_live(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
     
     games = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
-    tournamets = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
+    tournaments = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
     # print(tournaments)
 

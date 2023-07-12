@@ -44,11 +44,13 @@ def get_db():
 @router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
+
+    leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
     games = db.query(models.Event).filter(models.Event.date == today).all()
-    tournamets = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
+    tournaments = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
+    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues": leagues})
 
 
 # router by event
@@ -64,8 +66,8 @@ async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
 @router.get('/date/{td}', response_class=HTMLResponse)
 async def get_all(request: Request, td: str, db: Session = Depends(get_db)):
     games = db.query(models.Event).filter(models.Event.date == td).all()
-    tournamets = db.query(models.Event).filter(models.Event.date == td).distinct(models.Event.tournament_name)
+    tournaments = db.query(models.Event).filter(models.Event.date == td).distinct(models.Event.tournament_name)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
+    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments})
 
 

@@ -45,8 +45,10 @@ def get_db():
 @router.get('/finished', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
+
+    leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
     games = db.query(models.Event).filter(models.Event.status == 'finished').filter(models.Event.date == today).all()
-    tournamets = db.query(models.Event).filter(models.Event.status == 'finished').filter(models.Event.date == today).distinct(models.Event.tournament_name)
+    tournaments = db.query(models.Event).filter(models.Event.status == 'finished').filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
+    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues": leagues})
