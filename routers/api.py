@@ -17,6 +17,8 @@ from fastapi.templating import Jinja2Templates
 import json
 import requests
 
+from datetime import date
+
 # define router
 router = APIRouter(
     prefix='/api',
@@ -50,10 +52,11 @@ def object_as_dict(obj):
 # router all
 @router.get('/',)
 async def get_all(request: Request, db: Session = Depends(get_db)):
-    games = db.query(models.Event).all()
+    today = str(date.today())
+    games = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
     # print(games)
 
-    return {"games": games}
+    return games
 
 
 

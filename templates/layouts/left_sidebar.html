@@ -10,44 +10,25 @@
 
         <ul class="ml-6 mr-6  mt-4 border-l border-r text-xs  font-bold">
 
+            {% for tournamet in tournamets %}
+
             <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/spain.png') }}" alt="">La Liga
+                <a href="/league/{{ tournamet.tournament_unique_id }}" class="flex">
+                    <img class="w-5 mt-auto mb-auto rounded-full bg-gray-200" 
+                    src="https://api.sofascore.app/api/v1/unique-tournament/{{ tournamet.tournament_unique_id }}/image/dark" 
+                    alt="">
+                    <span class="ml-2">
+                        {{tournamet.tournament_category}}
+                    </span>
+                    
                 </a>
             </li>
-            <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/England.png') }}" alt="">Premier league
-                </a>
-            </li>
-            <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/Italy.png') }}" alt="">Serie A
-                </a>
-            </li>
-            <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/Germany.png') }}" alt="">Bundesliga
-                </a>
-            </li>
-            <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/France.png') }}" alt="">Liga 1
-                </a>
-            </li>
-            <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/uefa.png') }}" alt="">UEFA
-                </a>
-            </li>
-            <li class="p-2 bg-white hover:bg-gray-200">
-                <a href="" class="flex">
-                    <img class="w-5 mr-2 border-2 rounded-full border-gray-200" src="{{ url_for('static', path='/assets/images/ch.png') }}" alt="">Champions League
-                </a>
-            </li>
+
+            {% endfor %}
+        
         </ul>
 
-        <div class="p-2 pl-2 pr-2">
+        <!-- <div class="p-2 pl-2 pr-2">
             <div class="flex ml-auto mr-auto pl-4 pr-4 pt-2">
                 <img src="{{ url_for('static', path='/assets/images/logo.png') }}" alt="" class="w-4 h-4 mt-auto mb-auto">
                 <span class="ml-2 text-sm font-bold mt-auto mb-auto">All Leagues</span> 
@@ -99,6 +80,6 @@
                     <img src="/assets/images/triangle.svg" alt="" class="league_img">
                 </a>
             </li>              
-        </ul>
+        </ul> -->
     </div> 
 </div>

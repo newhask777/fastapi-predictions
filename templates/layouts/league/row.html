@@ -1,0 +1,13 @@
+
+
+{% include 'layouts/league/league_header.html' %}
+
+<div id="cart_league_body">
+        {% for game in league_games %}
+                        
+                                
+                {% include 'layouts/league/league_games.html' %}  
+                                      
+                        
+        {% endfor %}
+</div>        

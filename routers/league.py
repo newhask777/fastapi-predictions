@@ -19,13 +19,10 @@ import requests
 
 from datetime import date
 
-from client import html
-from fastapi.websockets import WebSocket
-
 # define router
 router = APIRouter(
-    prefix='/live',
-    tags=['live'],
+    prefix='/league',
+    tags=['league'],
     responses={404: {"description": "Not found"}}
 )
 
@@ -43,21 +40,15 @@ def get_db():
     finally:
         db.close()
 
-
 # router all
-@router.get('/', response_class=HTMLResponse)
-async def get_all(request: Request, db: Session = Depends(get_db)):
+@router.get('/{id}', response_class=HTMLResponse)
+async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
     today = str(date.today())
+
+    tournamets = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
-    games = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
-    tournamets = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
+    league_games = db.query(models.Event).filter(models.Event.tournament_unique_id == id).filter(models.Event.date == today).all()
+    tournament = db.query(models.Event).filter(models.Event.tournament_unique_id == id).filter(models.Event.date == today).first()
+    print(tournament)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
-
-@router.get('/test', response_class=HTMLResponse)
-async def test(request: Request):
-    
-    return templates.TemplateResponse("test.html", {"request": request})
-
-
-
+    return templates.TemplateResponse("league.html", {"request": request, "league_games": league_games, "tournament": tournament, "tournamets": tournamets})

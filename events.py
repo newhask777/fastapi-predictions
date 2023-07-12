@@ -13,11 +13,14 @@ from db.database import engine, SessionLocal, Base
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from datetime import datetime
+from datetime import datetime, date
+import time
 
-def store():
+today = str(date.today())
 
-    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-10"
+def store(today):
+
+    url = "https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-12"
 
     payload = ""
     headers = {
@@ -44,12 +47,6 @@ def store():
     with open('json/all.json', 'w', encoding='utf-8') as f:
         json.dump(response, f, indent=4, ensure_ascii=False)
 
-
-    # Base = declarative_base()
-
-    # models.Base.metadata.create_all(engine)
-
-    # Session = sessionmaker(bind=engine)
 
     db = SessionLocal() 
 
@@ -129,5 +126,8 @@ def store():
                     session.commit()
                 except:
                      continue
+    print('do')
 
-store()
+while True:
+    store(today)
+    time.sleep(60)
