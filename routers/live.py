@@ -54,10 +54,23 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 
     return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournamets": tournamets})
 
+
 @router.get('/test', response_class=HTMLResponse)
 async def test(request: Request):
     
     return templates.TemplateResponse("test.html", {"request": request})
 
+
+# router all
+@router.get('/api')
+async def get_live(request: Request, db: Session = Depends(get_db)):
+    today = str(date.today())
+    
+    games = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
+    tournamets = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
+
+    # print(tournaments)
+
+    return games
 
 
