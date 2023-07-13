@@ -1,19 +1,103 @@
-{
-    "data": {
-        "team": "Grindavik",
-        "matches_played": 4,
-        "won": 3,
-        "draw": 1,
-        "lost": 0,
-        "goals_scored": 5,
-        "goals_conceived": 0,
-        "points": 10,
-        "matches_played_as_home_team": 2,
-        "won_as_home_team": 1,
-        "draw_as_home_team": 1,
-        "lost_as_home_team": 0,
-        "goals_scored_as_home_team": 1,
-        "goals_conceived_as_home_team": 0,
-        "points_as_home_team": 4
+[
+    {
+        "data": [],
+        "errors": {
+            "id": "No data for match_id 256785 found."
+        }
+    },
+    {
+        "data": {
+            "team": "Jazz Pori",
+            "matches_played": 9,
+            "won": 5,
+            "draw": 3,
+            "lost": 1,
+            "goals_scored": 28,
+            "goals_conceived": 14,
+            "points": 18,
+            "matches_played_as_home_team": 4,
+            "won_as_home_team": 3,
+            "draw_as_home_team": 1,
+            "lost_as_home_team": 0,
+            "goals_scored_as_home_team": 13,
+            "goals_conceived_as_home_team": 3,
+            "points_as_home_team": 10
+        }
+    },
+    {
+        "data": {
+            "team": "Grindavik",
+            "matches_played": 9,
+            "won": 4,
+            "draw": 2,
+            "lost": 3,
+            "goals_scored": 11,
+            "goals_conceived": 9,
+            "points": 14,
+            "matches_played_as_home_team": 5,
+            "won_as_home_team": 1,
+            "draw_as_home_team": 1,
+            "lost_as_home_team": 3,
+            "goals_scored_as_home_team": 2,
+            "goals_conceived_as_home_team": 6,
+            "points_as_home_team": 4
+        }
+    },
+    {
+        "data": {
+            "team": "Ilves-Kissat Tampere",
+            "matches_played": 10,
+            "won": 5,
+            "draw": 3,
+            "lost": 2,
+            "goals_scored": 23,
+            "goals_conceived": 18,
+            "points": 18,
+            "matches_played_as_home_team": 5,
+            "won_as_home_team": 3,
+            "draw_as_home_team": 0,
+            "lost_as_home_team": 2,
+            "goals_scored_as_home_team": 13,
+            "goals_conceived_as_home_team": 12,
+            "points_as_home_team": 9
+        }
+    },
+    {
+        "data": {
+            "team": "Njardvik",
+            "matches_played": 10,
+            "won": 1,
+            "draw": 4,
+            "lost": 5,
+            "goals_scored": 12,
+            "goals_conceived": 22,
+            "points": 7,
+            "matches_played_as_home_team": 4,
+            "won_as_home_team": 1,
+            "draw_as_home_team": 3,
+            "lost_as_home_team": 0,
+            "goals_scored_as_home_team": 8,
+            "goals_conceived_as_home_team": 6,
+            "points_as_home_team": 6
+        }
+    },
+    {
+        "data": {
+            "team": "Valur Reykjavik",
+            "matches_played": 13,
+            "won": 9,
+            "draw": 2,
+            "lost": 2,
+            "goals_scored": 35,
+            "goals_conceived": 11,
+            "points": 29,
+            "matches_played_as_home_team": 6,
+            "won_as_home_team": 3,
+            "draw_as_home_team": 2,
+            "lost_as_home_team": 1,
+            "goals_scored_as_home_team": 11,
+            "goals_conceived_as_home_team": 6,
+            "points_as_home_team": 11
+        }
     }
-}
+]

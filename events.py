@@ -131,6 +131,7 @@ def store(today):
                     session.commit()
                 except:
                      continue
+    print('Do')
 
 
 while True:

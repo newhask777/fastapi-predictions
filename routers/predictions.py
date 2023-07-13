@@ -42,17 +42,19 @@ def get_db():
 @router.get('/', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
-    
+
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+  
     games = db.query(models.Prediction).filter(models.Prediction.date == today).all()
     tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
 
-    return templates.TemplateResponse("predictions.html", {"request": request, "games": games, "tournamets": tournamets})
+    return templates.TemplateResponse("predictions.html", {"request": request, "games": games, "tournamets": tournamets, "leagues": leagues})
 
 
 # router by date
 @router.get('/date/{td}', response_class=HTMLResponse)
-async def get_all(request: Request, td: str, db: Session = Depends(get_db)):
-  
+async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
+    
     games = db.query(models.Prediction).filter(models.Prediction.date == td).all()
     tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_name)
 
@@ -65,8 +67,5 @@ async def get_all(request: Request, td: str, db: Session = Depends(get_db)):
 async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
 
     game = db.query(models.Prediction).filter(models.Prediction.event_id == id).first()
-    # print(game)
-
-    # call function to make request and save to db
     
-    return templates.TemplateResponse("detail.html", {"request": request})
+    return templates.TemplateResponse("detail.html", {"request": request, "game": game})

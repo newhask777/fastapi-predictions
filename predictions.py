@@ -8,11 +8,11 @@ from datetime import date, datetime
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {"market":"classic","iso_date":"2023-07-12","federation":"UEFA"}
+querystring = {"market":"classic","iso_date":"2023-07-11"}
 
 
 headers = {
-	"X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",
+	"X-RapidAPI-Key": "0a310310b0msh8e2fe4cf562cbfcp1106c4jsn9e1244e794d9",
 	"X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
 }
 
@@ -23,8 +23,8 @@ with open('json/predictions.json', 'w', encoding='utf-8') as f:
 
 db = SessionLocal() 
 
-db.query(models.Prediction).delete()
-db.commit()
+# db.query(models.Prediction).delete()
+# db.commit()
   
 for event in events["data"]:
         

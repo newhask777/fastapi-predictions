@@ -8,9 +8,9 @@ from db import models
 from datetime import date, datetime
 import json
 
-# db = SessionLocal() 
+db = SessionLocal() 
 
-# events_ids = db.query(models.Prediction.event_id).all()
+events_ids = db.query(models.Prediction.event_id).all()
 
 with open('json/predictions.json', 'r', encoding='utf-8') as f:
     events = json.load(f)
@@ -26,7 +26,7 @@ games = []
 
 for event_id in ids:
 
-    url = f"https://football-prediction-api.p.rapidapi.com/api/v2/away-league-stats/{event_id}"
+    url = f"https://football-prediction-api.p.rapidapi.com/api/v2/predictions/{event_id}"
 
     headers = {
         "X-RapidAPI-Key": "0a310310b0msh8e2fe4cf562cbfcp1106c4jsn9e1244e794d9",
@@ -36,5 +36,6 @@ for event_id in ids:
     event = requests.get(url, headers=headers).json()
     games.append(event)
 
-with open('json/alstat.json', 'w', encoding='utf-8') as f:
+with open('json/event.json', 'w', encoding='utf-8') as f:
     json.dump(games, f, indent=4, ensure_ascii=False)
+
