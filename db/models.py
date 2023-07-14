@@ -84,6 +84,7 @@ class H2H(Base):
 class HomeLeagueStat(Base):
     __tablename__ = "homelstats"
     id = Column(Integer, primary_key=True, index=True)
+    event_id = Column(Integer, index=True)
     team = Column(String)
     matches_played = Column(Integer)
     won = Column(Integer)
