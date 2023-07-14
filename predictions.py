@@ -5,14 +5,21 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from db import models
 from datetime import date, datetime
+from datetime import datetime, date
+import time
+
+
+today = str(date.today())
+
+print(today)
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {"market":"classic","iso_date":"2023-07-11"}
+querystring = {f"market":"classic","iso_date":{today}}
 
 
 headers = {
-	"X-RapidAPI-Key": "0a310310b0msh8e2fe4cf562cbfcp1106c4jsn9e1244e794d9",
+	"X-RapidAPI-Key": "a056fb72cemshfd977431614cdeep1611c4jsnde64c6399532",
 	"X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
 }
 

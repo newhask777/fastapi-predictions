@@ -1,5 +1,10 @@
 <div class="flex justify-between text-xs font-bold p-4">
-    <span>{{game.home_team}}</span>
+    <div>   
+        <span>{{game.home_team}}</span>
+
+      
+        
+    </div>
     <span>{{game.result}}</span>
     <span>{{game.away_team}}</span>
 </div>
@@ -16,6 +21,103 @@
         {{game.odds}}
        
     </span>
+</div>
+
+<div class="text-xs font-bold p-4">
+    <div>
+        games: {{h2h.num_encounters}}
+        
+    </div>
+    <div>
+        over 05: {{h2h.over_05}}
+    </div>
+    <div>
+        over 15: {{h2h.over_15}}
+    </div>
+    <div>
+        over 25: {{h2h.over_25}}
+    </div>
+    <div>
+        over 35: {{h2h.over_35}}
+    </div>
+
+    <div>
+        both team scored: {{h2h.both_teams_scored}}
+    </div>
+
+    <div>
+        total goals: {{h2h.total_goals}}
+    </div>
+    <div>
+        average goals per match: {{h2h.avg_goals_per_match}}
+    </div>
+    <div>
+        home goals scored: {{h2h.home_goals_scored}}
+    </div>
+    <div>
+        home goals concelved: {{h2h.home_goals_conceived}}
+    </div>
+    <div>
+        home won: {{h2h.home_won}}
+    </div>
+    <div>
+        home draw: {{h2h.home_draw}}
+    </div>
+    <div>
+        home lost: {{h2h.home_lost}}
+    </div>
+    <div>
+        home clean sheet: {{h2h.home_clean_sheet}}
+    </div>
+    <div>
+        home clean sheet: {{h2h.home_clean_sheet}}
+    </div>
+    <div>
+        home first half time win: {{h2h.home_first_half_win}}
+    </div>
+    <div>
+        home first half time draw: {{h2h.home_first_half_draw}}
+    </div>
+    <div>
+        home first half time lost: {{h2h.home_first_half_lost}}
+    </div>
+    <div>
+        home average goals scored: {{h2h.home_avg_goals_scored}}
+    </div>
+    <div>
+        home average goals concived: {{h2h.home_avg_goals_conceived}}
+    </div>
+
+    <h2 class="p-4">
+        GAMES
+    </h2>
+
+    {% for game in h2h.encounters %}
+    <div class="pt-4 pb-4">
+        <div class="flex justify-between ">
+            <span>
+                {{game["start_date"]}}
+            </span>
+            <span>
+                {{game['competition_name']}}
+            </span>
+            <span>
+                {{game['competition_cluster']}}
+            </span>
+            <span>
+                {{game['season']}}
+            </span>
+        </div>
+        <div>
+            1st half: {{game['first_half_result']}}
+        </div>
+        <div>
+            full time result: {{game['fulltime_result']}}
+        </div>
+    </div>
+       
+        
+    {% endfor %}
 </div>
 
 

@@ -8,52 +8,44 @@ from db import models
 from datetime import date, datetime
 import json
 
-# db = SessionLocal() 
+
 
 # events_ids = db.query(models.Prediction.event_id).all()
 
-# with open('json/predictions.json', 'r', encoding='utf-8') as f:
-#     events = json.load(f)
+with open('json/predictions.json', 'r', encoding='utf-8') as f:
+    predictions = json.load(f)
 
-# ids = []
-# for event in events['data']:
-#     event_id = event['id']
-#     ids.append(event_id)
+ids = []
+for prediction in predictions['data']:
+    prediction_id = prediction['id']
+    ids.append(prediction_id)
 
-# print(ids)
+print(ids)
 
-# games = []
-
-
-# db = SessionLocal() 
-
-# for event_id in ids:
-
-#     url = f"https://football-prediction-api.p.rapidapi.com/api/v2/head-to-head/{event_id}"
-
-#     headers = {
-#         "X-RapidAPI-Key": "0a310310b0msh8e2fe4cf562cbfcp1106c4jsn9e1244e794d9",
-#         "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
-#     }
-
-#     events = requests.get(url, headers=headers).json()
-    # games.append(event)
-
-    # db.query(models.Prediction).delete()
-    # db.commit()
-
-
-with open('json/h2h.json', 'r', encoding='utf-8') as f:
-    events = json.load(f)
+events = []
 
 db = SessionLocal() 
 
-for event in events:
+for id in ids:
+
+    url = f"https://football-prediction-api.p.rapidapi.com/api/v2/head-to-head/{id}"
+
+    headers = {
+        "X-RapidAPI-Key": "a056fb72cemshfd977431614cdeep1611c4jsnde64c6399532",
+        "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
+    }
+
+    event = requests.get(url, headers=headers).json()
+
+    # print(game)
+    events.append(event)
+
     game = models.H2H()
+
     try:
         # print(items['data']['stats']['overall'])
         print(event['data']['stats']['home_team'])
-
+        game.event_id = id
         game.num_encounters = event['data']['stats']['overall']['num_encounters']
         game.over_05 = event['data']['stats']['overall']['over_05']
         game.over_15 = event['data']['stats']['overall']['over_15']
@@ -68,7 +60,7 @@ for event in events:
         game.home_goals_scored = event['data']['stats']['home_team']['goals_scored']
         game.home_goals_conceived = event['data']['stats']['home_team']['goals_conceived']
         game.home_won = event['data']['stats']['home_team']['won']
-        game.vdraw = event['data']['stats']['home_team']['draw']
+        game.home_draw = event['data']['stats']['home_team']['draw']
         game.home_lost = event['data']['stats']['home_team']['lost']
         game.home_clean_sheet = event['data']['stats']['home_team']['clean_sheet']
         game.home_first_half_win = event['data']['stats']['home_team']['first_half_win']
@@ -103,4 +95,6 @@ for event in events:
         db.commit()
     except:
         continue
-    
+        
+with open('json/h2h.json', 'w', encoding='utf-8') as f:
+    json.dump(events, f, indent=4, ensure_ascii=False)

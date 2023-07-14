@@ -34,7 +34,7 @@ class Prediction(Base):
 class H2H(Base):
     __tablename__ = "h2hs"
     id = Column(Integer, primary_key=True, index=True)
-    
+    event_id = Column(Integer, index=True)
     num_encounters = Column(Integer)
     over_05 = Column(Integer)
     over_15 = Column(Integer)

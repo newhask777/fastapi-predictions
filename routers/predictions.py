@@ -67,5 +67,8 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
 async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
 
     game = db.query(models.Prediction).filter(models.Prediction.event_id == id).first()
+
+    h2h = db.query(models.H2H).filter(models.H2H.event_id == id).first()
+
     
-    return templates.TemplateResponse("detail.html", {"request": request, "game": game})
+    return templates.TemplateResponse("detail.html", {"request": request, "game": game, "h2h": h2h})
