@@ -49,14 +49,14 @@ async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
     
     league_games = db.query(models.Event).filter(models.Event.tournament_id == id).filter(models.Event.date == today).all()
 
-    tournament = db.query(models.Event).filter(models.Event.tournament_id == id).filter(models.Event.date == today).first()
+    tournaments = db.query(models.Event).filter(models.Event.tournament_id == id).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
 
-    return templates.TemplateResponse("league.html", {
+    return templates.TemplateResponse("country.html", {
         "request": request,
         "league_games": league_games,
-        "tournament": tournament,
+        "tournaments": tournaments,
         "leagues": leagues,
         "countries": countries
         })

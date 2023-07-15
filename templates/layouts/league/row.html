@@ -1,13 +1,11 @@
-
-
 {% include 'layouts/league/league_header.html' %}
 
 <div id="cart_league_body">
         {% for game in league_games %}
-                        
-                                
-                {% include 'layouts/league/league_games.html' %}  
-                                      
-                        
+                {% if game.tournament_name == tournament.tournament_name %}     
+                                        
+                        {% include 'layouts/league/league_games.html' %}  
+                                        
+                {% endif %}      
         {% endfor %}
 </div>        

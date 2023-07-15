@@ -1,0 +1,87 @@
+    <!-- item 1-->
+    <div class="league_games_item flex flex-row justify-between border-b pb-2 bg-white p-3 hover:bg-gray-100 relative">
+
+        <!-- Time & Star -->
+        <div class="w-1/6 flex flex-row">           
+            <div class="home_team">
+                <span id="star" class="star inline-block align-middle hover:bg-lime-400 cursor-pointer">
+                   
+                        <!-- <img src="{{ url_for('static', path='/assets/images/star.svg') }}" alt="" class="align-middle inline-block pointer"> -->
+                        <i class="fa-regular fa-star "></i>
+                  
+                </span>
+                <span id="star_yellow" class="star_yellow inline-block align-middle">
+                    <a href="">
+
+                        <img src="{{ url_for('static', path='/assets/images/star_yellow.svg') }}" alt="" class="align-middle inline-block hidden">
+                    </a>
+                  
+                </span>
+                    {% if game.status == 'notstarted' %}
+                        <span class="time ml-4 inline-block align-middle pt-1 text-xs font-bold">
+                            {{ game.time }} 
+                        </span>
+                    {% elif game.status == 'inprogress' %}
+                        <span class="live ml-4 inline-block align-middle pt-1 text-xs font-bold">
+                            live
+                        </span>
+                    {% else %}
+                        <span class="time ml-4 inline-block align-middle pt-1 text-xs font-bold">
+                            {{ game.status }}
+                        </span>                    
+                    {% endif %}
+            </div>
+        </div>
+
+        <!-- End Time & Star -->    
+        
+            <!-- Teams -->
+            <a href="/home/event/{{game.event_id}}" class="flex w-4/6 flex flex-row justify-between">
+            
+                    <div class="home_team w-5/12">
+                        <div class="inline-block align-middle  rounded-full  p-1">
+                            <!-- <img src="{{ url_for('static', path='/assets/images/barselona.png') }}" alt="" class="w-4"> -->
+                            <img src="https://api.sofascore.app/api/v1/team/{{ game.home_team_id}}/image/small" alt="" class="w-4">
+                        </div>
+                        <span class="team_name ml-1 inline-block align-middle text-xs font-bold font-bold">{{ game.home_team_name }}</span>
+                    </div>
+                    <!-- Result -->
+                    <div class="result  flex justify-center">
+                        <span class="inline-block align-middle text-xs font-bold m-auto rounded-md border pl-4 pr-4 pt-1 pb-1">
+                                {{ game.home_score['current'] }} : {{ game.away_score['current'] }}
+                        </span>     
+                    </div>
+                    
+                    <div class="away_team w-5/12 flex justify-end">
+                        <span class="team_name mr-2 inline-block mt-auto mb-auto text-xs font-bold font-bold">{{ game.away_team_name }}</span>
+                        <div class="inline-block align-middle  rounded-full  p-1">
+                            <!-- <img src="{{ url_for('static', path='/assets/images/real.png') }}" alt="" class="w-4"> -->
+                            <img src="https://api.sofascore.app/api/v1/team/{{ game.away_team_id}}/image/small" alt="" class="w-4">
+                        </div>
+                    </div>
+            </a>
+             
+       
+        <!-- Stat -->
+        <div class="statistics w-1/6 flex flex-row justify-end">
+            <div class="">
+                <span class="inline-block align-middle text-xs">
+                    <a href="">
+                        <div class="font-bold mr-2  text-[#5f5f5f]">h2h</div>
+                    </a>
+                    
+                </span>
+                <span class="inline-block align-middle text-xs">
+                    <a href="">
+                        <img src="{{ url_for('static', path='/assets/images/statistics.png') }}" alt="" class="w-3">
+                    </a>
+                    
+                </span>
+            </div>
+            
+        </div>
+
+    </div>
+    <!-- end item -->
+    <!-- item 2-->
+
