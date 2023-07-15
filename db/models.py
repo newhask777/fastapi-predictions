@@ -106,6 +106,7 @@ class HomeLeagueStat(Base):
 class HomeLast10(Base):
     __tablename__ = "homel10s"
     id = Column(Integer, primary_key=True, index=True)
+    event_id = Column(Integer, index=True)
     results = Column(String)
     results_as_home_team = Column(String)
     results_as_away_team = Column(String)
@@ -136,6 +137,8 @@ class HomeLast10(Base):
     over_25 = Column(Integer)
     over_35 = Column(Integer)
     both_teams_scored = Column(Integer)
+    encounters = Column(JSON)
+
 
 
 

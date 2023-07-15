@@ -72,5 +72,7 @@ async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
 
     hlstat = db.query(models.HomeLeagueStat).filter(models.HomeLeagueStat.event_id == id).first()
 
+    hl10 = db.query(models.HomeLast10).filter(models.HomeLast10.event_id == id).first()
+
     
-    return templates.TemplateResponse("detail.html", {"request": request, "game": game, "h2h": h2h, "hlstat": hlstat})
+    return templates.TemplateResponse("detail.html", {"request": request, "game": game, "h2h": h2h, "hlstat": hlstat, "hl10": hl10})

@@ -49,6 +49,15 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
     leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
     games = db.query(models.Event).filter(models.Event.status == 'finished').filter(models.Event.date == today).all()
+    
     tournaments = db.query(models.Event).filter(models.Event.status == 'finished').filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues": leagues})
+    countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
+
+    return templates.TemplateResponse("home.html", {
+        "request": request, 
+        "games": games, 
+        "tournaments": tournaments, 
+        "leagues": leagues,
+        "countries": countries
+        })

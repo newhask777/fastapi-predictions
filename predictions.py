@@ -19,7 +19,7 @@ querystring = {f"market":"classic","iso_date":{today}}
 
 
 headers = {
-	"X-RapidAPI-Key": "a056fb72cemshfd977431614cdeep1611c4jsnde64c6399532",
+	"X-RapidAPI-Key": "b606334c27msh64b0f8f28715854p184c23jsn1a16e1bb37ec",
 	"X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
 }
 
@@ -49,7 +49,7 @@ for event in events["data"]:
 	game.market = event['market']
 	game.competition_name = event['competition_name']
 	game.prediction = event['prediction']
-	game.competition_cluster = event['competition_cluster'].lower()
+	game.competition_cluster = event['competition_cluster']
 	game.status = event['status']
 	game.federation = event['federation']
 	game.is_expired = event['is_expired']
