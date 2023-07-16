@@ -4,7 +4,38 @@
         <div class="p-2 pl-2 pr-2  rounded-t-md">
             <div class="flex ml-auto mr-auto pl-4 pr-4">
                 <img src="{{ url_for('static', path='/assets/images/logo.png') }}" alt="" class="w-4 h-4 mt-auto mb-auto">
-                <span class="ml-2 text-sm font-bold mt-auto mb-auto">Today Leagues</span> 
+                <span class="ml-2 text-sm font-bold mt-auto mb-auto">By Federation</span> 
+            </div>       
+        </div>
+
+        <ul class="ml-6 mr-6  mt-4 border-l border-r text-xs  font-bold">
+
+            {% for fede in federations %}
+
+            <li class="p-2 bg-white hover:bg-gray-200">
+                
+                <a href="/predictions/cluster/{{ fede.competition_cluster }}" class="flex">
+                    <img class="w-5 mt-auto mb-auto rounded-full bg-gray-200" 
+                    src="https://flagdownload.com/wp-content/uploads/Flag_of_{{fede.competition_cluster}}_Flat_Round-1024x1024.png" 
+                    alt="">
+                    <span class="ml-2">
+                        {{fede.federation}}
+                    </span>
+                    
+                </a>
+            </li>
+
+            {% endfor %}
+        
+        </ul>
+    </div>
+
+
+    <div class="pb-3">
+        <div class="p-2 pl-2 pr-2  rounded-t-md">
+            <div class="flex ml-auto mr-auto pl-4 pr-4">
+                <img src="{{ url_for('static', path='/assets/images/logo.png') }}" alt="" class="w-4 h-4 mt-auto mb-auto">
+                <span class="ml-2 text-sm font-bold mt-auto mb-auto">By Country</span> 
             </div>       
         </div>
 
@@ -14,7 +45,7 @@
 
             <li class="p-2 bg-white hover:bg-gray-200">
                 <!-- <a href="/league/{{ league.event_id }}" class="flex"> -->
-                <a href="/league/{{ league.event_id }}" class="flex">
+                <a href="/predictions/cluster/{{ league.competition_cluster }}" class="flex">
                     <img class="w-5 mt-auto mb-auto rounded-full bg-gray-200" 
                     src="https://flagdownload.com/wp-content/uploads/Flag_of_{{league.competition_cluster}}_Flat_Round-1024x1024.png" 
                     alt="">

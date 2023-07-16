@@ -16,7 +16,7 @@ print(today)
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
 querystring = {f"market":"classic","iso_date":{today}}
-
+# querystring = {f"market":"classic","iso_date":"2023-07-15"}
 
 headers = {
 	"X-RapidAPI-Key": "b606334c27msh64b0f8f28715854p184c23jsn1a16e1bb37ec",
@@ -30,8 +30,8 @@ with open('json/predictions.json', 'w', encoding='utf-8') as f:
 
 db = SessionLocal() 
 
-# db.query(models.Prediction).delete()
-# db.commit()
+db.query(models.Prediction).delete()
+db.commit()
   
 for event in events["data"]:
         

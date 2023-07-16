@@ -67,7 +67,23 @@
                 </span>
                 <span class="inline-block align-middle text-xs">
                     <a href="">
-                        {{ game.status }}
+                        {% if game.status == "won" %}
+
+                            <img src="{{ url_for('static', path='/assets/images/win.com.png') }}" alt="" class="w-4">
+
+                        {% elif game.status == 'lost' %}
+
+                            <img src="{{ url_for('static', path='/assets/images/Red_x.svg') }}" alt="" class="w-4">
+                        
+                        {% elif game.status == 'draw' %}
+
+                            <img src="{{ url_for('static', path='/assets/images/equal.png') }}" alt="" class="w-4">
+
+                        {% else %}
+
+                            {{ game.status }}
+
+                        {% endif %}
                     </a>
                     
                 </span>
@@ -77,5 +93,4 @@
 
     </div>
     <!-- end item -->
-    <!-- item 2-->
 

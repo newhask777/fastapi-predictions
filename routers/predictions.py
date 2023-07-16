@@ -49,7 +49,38 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 
     tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
 
-    return templates.TemplateResponse("predictions.html", {"request": request, "games": games, "tournamets": tournamets, "leagues": leagues})
+    federations = db.query(models.Prediction).distinct(models.Prediction.federation)
+
+    return templates.TemplateResponse("predictions.html", {
+        "request": request,
+        "games": games,
+        "tournamets": tournamets,
+        "leagues": leagues,
+        "federations": federations
+        })
+
+
+# by country
+@router.get('/cluster/{country}', response_class=HTMLResponse)
+async def get_game(request: Request, country: str, db: Session = Depends(get_db)):
+    today = str(date.today())
+    
+    games = db.query(models.Prediction).filter(models.Prediction.competition_cluster == country).all()
+
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    tournamets = db.query(models.Prediction).filter(models.Prediction.competition_cluster == country).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    federations = db.query(models.Prediction).distinct(models.Prediction.federation)
+
+    return templates.TemplateResponse("predictions.html", {
+        "request": request,
+        "games": games,
+        "tournamets": tournamets,
+        "leagues": leagues,
+        "federations": federations
+        })
+
 
 
 # router by date
@@ -62,13 +93,15 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
 
     tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_name)
 
+    federations = db.query(models.Prediction).distinct(models.Prediction.federation)
+
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
         "tournamets": tournamets,
-        "leagues": leagues
+        "leagues": leagues,
+        "federations": federations
         })
-
 
 
 # get single
@@ -84,4 +117,10 @@ async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
     hl10 = db.query(models.HomeLast10).filter(models.HomeLast10.event_id == id).first()
 
     
-    return templates.TemplateResponse("detail.html", {"request": request, "game": game, "h2h": h2h, "hlstat": hlstat, "hl10": hl10})
+    return templates.TemplateResponse("detail.html", {
+        "request": request,
+        "game": game,
+        "h2h": h2h,
+        "hlstat": hlstat,
+        "hl10": hl10
+        })
