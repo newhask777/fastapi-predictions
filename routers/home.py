@@ -62,8 +62,9 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 @router.get('/event/{id}', response_class=HTMLResponse)
 async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
     print(id)
+    game = db.query(models.Event).filter(models.Event.event_id == id).first()
   
-    return templates.TemplateResponse("detail.html", {"request": request})
+    return templates.TemplateResponse("game.html", {"request": request, "game": game})
 
 
 

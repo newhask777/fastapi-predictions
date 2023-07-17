@@ -37,12 +37,18 @@
                     </div>
                     <!-- Result -->
                     <div class="result  flex justify-center">
-                        {% if game.result != None %}
+                        {% if game.result != "" %}
                         <span class="inline-block align-middle text-xs font-bold m-auto rounded-md border pl-4 pr-4 pt-1 pb-1">
-                           
+                            
                                {{ game.result }}
                             
-                        </span>   
+                        </span>  
+                        {% else %}
+                            <span class="inline-block align-middle text-xs font-bold m-auto  pl-4 pr-4 pt-1 pb-1">
+                                
+                                vs
+                            
+                            </span>
                         {% endif %}  
                     </div>
                     

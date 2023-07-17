@@ -49,64 +49,58 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 
     tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
 
-    federations = db.query(models.Prediction).distinct(models.Prediction.federation)
+    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
 
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
         "tournamets": tournamets,
         "leagues": leagues,
-        "federations": federations
+        "federations": federations,
         })
-
-
-# by country
-@router.get('/cluster/{country}', response_class=HTMLResponse)
-async def get_game(request: Request, country: str, db: Session = Depends(get_db)):
-    today = str(date.today())
-    
-    games = db.query(models.Prediction).filter(models.Prediction.competition_cluster == country).all()
-
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.competition_cluster == country).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-
-    federations = db.query(models.Prediction).distinct(models.Prediction.federation)
-
-    return templates.TemplateResponse("predictions.html", {
-        "request": request,
-        "games": games,
-        "tournamets": tournamets,
-        "leagues": leagues,
-        "federations": federations
-        })
-
 
 
 # router by date
 @router.get('/date/{td}', response_class=HTMLResponse)
 async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
 
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_name)
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_cluster)
     
     games = db.query(models.Prediction).filter(models.Prediction.date == td).all()
 
     tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_name)
 
-    federations = db.query(models.Prediction).distinct(models.Prediction.federation)
+    federations = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.federation)
+
+    wons = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.status == "won").all()
+    w_count = len(wons)
+
+    lost = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.status == "lost").all()
+    l_count = len(lost)
+    
 
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
         "tournamets": tournamets,
         "leagues": leagues,
-        "federations": federations
+        "federations": federations,
+        "wons": w_count,
+        "lost": l_count
         })
 
 
 # get single
 @router.get('/{id}', response_class=HTMLResponse)
 async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
+    today = str(date.today())
+
+
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_cluster)
+    
+    tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
 
     game = db.query(models.Prediction).filter(models.Prediction.event_id == id).first()
 
@@ -122,5 +116,53 @@ async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
         "game": game,
         "h2h": h2h,
         "hlstat": hlstat,
-        "hl10": hl10
+        "hl10": hl10,
+        "tournamets": tournamets,
+        "leagues": leagues,
+        "federations": federations,
+        })
+
+
+
+# by country
+@router.get('/cluster/{country}', response_class=HTMLResponse)
+async def get_game(request: Request, country: str, db: Session = Depends(get_db)):
+    today = str(date.today())
+    
+    games = db.query(models.Prediction).filter(models.Prediction.date == today).filter(models.Prediction.competition_cluster == country).all()
+
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    tournamets = db.query(models.Prediction).filter(models.Prediction.competition_cluster == country).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
+
+    return templates.TemplateResponse("predictions.html", {
+        "request": request,
+        "games": games,
+        "tournamets": tournamets,
+        "leagues": leagues,
+        "federations": federations
+        })
+
+
+# by federation
+@router.get('/federation/{federation}', response_class=HTMLResponse)
+async def get_game(request: Request, federation: str, db: Session = Depends(get_db)):
+    today = str(date.today())
+    
+    games = db.query(models.Prediction).filter(models.Prediction.federation == federation).filter(models.Prediction.date == today).all()
+
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    tournamets = db.query(models.Prediction).filter(models.Prediction.federation == federation).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+
+    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
+
+    return templates.TemplateResponse("predictions.html", {
+        "request": request,
+        "games": games,
+        "tournamets": tournamets,
+        "leagues": leagues,
+        "federations": federations
         })
