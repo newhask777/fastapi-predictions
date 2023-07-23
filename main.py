@@ -14,6 +14,7 @@ from routers import finished
 from routers import scheduled
 from routers import league
 from routers import country
+from routers import new
 
 app = FastAPI()
 app.include_router(predictions.router)
@@ -24,10 +25,12 @@ app.include_router(api.router)
 app.include_router(live.router)
 app.include_router(league.router)
 app.include_router(country.router)
+app.include_router(new.router)
 
 models.Base.metadata.create_all(bind=engine)
 
-app.mount("/statis", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/logos", StaticFiles(directory="img-scraper"), name="logos")
 
 @app.get('/')
 async def root():

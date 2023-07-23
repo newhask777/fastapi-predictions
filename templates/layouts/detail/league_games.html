@@ -1,12 +1,13 @@
 <div class="flex justify-between text-xs font-bold p-4">
     <div>   
         <span>{{game.home_team}}</span>
-
+        <img src="http://127.0.0.1:8000/static/logos/{{game.home_team}}.png" alt="" class="w-10 h-10">
       
         
     </div>
     <span>{{game.result}}</span>
     <span>{{game.away_team}}</span>
+    <img src="http://127.0.0.1:8000/static/logos/{{game.away_team}}.png" alt="" class="w-10 h-10">
 </div>
 <div class="text-xs font-bold p-4">
     <span>{{game.prediction}}</span>

@@ -79,7 +79,7 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
     l_count = len(lost)
     
 
-    return templates.TemplateResponse("predictions.html", {
+    return templates.TemplateResponse("pred-date.html", {
         "request": request,
         "games": games,
         "tournamets": tournamets,
@@ -88,6 +88,36 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
         "wons": w_count,
         "lost": l_count
         })
+
+
+
+# router by date and federation
+@router.get('/date/{td}/federation/{federation}', response_class=HTMLResponse)
+async def get_federation_by_date(request: Request, federation: str, td: str, db: Session = Depends(get_db)):
+
+    leagues = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).distinct(models.Prediction.competition_cluster)
+
+    games = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).all()
+
+    tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).distinct(models.Prediction.competition_name)
+
+    federations = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.federation)
+
+    wons = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).filter(models.Prediction.status == "won").all()
+    w_count = len(wons)
+
+    lost = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).filter(models.Prediction.status == "lost").all()
+    l_count = len(lost)
+
+    return templates.TemplateResponse("pred-date.html", {
+            "request": request,
+            "games": games,
+            "tournamets": tournamets,
+            "leagues": leagues,
+            "federations": federations,
+            "wons": w_count,
+            "lost": l_count
+            })
 
 
 # get single
