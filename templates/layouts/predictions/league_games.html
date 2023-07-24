@@ -64,12 +64,26 @@
         <!-- Stat -->
         <div class="statistics w-1/6 flex flex-row justify-end">
             <div class="">
-                <span class="inline-block align-middle text-xs">
-                    <a href="">
-                        <div class="font-bold mr-2  text-[#5f5f5f]">{{ game.prediction }}</div>
-                    </a>
-                    
-                </span>
+                <div class="flex mt-auto mb-auto">
+
+                    <span class="inline-block align-middle text-xs mt-auto mb-auto">
+                        <a href="">
+                            <div class="font-bold">{{ game.prediction }}</div>
+                        </a>
+                    </span>
+                    <span>:</span>
+                    <span class="text-xs font-bold mt-auto mb-auto ml-1">
+    
+                       {% for k, v in game.odds.items()%}
+                            {% if k == game.prediction %}
+                                {{ v }}
+                            {% endif %}
+                       {% endfor %}
+                        
+                    </span>
+   
+                </div>
+              
                 <span class="inline-block align-middle text-xs">
                     <a href="">
                         {% if game.status == "won" %}

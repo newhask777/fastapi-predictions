@@ -77,7 +77,10 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
 
     lost = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.status == "lost").all()
     l_count = len(lost)
-    
+
+    odds =  db.query(models.Prediction.odds).filter(models.Prediction.date == td).all()
+    predictions =  db.query(models.Prediction.prediction).filter(models.Prediction.date == td).all()
+    # print(odds)
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
