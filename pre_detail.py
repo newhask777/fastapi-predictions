@@ -29,7 +29,7 @@ for event_id in ids:
     url = f"https://football-prediction-api.p.rapidapi.com/api/v2/predictions/{event_id}"
 
     headers = {
-        "X-RapidAPI-Key": "0a310310b0msh8e2fe4cf562cbfcp1106c4jsn9e1244e794d9",
+        "X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8",
         "X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
     }
 

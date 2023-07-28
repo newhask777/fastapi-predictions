@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, String, Integer, Column, ForeignKey, JSON, DateTime
+from sqlalchemy import Boolean, String, Integer, Column, ForeignKey, JSON, DateTime, TIMESTAMP
 from sqlalchemy.orm import relationship, Mapped
 from db.database import Base
 from typing import Dict
@@ -216,4 +216,49 @@ class Event(Base):
     slug = Column(String)
     status = Column(String)
     final_result_only = Column(Boolean)
+
+
+# EVENTS FROM FOOTBALL-API
+
+class Event2(Base):
+    __tablename__ = 'events2'
+    id = Column(Integer, primary_key=True, index=True)
+    event_id = Column(Integer, index=True)
+    referee = Column(String)
+    timezone = Column(String)
+    date = Column(String)
+    # timestamp = Column(TIMESTAMP, default=datetime.datetime.utcnow)
+    periods = Column(JSON)
+    venue = Column(JSON)
+    status = Column(JSON)
+    # League
+    league_id = Column(Integer, index=True)
+    league_name = Column(String)
+    league_country = Column(String)
+    league_logo = Column(String)
+    league_flag = Column(String)
+    league_season = Column(Integer, index=True)
+    league_round = Column(String)
+    # Teams
+    # home team
+    home_team_id = Column(Integer, index=True)
+    home_team_name = Column(String)
+    home_team_logo = Column(String)
+    home_team_winner = Column(Boolean)
+    # away team
+    away_team_id = Column(Integer, index=True)
+    away_team_name = Column(String)
+    away_team_logo = Column(String)
+    away_team_winner = Column(Boolean)
+    # goals
+    home_goals = Column(Integer)
+    away_goals = Column(Integer)
+    # score
+    halftime_score = Column(JSON)
+    fulltime_score = Column(JSON)
+    extratime_score = Column(JSON)
+    penalty = Column(JSON)
+    
+
+
 
