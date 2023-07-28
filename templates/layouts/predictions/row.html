@@ -1,9 +1,9 @@
 {{wons}} {{lost}}
 {% for tournament in tournamets %}
 
-                {% include 'layouts/predictions/league_header.html' %}
+        {% include 'layouts/predictions/league_header.html' %}
 
-        <div id="cart_league_body">
+        <div id="cart_league_body" class="open">
                 {% for game in games %}
                         {% if game.competition_name == tournament.competition_name %}
                                 

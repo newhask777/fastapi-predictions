@@ -8,7 +8,33 @@
 
             <div class="flex">
                 <!-- <img src="{{ url_for('static', path='assets/images/spain.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full"> -->
-                <img src="https://flagdownload.com/wp-content/uploads/Flag_of_{{ tournament.tournament_category }}_Flat_Round-1024x1024.png" alt="" class="w-5 mt-auto mb-auto rounded-full">
+                {% if tournament.tournament_category == 'World' %}
+
+                    <img src="{{ url_for('static', path='assets/images/fifa.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+                
+                {% elif tournament.tournament_category == 'USA' %}
+
+                    <img src="{{ url_for('static', path='assets/images/usa.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                {% elif tournament.tournament_category == 'Czech Republic' %}
+
+                    <img src="{{ url_for('static', path='assets/images/czh.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                {% elif tournament.tournament_category == 'Faroe Islands' %}
+
+                    <img src="{{ url_for('static', path='assets/images/faroe.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                {% elif 'Amateur' in  tournament.tournament_category %}
+
+                    <img src="{{ url_for('static', path='assets/images/logo.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                {% else %}
+
+                    <img src="https://flagdownload.com/wp-content/uploads/Flag_of_{{ tournament.tournament_category }}_Flat_Round-1024x1024.png" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                {% endif %}
+
+               
                 
                 <div class="cart_league__name ml-2">
                     <div class="inline-block align-middle ml-2">

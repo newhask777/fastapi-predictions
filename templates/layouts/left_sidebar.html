@@ -3,7 +3,7 @@
     <div class="pb-3">
         <div class="p-2 pl-2 pr-2  rounded-t-md">
             <div class="flex ml-auto mr-auto pl-4 pr-4">
-                <img src="{{ url_for('static', path='/assets/images/logo.png') }}" alt="" class="w-4 h-4 mt-auto mb-auto">
+                <img src="{{ url_for('static', path='/assets/images/blue-ball.png') }}" alt="" class="w-8 h-8 mt-auto mb-auto">
                 <span class="ml-2 text-sm font-bold mt-auto mb-auto">Today Countries</span> 
             </div>       
         </div>
@@ -13,9 +13,36 @@
 
                 <li class="p-2 bg-white  hover:bg-gray-200">
                     <a href="/country/{{ country.tournament_id }}" class="flex">
-                        <img class="w-5 mt-auto mb-auto rounded-full bg-gray-200" 
-                        src="https://flagdownload.com/wp-content/uploads/Flag_of_{{ country.tournament_category }}_Flat_Round-1024x1024.png" 
-                        alt="">
+
+                        {% if country.tournament_category == 'World' %}
+
+                            <img src="{{ url_for('static', path='assets/images/fifa.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                        {% elif country.tournament_category == 'USA' %}
+
+                            <img src="{{ url_for('static', path='assets/images/usa.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                        {% elif country.tournament_category == 'Czech Republic' %}
+
+                            <img src="{{ url_for('static', path='assets/images/czh.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                        {% elif country.tournament_category == 'Faroe Islands' %}
+
+                            <img src="{{ url_for('static', path='assets/images/faroe.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+                        {% elif 'Amateur' in  country.tournament_category%}
+
+                            <img src="{{ url_for('static', path='assets/images/logo.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full">
+
+
+                        {% else %}
+
+                            <img class="w-5 mt-auto mb-auto rounded-full bg-gray-200" 
+                            src="https://flagdownload.com/wp-content/uploads/Flag_of_{{ country.tournament_category }}_Flat_Round-1024x1024.png" 
+                            alt="">
+
+                        {% endif %}
+                       
                         <span class="ml-2">
                             {{country.tournament_category}}
                         </span>
@@ -29,7 +56,7 @@
     <div class="pb-3">
         <div class="p-2 pl-2 pr-2  rounded-t-md">
             <div class="flex ml-auto mr-auto pl-4 pr-4">
-                <img src="{{ url_for('static', path='/assets/images/logo.png') }}" alt="" class="w-4 h-4 mt-auto mb-auto">
+                <img src="{{ url_for('static', path='/assets/images/blue-ball.png') }}" alt="" class="w-8 h-8 mt-auto mb-auto">
                 <span class="ml-2 text-sm font-bold mt-auto mb-auto">Today Leagues</span> 
             </div>       
         </div>

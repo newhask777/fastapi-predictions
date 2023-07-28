@@ -54,7 +54,9 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues": leagues, "countries": countries})
+    amateur = ' Amateur'
+
+    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues": leagues, "countries": countries, "amateur": amateur})
 
 
 
