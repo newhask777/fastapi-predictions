@@ -1,4 +1,19 @@
-{{wons}} {{lost}}
+<div class="text-xs font-bold">
+        <div>
+               wins:{{wons}} lost:{{lost}}
+        </div>
+        <div>
+                plus: {{cfplus}}
+        </div>
+        <div>
+                minus: {{cfminus}}
+        </div>
+
+        <div>
+                total: {{profit}}
+        </div>
+</div>
+
 {% for tournament in tournamets %}
 
                 {% include 'layouts/predictions/date/league_header.html' %}

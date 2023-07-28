@@ -8,6 +8,10 @@ from datetime import date, datetime
 from datetime import datetime, date
 import time
 
+db = SessionLocal() 
+
+# db.query(models.Prediction).delete()
+# db.commit()
 
 today = str(date.today())
 
@@ -15,11 +19,13 @@ print(today)
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {f"market":"classic","iso_date":{today}}
-# querystring = {f"market":"classic","iso_date":"2023-07-23"}
+# querystring = {f"market":"classic","iso_date":{today}}
+querystring = {f"market":"classic","iso_date":"2023-07-07"}
 
 headers = {
-	"X-RapidAPI-Key": "b606334c27msh64b0f8f28715854p184c23jsn1a16e1bb37ec",
+    "X-RapidAPI-Key": "2210a764d4msh076b6bf15a4fc36p149516jsn7a7bc609bfd5", # drobyshevskiyigor.di@gmail.com
+    # "X-RapidAPI-Key": "7ca9a3c5c9mshef5b48845d7690ep19e04bjsn6041fa46a9c8", # haskellisp@gmail.com
+	# "X-RapidAPI-Key": "b606334c27msh64b0f8f28715854p184c23jsn1a16e1bb37ec",
 	"X-RapidAPI-Host": "football-prediction-api.p.rapidapi.com"
 }
 
@@ -28,10 +34,7 @@ events = requests.get(url, headers=headers, params=querystring).json()
 with open('json/predictions.json', 'w', encoding='utf-8') as f:
     json.dump(events, f, indent=4, ensure_ascii=False)
 
-db = SessionLocal() 
 
-# db.query(models.Prediction).delete()
-# db.commit()
   
 for event in events["data"]:
         

@@ -3,27 +3,39 @@ $(function () {
 var acc = document.getElementsByClassName("cart_expand");
 
 for (var i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-        
-            var up = this.getElementsByClassName('up');
-            var down = this.getElementsByClassName('down');
-        
-            console.log(up);
+        acc[i].addEventListener("click", function(e) {
+            e.stopImmediatePropagation();
+
+            var up = this.getElementsByClassName('up')[0];
+            var down = this.getElementsByClassName('down')[0];
+
             var panel = this.parentElement.nextElementSibling;
-            console.log(panel);
-        
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-                up.style.display = "none";
-                // down.style.display = "block";
+          
+            if (panel.classList.contains('open')) {
+               console.log(up);
+               panel.classList.remove('open');
+               panel.classList.add('close');
             
-            } else {
-                panel.style.display = "block";
-                // up.style.display = "block";
-                // down.style.display = "none";
+               down.classList.remove('open');
+               down.classList.add('close');
+               
+               up.classList.add('open');
+
+            } 
+            else{
+                console.log(down);
+                panel.classList.add('open');
+                panel.classList.remove('close');
+
+                down.classList.add('open');
+                down.classList.remove('close')
+
+                up.classList.remove('open');
+                up.classList.add('close');
             }
-        });
+        })
     }
+   
 });
 
 

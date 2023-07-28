@@ -15,6 +15,7 @@ from routers import scheduled
 from routers import league
 from routers import country
 from routers import new
+from routers import performance
 
 app = FastAPI()
 app.include_router(predictions.router)
@@ -26,6 +27,7 @@ app.include_router(live.router)
 app.include_router(league.router)
 app.include_router(country.router)
 app.include_router(new.router)
+app.include_router(performance.router)
 
 models.Base.metadata.create_all(bind=engine)
 

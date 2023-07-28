@@ -24,7 +24,9 @@ def store(today):
 
     
 
-    url = f"https://api.sofascore.com/api/v1/sport/football/scheduled-events/{today}"
+    url = f"https://api.sofascore.com/api/v1/sport/football/scheduled-events/{today}/inverse"
+    # url = f"https://api.sofascore.com/api/v1/sport/football/scheduled-events/2023-07-24"
+    print(today)
 
     payload = ""
     headers = {
