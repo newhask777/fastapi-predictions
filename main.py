@@ -15,7 +15,9 @@ from routers import scheduled
 from routers import league
 from routers import country
 from routers import new
-from routers import performance
+# from routers import performance
+# from routers import fixtures
+from routers import vse
 
 app = FastAPI()
 app.include_router(predictions.router)
@@ -27,7 +29,9 @@ app.include_router(live.router)
 app.include_router(league.router)
 app.include_router(country.router)
 app.include_router(new.router)
-app.include_router(performance.router)
+# app.include_router(performance.router)
+# app.include_router(fixtures.router)
+app.include_router(vse.router)
 
 models.Base.metadata.create_all(bind=engine)
 

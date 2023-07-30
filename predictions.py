@@ -20,7 +20,7 @@ print(today)
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
 # querystring = {f"market":"classic","iso_date":{today}}
-querystring = {f"market":"classic","iso_date":"2023-07-28"}
+querystring = {"market":"classic","iso_date":"2023-07-29"}
 
 headers = {
     "X-RapidAPI-Key": "42fe1d95e8msh68f2a34f3ade683p172d0ejsn85f061cc437b",

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <main class="ml-20 mr-20">
+        <div class="content grid grid-rows-12 grid-flow-col gap-1 flex flex-row items-start p-2">
+            <!-- Left Sidebar -->
+            {% include 'layouts/left_sidebar2.html' %}
+            <!-- end Left Sidebar -->
+            
+            <!-- Main -->
+            {% include 'layouts/content2.html' %}
+            <!-- End Main -->
+
+            <!-- Right Sidebar -->                
+            {% include 'layouts/right_sidebar.html' %}
+            <!-- End Right Sidebar -->
+            
+        </div>
+        
+    </main>
+{% endblock %}
+
+{% include 'layouts/footer.html' %}

@@ -19,11 +19,10 @@ import requests
 
 from datetime import date
 
-
 # define router
 router = APIRouter(
-    prefix='/fixtures',
-    tags=['fixtures'],
+    prefix='/vse',
+    tags=['vse'],
     responses={404: {"description": "Not found"}}
 )
 
@@ -45,32 +44,6 @@ def get_db():
 # router all
 @router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
+    vse = "vse"
 
-    leagues = db.query(models.Event2).distinct(models.Event2.league_name)
-    
-    games = db.query(models.Event2).all()
-    
-    tournaments = db.query(models.Event2).distinct(models.Event2.league_name)
-
-    countries = db.query(models.Event2).distinct(models.Event2.league_country)
-
-
-    return templates.TemplateResponse("all2.html", {
-        "request": request,
-        "games": games,
-        "tournaments": tournaments,
-        "leagues": leagues,
-        "countries": countries,
-    })
-
-# router all
-@router.get('/event/{event_id}', response_class=HTMLResponse)
-async def get_all(request: Request, event_id: int, db: Session = Depends(get_db)):
-
-    game = db.query(models.Event2).filter(models.Event2.event_id == event_id).first()
-  
-    return templates.TemplateResponse("game.html", {
-        "request": request,
-        "game": game
-    })
+    return templates.TemplateResponse("vse.html", {"request": request, "vse": vse})

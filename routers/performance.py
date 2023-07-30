@@ -46,7 +46,7 @@ async def get_by_date(request: Request, federation: str, db: Session = Depends(g
     
     games = db.query(models.Prediction).filter(models.Prediction.competition_cluster == federation).all()
 
-    tournamets = db.query(models.Prediction).filter(models.Prediction.competition_cluster == federation).distinct(models.Prediction.competition_name)
+    tournamets = db.query(models.Prediction).filter(models.Prediction.competition_cluster == federation).distinct(models.Prediction.date)
 
     federations = db.query(models.Prediction).filter(models.Prediction.competition_cluster == federation).distinct(models.Prediction.federation)
 
@@ -62,6 +62,8 @@ async def get_by_date(request: Request, federation: str, db: Session = Depends(g
 
     win_coef = []
     lost_coef = []
+
+    count = len(games)
 
     for game in games:
         for k, v in game.odds.items():
@@ -97,5 +99,6 @@ async def get_by_date(request: Request, federation: str, db: Session = Depends(g
         "lost": l_count,
         "cfplus": win_clear,
         "cfminus": l_count,
-        "profit": profit
+        "profit": profit,
+        "count": count
         })
