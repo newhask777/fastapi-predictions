@@ -1,0 +1,39 @@
+<div id="cart_league_header" class="cart_league flex pl-2 pr-2 p-1 mt-2 mb-2 rounded-md cursor-pointer bg-gray-100 hover:bg-gray-200">
+    <div class="cart_expand flex justify-between w-full">
+
+
+        <!-- League name -->
+
+            <div class="flex">
+               
+
+                    <img src="">
+
+           
+
+               
+                
+                <div class="cart_league__name ml-2">
+                    <div class="inline-block align-middle ml-2">
+                        <span class="text-sm font-bold">
+                            {{tournament.country}}
+                        </span>
+                        <span class="text-xs font-bold ml-2">{{tournament.league}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-xs font-bold ml-2 justify-end mt-auto mb-auto">
+                {{ tournament.matchdate }}
+            </div>
+       
+       
+        <!-- End League name -->
+        
+        <div class="arrows mt-auto mb-auto">
+            <img  src="{{ url_for('static', path='assets/images/arr-down1.png') }}" alt="" class="open down w-4 h-4">
+            <img  src="{{ url_for('static', path='assets/images/arr-up.png') }}" alt="" class="close up w-4 h-4">
+        </div>
+
+    </div>
+</div>

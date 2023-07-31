@@ -11,8 +11,8 @@ import time
 
 db = SessionLocal() 
 
-# db.query(models.Prediction).delete()
-# db.commit()
+db.query(models.Vse).delete()
+db.commit()
 
 today = str(date.today())
 
@@ -118,8 +118,8 @@ for link in links:
     events.append(data)
 
 
-with open('json/result.json', 'w', encoding='utf-8') as f:
-    json.dump(events, f, indent=4, ensure_ascii=False)
+# with open('json/result.json', 'w', encoding='utf-8') as f:
+#     json.dump(events, f, indent=4, ensure_ascii=False)
 
 
 for event in events:

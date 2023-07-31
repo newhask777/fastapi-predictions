@@ -1,0 +1,35 @@
+<div class="text-xs font-bold">
+        <div>
+                games: {{ count}}
+        </div>
+        <div>
+                wins:{{wons}} lost:{{lost}}
+        </div>
+        <div>
+                plus: {{cfplus}}
+        </div>
+        <div>
+                minus: {{cfminus}}
+        </div>
+
+        <div>
+                total: {{profit}}
+        </div>
+</div>
+
+{% for game in games %}
+
+        {% include 'layouts/predictions/only/league_header.html' %}
+
+        <div id="cart_league_body">
+                
+                           
+                {% include 'layouts/predictions/only/league_games.html' %}  
+                                      
+
+        </div>    
+        
+       
+    
+{% endfor %}
+

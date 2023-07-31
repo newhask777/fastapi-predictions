@@ -47,7 +47,7 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
   
     games = db.query(models.Prediction).filter(models.Prediction.date == today).all()
 
-    tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
+    tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).limit(4).distinct(models.Prediction.competition_name)
 
     federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
 

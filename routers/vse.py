@@ -44,6 +44,8 @@ def get_db():
 # router all
 @router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
-    vse = "vse"
+    games = db.query(models.Vse).all()
+    
+    tournaments = db.query(models.Vse).distinct(models.Vse.country)
 
-    return templates.TemplateResponse("vse.html", {"request": request, "vse": vse})
+    return templates.TemplateResponse("vse.html", {"request": request, "games": games, 'tournaments': tournaments})

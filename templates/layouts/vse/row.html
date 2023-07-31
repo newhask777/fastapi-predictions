@@ -1,0 +1,17 @@
+{% for tournament in tournaments %}
+
+{% include 'layouts/vse/league_header.html' %}
+
+        <div id="cart_league_body" class="open">
+                {% for game in games %}
+                        {% if game.id == tournament.id %}
+                                
+                                {% include 'layouts/vse/league_games.html' %}  
+                                      
+                        {% endif %}
+                {% endfor %}
+        </div>        
+    
+{% endfor %}
+
+
