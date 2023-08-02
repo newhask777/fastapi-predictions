@@ -1,4 +1,38 @@
-{{wons}} {{lost}}
+<div class="text-xs font-bold">
+        <div>
+                {% if statuses %}
+                games: {{statuses}}
+               
+                {% endif %}
+        </div>
+        <div>
+                {% if wons %}
+                wons: {{wons}}
+        
+                {% endif %}               
+        </div>
+        <div>
+                {% if loses %}
+                loses: {{loses}}
+        
+                {% endif %}
+        </div>
+        <div>
+                {% if pred_1 %}
+                1: {{pred_1}}
+        
+                {% endif %}
+        </div>
+        <div>
+                {% if cfplus %}
+                coef: {{cfplus}}
+        
+                {% endif %}
+        </div>
+
+</div>
+
+
 {% for tournament in tournamets %}
 
         {% include 'layouts/predictions/league_header.html' %}

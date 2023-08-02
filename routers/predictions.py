@@ -125,8 +125,8 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
-        "games": games_filtered_19,
-        # "games": games,
+        # "games": games_filtered_19,
+        "games": games,
         "tournamets": tournamets,
         "leagues": leagues,
         "federations": federations,
@@ -300,4 +300,70 @@ async def get_game(request: Request, federation: str, db: Session = Depends(get_
         "tournamets": tournamets,
         "leagues": leagues,
         "federations": federations
+        })
+
+
+    # by federation
+@router.get('/month/month', response_class=HTMLResponse)
+async def get_game(request: Request, db: Session = Depends(get_db)):
+
+    games = db.query(models.Prediction).all() 
+
+    statuses = []
+    wons = []
+    loses = []
+    pred_1 = []
+    for game in games:
+        odds = game.odds
+        # print(odds)
+
+        
+
+        prediction = game.prediction
+        # print(prediction)
+
+        status = game.status
+        statuses.append(status)
+
+        if game.status == "won":
+            wons.append(game.status)
+
+        if game.status == "lost":
+            loses.append(game.status)
+        # print(status)
+        
+    coef_filtered_17_18 = []
+    coef_filtered_18_19 = []
+
+    # for game in games:
+    #     for k, v in game.odds.items():
+    #         # print(v)
+    #         if k == game.prediction:
+    #             if v is not None and v > 1.7 and v < 1.8:
+                    
+    #                 # print(v)
+    #                 coef_filtered_17_18.append(v)
+
+    # cfplus = sum([c for c in coef_filtered_17_18])
+
+    for game in games:
+        for k, v in game.odds.items():
+            # print(v)
+            if k == game.prediction:
+                if v is not None and v > 1.6 and v < 1.7:
+                    
+                    # print(v)
+                    coef_filtered_18_19.append(v)
+
+    cfplus = sum([c for c in coef_filtered_18_19])
+
+
+    return templates.TemplateResponse("predictions.html", {
+        "request": request,
+        "games": games,
+        "statuses": len(statuses),
+        "wons": len(wons),
+        "loses": len(loses),
+        "pred_1": len(pred_1),
+        "cfplus": cfplus
         })
