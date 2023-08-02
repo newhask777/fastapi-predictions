@@ -29,6 +29,9 @@ class Prediction(Base):
     last_update_at = Column(String)
     odds = Column(JSON)
 
+    def as_dict(self):
+       return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
 
 # HEAD TO HEAD
 class H2H(Base):

@@ -1,0 +1,4 @@
+venv/scripts/activate
+uvicorn main:app --reload
+python predictions.py
+python events.py
