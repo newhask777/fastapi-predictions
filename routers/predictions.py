@@ -18,7 +18,8 @@ import numpy as np
 from dao.predictions.Today import Today
 from dao.predictions.ByDate import ByDate
 from dao.predictions.ByDateFederation import ByDateFederation
-
+from dao.predictions.ByFederation import ByFederation
+from dao.predictions.ByCountry import ByCountry
 
 # define router
 router = APIRouter(
@@ -135,7 +136,6 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
         })
 
 
-
 # router by date and federation
 @router.get('/date/{td}/federation/{federation}', response_class=HTMLResponse)
 async def get_federation_by_date(request: Request, federation: str, td: str, db: Session = Depends(get_db)):
@@ -148,32 +148,9 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
     wons = await ByDateFederation.get_wons(request, federation, td, db)
     losts = await ByDateFederation.get_losts(request, federation, td, db)
     
-   
+    coef_plus = await ByDateFederation.get_win_coef(games)
 
-    win_coef = []
-    lost_coef = []
-
-    for game in games:
-        for k, v in game.odds.items():
-            if k == game.prediction:
-                if game.status == 'won':
-
-                    win_coef.append(v)
-
-    cfplus = sum([c for c in win_coef])
-    # print(cfplus)
-
-    win_clear = cfplus - wons
-
-    for game in games:
-        for k, v in game.odds.items():
-            if k == game.prediction:
-                if game.status == 'lost':
-
-                    lost_coef.append(v)
-
-    cfminus = sum([c for c in lost_coef])
-
+    win_clear = coef_plus - wons
     profit = win_clear - losts
 
     return templates.TemplateResponse("pred-date.html", {
@@ -223,24 +200,19 @@ async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
         })
 
 
-
 # by country
 @router.get('/cluster/{country}', response_class=HTMLResponse)
 async def get_game(request: Request, country: str, db: Session = Depends(get_db)):
-    today = str(date.today())
-    
-    games = db.query(models.Prediction).filter(models.Prediction.date == today).filter(models.Prediction.competition_cluster == country).all()
 
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.competition_cluster == country).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-
-    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
+    games = await ByCountry.get_games_by_country(request, country, db)    
+    leagues = await ByCountry.get_leagues_by_country(request, country, db)    
+    tournaments = await ByCountry.get_tournaments_by_country(request, country, db)
+    federations = await ByCountry.get_federations_by_country(request, country, db)
 
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
-        "tournamets": tournamets,
+        "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations
         })
@@ -249,20 +221,16 @@ async def get_game(request: Request, country: str, db: Session = Depends(get_db)
 # by federation
 @router.get('/federation/{federation}', response_class=HTMLResponse)
 async def get_game(request: Request, federation: str, db: Session = Depends(get_db)):
-    today = str(date.today())
-    
-    games = db.query(models.Prediction).filter(models.Prediction.federation == federation).filter(models.Prediction.date == today).all()
-
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.federation == federation).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-
-    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
+   
+    games = await ByFederation.get_games_by_federation(request, federation, db)
+    leagues = await ByFederation.get_leagues_by_federation(request, federation, db)
+    tournaments = await ByFederation.get_tournaments_by_federation(request, federation, db)
+    federations = await ByFederation.get_federations_by_federation(request, federation, db)
 
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
-        "tournamets": tournamets,
+        "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations
         })
