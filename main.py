@@ -41,7 +41,7 @@ models.Base.metadata.create_all(bind=engine)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/logos", StaticFiles(directory="img-scraper"), name="logos")
 
-@app.get('/')
+@app.get('/home')
 async def root():
     
     return {"data": "start"}

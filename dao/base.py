@@ -1,0 +1,4 @@
+
+
+class BaseDAO:
+    pass
