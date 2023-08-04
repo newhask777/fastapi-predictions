@@ -13,11 +13,11 @@ class Today:
     TODAY ALL GAMES
     '''
     @classmethod
-    async def get_games(cls, request: Request, db: Session):
+    async def get_games(cls, request, db):
         games = db.query(Prediction).filter(Prediction.date == cls.today).all()
 
-        for game in games:
-            print(game.as_dict())
+        # for game in games:
+        #     print(game.as_dict())
 
         if not games:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
@@ -30,7 +30,7 @@ class Today:
     TODAY ALL LEAGUES
     '''
     @classmethod
-    async def get_leagues(cls, request: Request, db: Session):
+    async def get_leagues(cls, request, db):
         leagues = db.query(Prediction).filter(Prediction.date == cls.today).distinct(Prediction.competition_name)
 
         if not leagues:
@@ -44,7 +44,7 @@ class Today:
     TODAY ALL TOURNAMENTS
     '''
     @classmethod
-    async def get_tournaments(cls, request: Request, db: Session):
+    async def get_tournaments(cls, request, db):
         tournamets = db.query(Prediction).filter(Prediction.date == cls.today).limit(4).distinct(Prediction.competition_name)
 
         if not tournamets:
@@ -58,7 +58,7 @@ class Today:
     TODAY ALL FEDERATIONS
     '''
     @classmethod
-    async def get_federations(cls, request: Request, db: Session):
+    async def get_federations(cls, request, db):
         federations = db.query(Prediction).filter(Prediction.date == cls.today).distinct(Prediction.federation)
 
         if not federations:

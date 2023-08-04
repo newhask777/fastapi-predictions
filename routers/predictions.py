@@ -17,6 +17,7 @@ import numpy as np
 
 from dao.predictions.Today import Today
 from dao.predictions.ByDate import ByDate
+from dao.predictions.ByDateFederation import ByDateFederation
 
 
 # define router
@@ -139,23 +140,15 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 @router.get('/date/{td}/federation/{federation}', response_class=HTMLResponse)
 async def get_federation_by_date(request: Request, federation: str, td: str, db: Session = Depends(get_db)):
 
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).distinct(models.Prediction.competition_cluster)
+    games = await ByDateFederation.get_games_by_date_federation(request, federation, td, db)
+    leagues = await ByDateFederation.get_leagues_by_date_federation(request, federation, td, db)
+    tournaments = await ByDateFederation.get_tournaments_by_date_federation(request, federation, td, db)
+    federations = await ByDateFederation.get_federations_by_date_federation(request, federation, td, db)
 
-    games = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).all()
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).distinct(models.Prediction.competition_name)
-
-    federations = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.federation)
-
-    wons = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).filter(models.Prediction.status == "won").all()
-    w_count = len(wons)
-
-    lost = db.query(models.Prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).filter(models.Prediction.status == "lost").all()
-    l_count = len(lost)
-
-    odds =  db.query(models.Prediction.odds).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).all()
-    predictions =  db.query(models.Prediction.prediction).filter(models.Prediction.date == td).filter(models.Prediction.federation == federation).all()
-    # print(odds)
+    wons = await ByDateFederation.get_wons(request, federation, td, db)
+    losts = await ByDateFederation.get_losts(request, federation, td, db)
+    
+   
 
     win_coef = []
     lost_coef = []
@@ -170,7 +163,7 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
     cfplus = sum([c for c in win_coef])
     # print(cfplus)
 
-    win_clear = cfplus - w_count
+    win_clear = cfplus - wons
 
     for game in games:
         for k, v in game.odds.items():
@@ -180,20 +173,19 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
                     lost_coef.append(v)
 
     cfminus = sum([c for c in lost_coef])
-    print(cfminus)
 
-    profit = win_clear - l_count
+    profit = win_clear - losts
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
         "games": games,
-        "tournamets": tournamets,
+        "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,
-        "wons": w_count,
-        "lost": l_count,
+        "wons": wons,
+        "lost": losts,
         "cfplus": win_clear,
-        "cfminus": l_count,
+        "cfminus": losts,
         "profit": profit
         })
 
