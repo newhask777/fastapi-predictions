@@ -15,8 +15,8 @@ from fastapi.templating import Jinja2Templates
 from datetime import date
 import numpy as np
 
-from dao import prediction
-
+from dao.predictions.Today import Today
+from dao.predictions.ByDate import ByDate
 
 
 # define router
@@ -46,39 +46,28 @@ def get_db():
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
 
-    games = await prediction.get_games(request, db)
-
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.competition_name)
-  
-    # games = db.query(models.Prediction).filter(models.Prediction.date == today).all()
-    # for game in games:
-    #     print(game.as_dict())
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.date == today).limit(4).distinct(models.Prediction.competition_name)
-
-    federations = db.query(models.Prediction).filter(models.Prediction.date == today).distinct(models.Prediction.federation)
-
+    games = await Today.get_games(request, db)
+    leagues = await Today.get_leagues(request, db)
+    tournaments = await Today.get_tournaments(request, db)
+    federations = await Today.get_federations(request, db)
+   
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
-        "tournamets": tournamets,
+        "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,
         })
 
 
 # router by date
-@router.get('/date/{td}', response_class=HTMLResponse)
-async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
+@router.get('/date/{dt}', response_class=HTMLResponse)
+async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
-    leagues = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_cluster)
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_name)
-
-    federations = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.federation)
-    
-    games = db.query(models.Prediction).filter(models.Prediction.date == td).all()
-
+    games = await ByDate.get_games_by_date(request, dt, db)
+    leagues = await ByDate.get_leagues_by_date(request, dt, db)
+    tournaments = await ByDate.get_tournaments_by_date(request, dt, db)
+    federations = await ByDate.get_federations_by_date(request, dt, db)
     
     games_filtered_19 = []
 
@@ -134,7 +123,7 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
         "request": request,
         "games": games_filtered_19,
         "games": games,
-        "tournamets": tournamets,
+        "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,
         "wons": w_count,
@@ -144,30 +133,7 @@ async def get_by_date(request: Request, td: str, db: Session = Depends(get_db)):
         "profit": profit
         })
 
-# router by date
-@router.get('/under/date/{td}', response_class=HTMLResponse)
-async def get_under(request: Request, td: str, db: Session = Depends(get_db)):
 
-    games = db.query(models.Prediction)\
-        .filter(models.Prediction.date == td)\
-        .all()
-    
-    games_filtered_19 = []
-
-    for game in games:
-        for k, v in game.odds.items():
-            if k == game.prediction:
-                if v >= 1.9:
-                    print(game.as_dict())
-                    games_filtered_19.append(game)
-
-    tournamets = db.query(models.Prediction).filter(models.Prediction.date == td).distinct(models.Prediction.competition_name)
-
-    return templates.TemplateResponse("pred-date.html", {
-        "request": request,
-        "games": games_filtered_19,
-        "tournamets": tournamets,
-        }) 
 
 # router by date and federation
 @router.get('/date/{td}/federation/{federation}', response_class=HTMLResponse)
