@@ -16,7 +16,7 @@ class ByFederation:
     async def get_games_by_federation(cls, request, federation, db):
         games = db.query(Prediction)\
         .filter(Prediction.federation == federation)\
-        .filter(Prediction.date == cls.get_games_by_countrytoday)\
+        .filter(Prediction.date == cls.today)\
         .all()
 
         if not games:
@@ -33,7 +33,7 @@ class ByFederation:
     async def get_leagues_by_federation(cls, request, federation, db):
         leagues = db.query(Prediction)\
         .filter(Prediction.federation == federation)\
-        .filter(Prediction.date == cls.get_games_by_countrytoday)\
+        .filter(Prediction.date == cls.today)\
         .all()
 
         if not leagues:

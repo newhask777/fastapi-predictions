@@ -42,8 +42,9 @@ def get_db():
 
 
 # router all
-@router.get('', response_class=HTMLResponse)
+@router.get('/all', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
+    print(dict(request.headers.items()))
     today = str(date.today())
 
     leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)

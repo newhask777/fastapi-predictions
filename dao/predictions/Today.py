@@ -15,7 +15,7 @@ class Today:
     @classmethod
     async def get_games(cls, request, db):
         games = db.query(Prediction).filter(Prediction.date == cls.today).all()
-
+        print(cls.today)
         # for game in games:
         #     print(game.as_dict())
 

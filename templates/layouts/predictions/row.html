@@ -31,22 +31,25 @@
         </div>
 
 </div>
-
+<!-- {{dict(request.headers.items())}} -->
 
 {% for tournament in tournamets %}
+        {% for game in games %}
+                {% if game.competition_name == tournament.competition_name %} 
+        
+                        {% include 'layouts/predictions/date/league_header.html' %}
 
-        {% include 'layouts/predictions/league_header.html' %}
+                        <div id="cart_league_body" class="open">
+                                
+                                                        
+                                {% include 'layouts/predictions/date/league_games.html' %}  
+                                                        
+                                                    
+                        </div>   
 
-        <div id="cart_league_body" class="open">
-                {% for game in games %}
-                        {% if game.competition_name == tournament.competition_name %}   
-
-                                        
-                                        {% include 'layouts/predictions/league_games.html' %}  
-                                        
-                                {% endif %}
-                        {% endfor %}
-        </div>        
-    
+                       
+                {% endif %}
+        {% endfor %}
 {% endfor %}
+
 

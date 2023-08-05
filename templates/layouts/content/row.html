@@ -1,17 +1,22 @@
-{% for tournament in tournaments %}
+<!-- ALL -->
 
-        {% include 'layouts/content/row/league_header.html' %}
-
-        <div id="cart_league_body" class="open">
-                {% for game in games %}
-                        {% if game.tournament_name == tournament.tournament_name %}
-                                
-                                {% include 'layouts/content/row/league_games.html' %}  
-                                      
-                        {% endif %}
-                {% endfor %}
-        </div>        
-    
-{% endfor %}
+{% if request.url._url == 'http://127.0.0.1:8000/home/all' %}
 
 
+        {% for tournament in tournaments %}
+
+                {% include 'layouts/content/row/league_header.html' %}
+
+                <div id="cart_league_body" class="open">
+                        {% for game in games %}
+                                {% if game.tournament_id == tournament.tournament_id %}     
+                                                        
+                                        {% include 'layouts/content/row/league_games.html' %}  
+                                                        
+                                {% endif %}      
+                        {% endfor %}
+                </div>        
+        {% endfor %}
+
+
+{% endif %}

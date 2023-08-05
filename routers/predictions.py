@@ -14,6 +14,7 @@ from fastapi.templating import Jinja2Templates
 
 from datetime import date
 import numpy as np
+import json
 
 from dao.predictions.Today import Today
 from dao.predictions.ByDate import ByDate
@@ -42,11 +43,11 @@ def get_db():
     finally:
         db.close()
 
+today = str(date.today())
 
 # router all
-@router.get('/', response_class=HTMLResponse)
+@router.get(f'/', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
 
     games = await Today.get_games(request, db)
     leagues = await Today.get_leagues(request, db)
@@ -75,14 +76,9 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
     for game in games:
         for k, v in game.odds.items():
-            # print(v)
             if k == game.prediction:
-                if v is not None and v > 1.6 and v < 1.8:
-                    
-                    # print(v)
+                if v is not None and v > 1.9 and v < 2.0:
                     games_filtered_19.append(game)
-
-    # print(games_filtered_19)
 
     wons = [game for game in games_filtered_19 if game.status == 'won']
     lost = [game for game in games_filtered_19 if game.status == 'lost']
@@ -123,7 +119,7 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
-        "games": games_filtered_19,
+        # "games": games_filtered_19,
         "games": games,
         "tournamets": tournaments,
         "leagues": leagues,
