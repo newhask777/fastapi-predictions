@@ -43,6 +43,7 @@ def get_db():
 # router all
 @router.get('/{id}', response_class=HTMLResponse)
 async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
+    
     today = str(date.today())
 
     leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
@@ -53,10 +54,16 @@ async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
     
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
 
-    return templates.TemplateResponse("country.html", {
+    client_host = request.url
+
+    url = f'http://127.0.0.1:8000/country/{id}'
+
+    return templates.TemplateResponse("home.html", {
         "request": request,
         "league_games": league_games,
         "tournaments": tournaments,
         "leagues": leagues,
-        "countries": countries
+        "countries": countries,
+        "client_host": client_host,
+        "url": url
         })
