@@ -53,6 +53,8 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
     leagues = await Today.get_leagues(request, db)
     tournaments = await Today.get_tournaments(request, db)
     federations = await Today.get_federations(request, db)
+
+    temp = 'predictions'
    
     return templates.TemplateResponse("predictions.html", {
         "request": request,
@@ -60,6 +62,7 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
         "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,
+        "temp": temp
         })
 
 
@@ -71,14 +74,23 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
     leagues = await ByDate.get_leagues_by_date(request, dt, db)
     tournaments = await ByDate.get_tournaments_by_date(request, dt, db)
     federations = await ByDate.get_federations_by_date(request, dt, db)
+
+    temp = 'predictions'
     
     games_filtered_19 = []
+    tournaments_filtered_19 = []
 
     for game in games:
         for k, v in game.odds.items():
             if k == game.prediction:
                 if v is not None and v > 1.7 and v < 1.8:
                     games_filtered_19.append(game)
+
+    for tournament in tournaments:
+        for k, v in tournament.odds.items():
+            if k == tournament.prediction:
+                if v is not None and v > 1.7 and v < 1.8:
+                    tournaments_filtered_19.append(tournament)
 
     wons = [game for game in games_filtered_19 if game.status == 'won']
     lost = [game for game in games_filtered_19 if game.status == 'lost']
@@ -109,8 +121,9 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
-        "games": games_filtered_19,
-        # "games": games,
+        # "games": games_filtered_19,
+        # "tournamets": tournaments_filtered_19,
+        "games": games,
         "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,
@@ -118,7 +131,8 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
         "lost": l_count,
         "cfplus": win_clear,
         "cfminus": l_count,
-        "profit": profit
+        "profit": profit,
+        "temp": temp
         })
 
 
@@ -130,6 +144,8 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
     leagues = await ByDateFederation.get_leagues_by_date_federation(request, federation, td, db)
     tournaments = await ByDateFederation.get_tournaments_by_date_federation(request, federation, td, db)
     federations = await ByDateFederation.get_federations_by_date_federation(request, federation, td, db)
+
+    temp = "predictions"
 
     wons = await ByDateFederation.get_wons(request, federation, td, db)
     losts = await ByDateFederation.get_losts(request, federation, td, db)
@@ -149,7 +165,8 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
         "lost": losts,
         "cfplus": win_clear,
         "cfminus": losts,
-        "profit": profit
+        "profit": profit,
+        "temp": temp
         })
 
 
@@ -173,6 +190,8 @@ async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
 
     hl10 = db.query(models.HomeLast10).filter(models.HomeLast10.event_id == id).first()
 
+    temp = "predictions"
+
     
     return templates.TemplateResponse("detail.html", {
         "request": request,
@@ -183,6 +202,7 @@ async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
         "tournamets": tournamets,
         "leagues": leagues,
         "federations": federations,
+        "temp": temp
         })
 
 
@@ -195,12 +215,15 @@ async def get_game(request: Request, country: str, db: Session = Depends(get_db)
     tournaments = await ByCountry.get_tournaments_by_country(request, country, db)
     federations = await ByCountry.get_federations_by_country(request, country, db)
 
+    temp = "predictions"
+
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
         "tournamets": tournaments,
         "leagues": leagues,
-        "federations": federations
+        "federations": federations,
+        "temp": temp
         })
 
 
@@ -213,10 +236,13 @@ async def get_game(request: Request, federation: str, db: Session = Depends(get_
     tournaments = await ByFederation.get_tournaments_by_federation(request, federation, db)
     federations = await ByFederation.get_federations_by_federation(request, federation, db)
 
+    temp = "predictions"
+
     return templates.TemplateResponse("predictions.html", {
         "request": request,
         "games": games,
         "tournamets": tournaments,
         "leagues": leagues,
-        "federations": federations
+        "federations": federations,
+        "temp": temp
         })

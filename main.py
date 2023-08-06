@@ -9,7 +9,6 @@ from starlette import status
 from routers import predictions
 from routers import events
 from routers import api
-from routers import live
 from routers import finished
 from routers import scheduled
 from routers import league
@@ -25,7 +24,6 @@ app.include_router(events.router)
 app.include_router(scheduled.router)
 app.include_router(finished.router)
 app.include_router(api.router)
-app.include_router(live.router)
 app.include_router(league.router)
 app.include_router(country.router)
 # app.include_router(performance.router)

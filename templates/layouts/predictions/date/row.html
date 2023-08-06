@@ -1,60 +1,58 @@
 <div class="text-xs font-bold">
-        <div>
-                games: {{ count}}
-        </div>
-        <div>
-                wins:{{wons}} lost:{{lost}}
-        </div>
-        <div>
-                plus: {{cfplus}}
-        </div>
-        <div>
-                minus: {{cfminus}}
-        </div>
+    <div>
+            games: {{ count}}
+    </div>
+    <div>
+            wins:{{wons}} lost:{{lost}}
+    </div>
+    <div>
+            plus: {{cfplus}}
+    </div>
+    <div>
+        minus: {{cfminus}}
+    </div>
 
-        <div>
-                total: {{profit}}
-        </div>
+    <div>
+        total: {{profit}}
+    </div>
 </div>
 
 {% if games %}
 
-{% for tournament in tournamets %}
+	{% for tournament in tournamets %}
 
-        {% include 'layouts/predictions/league_header.html' %}
+			{% include 'layouts/predictions/league_header.html' %}
 
-        <div id="cart_league_body" class="open">
-                {% for game in games %}
-                        {% if game.competition_name == tournament.competition_name %}   
+			<div id="cart_league_body" class="open">
+				{% for game in games %}
+					{% if game.competition_name == tournament.competition_name %}   
 
-                                        
-                                        {% include 'layouts/predictions/league_games.html' %}  
-                                        
-                                {% endif %}
-                        {% endfor %}
-        </div>        
-    
-{% endfor %}
+											
+						{% include 'layouts/predictions/league_games.html' %}  
+											
+					{% endif %}
+				{% endfor %}
+			</div>        
+			
+	{% endfor %}
 
 {% else %}
 
-{% for tournament in tournamets %}
-        {% for game in games %}
-                {% if game.competition_name == tournament.competition_name %} 
-        
-                        {% include 'layouts/predictions/date/league_header.html' %}
+	{% for tournament in tournamets %}
+				
+		{% include 'layouts/predictions/league_header.html' %}
 
-                        <div id="cart_league_body" class="open">
-                                
-                                                        
-                                {% include 'layouts/predictions/date/league_games.html' %}  
-                                                        
-                                                    
-                        </div>   
+		{% for game in games %}
+			{% if game.competition_name == tournament.competition_name %} 
 
-                       
-                {% endif %}
-        {% endfor %}
-{% endfor %}
+				<div id="cart_league_body" class="open">
+																			
+					{% include 'layouts/predictions/date/league_games.html' %}  
+																								
+				</div>   
+		
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
 
 {% endif %}

@@ -1,0 +1,263 @@
+<div class="flex justify-between text-xs font-bold p-4">
+    <div>   
+        <span>{{game.home_team}}</span>
+        <img src="http://127.0.0.1:8000/static/logos/{{game.home_team}}.png" alt="" class="w-10 h-10">
+      
+        
+    </div>
+    <span>{{game.result}}</span>
+    <span>{{game.away_team}}</span>
+    <img src="http://127.0.0.1:8000/static/logos/{{game.away_team}}.png" alt="" class="w-10 h-10">
+</div>
+<div class="text-xs font-bold p-4">
+    <span>{{game.prediction}}</span>
+    <span>
+        {{game.status}}
+    </span>
+    
+</div>
+<div>
+    <span class="text-xs font-bold p-4">
+        
+        {{game.odds}}
+       
+    </span>
+</div>
+
+<div class="text-xs font-bold p-4">
+    <div>
+        games: {{h2h.num_encounters}}
+        
+    </div>
+    <div>
+        over 05: {{h2h.over_05}}
+    </div>
+    <div>
+        over 15: {{h2h.over_15}}
+    </div>
+    <div>
+        over 25: {{h2h.over_25}}
+    </div>
+    <div>
+        over 35: {{h2h.over_35}}
+    </div>
+
+    <div>
+        both team scored: {{h2h.both_teams_scored}}
+    </div>
+
+    <div>
+        total goals: {{h2h.total_goals}}
+    </div>
+    <div>
+        average goals per match: {{h2h.avg_goals_per_match}}
+    </div>
+    <div>
+        home goals scored: {{h2h.home_goals_scored}}
+    </div>
+    <div>
+        home goals concelved: {{h2h.home_goals_conceived}}
+    </div>
+    <div>
+        home won: {{h2h.home_won}}
+    </div>
+    <div>
+        home draw: {{h2h.home_draw}}
+    </div>
+    <div>
+        home lost: {{h2h.home_lost}}
+    </div>
+    <div>
+        home clean sheet: {{h2h.home_clean_sheet}}
+    </div>
+    <div>
+        home clean sheet: {{h2h.home_clean_sheet}}
+    </div>
+    <div>
+        home first half time win: {{h2h.home_first_half_win}}
+    </div>
+    <div>
+        home first half time draw: {{h2h.home_first_half_draw}}
+    </div>
+    <div>
+        home first half time lost: {{h2h.home_first_half_lost}}
+    </div>
+    <div>
+        home average goals scored: {{h2h.home_avg_goals_scored}}
+    </div>
+    <div>
+        home average goals concived: {{h2h.home_avg_goals_conceived}}
+    </div>
+
+    <h2 class="p-4">
+        GAMES
+    </h2>
+
+    {% for game in h2h.encounters %}
+    <div class="pt-4 pb-4">
+        <div class="flex justify-between ">
+            <span>
+                {{game["start_date"]}}
+            </span>
+            <span>
+                {{game['competition_name']}}
+            </span>
+            <span>
+                {{game['competition_cluster']}}
+            </span>
+            <span>
+                {{game['season']}}
+            </span>
+        </div>
+        <div>
+            1st half: {{game['first_half_result']}}
+        </div>
+        <div>
+            full time result: {{game['fulltime_result']}}
+        </div>
+    </div>
+       
+        
+    {% endfor %}
+
+    <h2>Home League Statistics</h2>
+
+    <div>
+        games played: {{hlstat.matches_played}}  
+    </div>
+    <div>
+        won: {{hlstat.won}}
+    </div>
+    <div>
+        won: {{hlstat.draw}}
+    </div>
+    <div>
+        lost: {{hlstat.lost}}
+    </div>
+    <div>
+        goals scored: {{hlstat.goals_scored}}
+    </div>
+    <div>
+        goals concived: {{hlstat.goals_conceived}}
+    </div>
+    <div>
+        points: {{hlstat.goals_conceived}}
+    </div>
+    <div>
+        matches played as home team: {{hlstat.matches_played_as_home_team}}
+    </div>
+    <div>
+        matches won as home team: {{hlstat.won_as_home_team}}
+    </div>
+    <div>
+        matches draw as home team: {{hlstat.draw_as_home_team}}
+    </div>
+    <div>
+        matches lost as home team: {{hlstat.lost_as_home_team}}
+    </div>
+    <div>
+        goals scored as home team: {{hlstat.goals_scored_as_home_team}}
+    </div>
+    <div>
+        goals concelved as home team: {{hlstat.goals_conceived_as_home_team}}
+    </div>
+    <div>
+        goals points as home team: {{hlstat.points_as_home_team}}
+    </div>
+
+    <h3 class="mt-4">Last 10 games</h3>
+
+    <div>
+        results: {{hl10.results}}
+    </div>
+    <div>
+        home games: {{hl10.results_as_home_team}}
+    </div>
+    <div>
+        away games: {{hl10.results_as_away_team}}
+    </div>
+    <div>
+        wins: {{hl10.wins}}
+    </div>
+    <div>
+        draws: {{hl10.draws}}
+    </div>
+    <div>
+        losts: {{hl10.lost}}
+    </div>
+    <div>
+        as home team: {{hl10.num_played_as_home_team}}
+    </div>
+    <div>
+        as away team: {{hl10.num_played_as_away_team}}
+    </div>
+    <div>
+        wins home team: {{hl10.wins_as_home_team}}
+    </div>
+    <div>
+        draws home team: {{hl10.draws_as_home_team}}
+    </div>
+    <div>
+        lost home team: {{hl10.lost_as_home_team}}
+    </div>
+    <div>
+        wins away team: {{hl10.wins_as_away_team}}
+    </div>
+    <div>
+        draws away team: {{hl10.draws_as_away_team}}
+    </div>
+    <div>
+        lost away team: {{hl10.lost_as_away_team}}
+    </div>
+    <div>
+        clean sheets: {{hl10.clean_sheets}}
+    </div>
+    <div>
+        goals scored: {{hl10.goals_scored}}
+    </div>
+    <div>
+        goals scored 1h: {{hl10.goals_scored_first_half}}
+    </div>
+    <div>
+        goals scored 2h: {{hl10.goals_scored_second_half}}
+    </div>
+    <div>
+        goals scored home: {{hl10.goals_scored_as_home_team}}
+    </div>
+    <div>
+        goals scored away: {{hl10.goals_scored_as_away_team}}
+    </div>
+    <div>
+        goals conceived: {{hl10.goals_conceived}}
+    </div>
+    <div>
+        goals conceived 1h: {{hl10.goals_conceived_first_half}}
+    </div>
+    <div>
+        goals conceived 2h: {{hl10.goals_conceived_second_half}}
+    </div>
+    <div>
+        goals conceived home: {{hl10.goals_conceived_as_home_team}}
+    </div>
+    <div>
+        goals conceived away: {{hl10.goals_conceived_as_away_team}}
+    </div>
+    <div>
+        over 05: {{hl10.over_05}}
+    </div>
+    <div>
+        over 15: {{hl10.over_15}}
+    </div>
+    <div>
+        over 15: {{hl10.over_25}}
+    </div>
+    <div>
+        over 15: {{hl10.over_35}}
+    </div>
+    <div>
+        both teams scored: {{hl10.both_teams_scored}}
+    </div>
+</div>
+
+
+

@@ -54,11 +54,13 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
     type = 'all'
+    temp = 'finished'
     return templates.TemplateResponse("events.html", {
         "request": request, 
         "games": games, 
         "tournaments": tournaments, 
         "leagues": leagues,
         "countries": countries,
-        "type": "all"
+        "type": "all",
+        "temp": temp
         })

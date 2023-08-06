@@ -45,7 +45,7 @@ class Today:
     '''
     @classmethod
     async def get_tournaments(cls, request, db):
-        tournamets = db.query(Prediction).filter(Prediction.date == cls.today).limit(4).distinct(Prediction.competition_name)
+        tournamets = db.query(Prediction).filter(Prediction.date == cls.today).distinct(Prediction.competition_name)
 
         if not tournamets:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
