@@ -119,12 +119,12 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
     profit = win_clear - l_count
     profit = round(profit, 2)
 
-    return templates.TemplateResponse("pred-date.html", {
+    return templates.TemplateResponse("predictions.html", {
         "request": request,
-        # "games": games_filtered_19,
-        # "tournamets": tournaments_filtered_19,
-        "games": games,
-        "tournamets": tournaments,
+        "games": games_filtered_19,
+        "tournamets": tournaments_filtered_19,
+        # "games": games,
+        # "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,
         "wons": w_count,
