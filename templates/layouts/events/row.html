@@ -1,0 +1,52 @@
+{% if type == 'all'%}
+        {% for tournament in tournaments %}
+        {% include 'layouts/events/row/league_header.html' %}
+
+                <div id="cart_league_body" class="open">
+                        {% for game in games %}
+                                {% if game.tournament_id == tournament.tournament_id %}     
+                                                                        
+                                        {% include 'layouts/events/row/league_games.html' %}  
+                                                                        
+                                {% endif %}      
+                        {% endfor %}
+                </div>        
+        {% endfor %}
+{% endif %}
+
+<!-- LEAGUE -->
+
+{% if type == 'league'%}
+        {% include 'layouts/events/row/league_header.html' %}
+
+                <div id="cart_league_body" class="open">
+                        {% for game in games %}
+                                {% if game.tournament_name == tournament.tournament_name %}     
+                                                        
+                                        {% include 'layouts/events/row/league_games.html' %}  
+                                                        
+                                {% endif %}      
+                        {% endfor %}
+                </div>   
+{% endif %}
+
+<!-- COUNTRY -->
+
+{% if type == 'country'%}
+        {% for tournament in tournaments %}
+        {% include 'layouts/events/row/league_header.html' %}
+                <div id="cart_league_body" class="open">
+                        {% for game in games %}
+                                {% if game.tournament_category == tournament.tournament_category %}                             
+                                        {% include 'layouts/events/row/league_games.html' %}                           
+                                {% endif %}      
+                        {% endfor %}
+                </div>        
+        {% endfor %}
+{% endif %}  
+
+
+{% if type == 'game'%}
+        
+{% endif %}  
+

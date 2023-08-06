@@ -49,10 +49,26 @@
                         <span class="team_name ml-1 inline-block align-middle text-xs font-bold font-bold">{{ game.home_team_name }}</span>
                     </div>
                     <!-- Result -->
-                    <div class="result  flex justify-center">
+                    <!-- <div class="result  flex justify-center">
                         <span class="inline-block align-middle text-xs font-bold m-auto rounded-md border pl-4 pr-4 pt-1 pb-1">
                                 {{ game.home_score['current'] }} : {{ game.away_score['current'] }}
                         </span>     
+                    </div> -->
+
+                    <div class="result  flex justify-center">
+                        {% if not game.home_score %}
+                            <span class="inline-block align-middle text-xs font-bold m-auto  pl-4 pr-4 pt-1 pb-1">
+
+                                vs
+                                
+                            </span>
+                        {% else %}
+                            <span class="inline-block align-middle text-xs font-bold m-auto rounded-md border pl-4 pr-4 pt-1 pb-1">
+                            
+                                {{ game.home_score['current'] }} : {{ game.away_score['current'] }}
+                                
+                            </span>  
+                        {% endif %}  
                     </div>
                     
                     <div class="away_team w-5/12 flex justify-end">

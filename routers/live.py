@@ -54,34 +54,14 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
     tournaments = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
-
-    return templates.TemplateResponse("home.html", {
+    type = 'all'
+    return templates.TemplateResponse("events.html", {
         "request": request, 
         "games": games, 
         "tournaments": tournaments, 
         "leagues":leagues,
-        "countries": countries
+        "countries": countries,
+        "type": type
         })
-
-
-
-# live test
-@router.get('/test', response_class=HTMLResponse)
-async def test(request: Request):
-    
-    return templates.TemplateResponse("test.html", {"request": request})
-
-
-# router live api
-@router.get('/api')
-async def get_live(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
-    
-    games = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
-    tournaments = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).distinct(models.Event.tournament_name)
-
-    # print(tournaments)
-
-    return games
 
 

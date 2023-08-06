@@ -21,8 +21,8 @@ from datetime import date
 
 # define router
 router = APIRouter(
-    prefix='/home',
-    tags=['home'],
+    prefix='/scheduled',
+    tags=['scheduled'],
     responses={404: {"description": "Not found"}}
 )
 
@@ -42,7 +42,7 @@ def get_db():
 
 
 # router all
-@router.get('/scheduled', response_class=HTMLResponse)
+@router.get('/', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
 
@@ -53,11 +53,12 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
     tournaments = db.query(models.Event).filter(models.Event.status == 'notstarted').filter(models.Event.date == today).distinct(models.Event.tournament_name)
 
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
-
-    return templates.TemplateResponse("home.html", {
+    type = 'all'
+    return templates.TemplateResponse("events.html", {
         "request": request, 
         "games": games, 
         "tournaments": tournaments, 
         "leagues": leagues,
-        "countries": countries
+        "countries": countries,
+        "type":"all"
         })

@@ -3,7 +3,7 @@
 
 
         <!-- League name -->
-
+        {% if type == 'all' %}
             <div class="flex">
                 <!-- <img src="{{ url_for('static', path='assets/images/spain.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full"> -->
                 {% if tournament.tournament_category == 'World' %}
@@ -43,9 +43,21 @@
                     </div>
                 </div>
             </div>
-
-           
-       
+        {% else %}
+            <div class="flex">
+                <!-- <img src="{{ url_for('static', path='assets/images/spain.png') }}" alt="" class="w-5 mt-auto mb-auto rounded-full"> -->
+                <img src="https://flagdownload.com/wp-content/uploads/Flag_of_{{ tournament.tournament_category }}_Flat_Round-1024x1024.png" alt="" class="w-5 mt-auto mb-auto rounded-full">
+                
+                <div class="cart_league__name ml-2">
+                    <div class="inline-block align-middle ml-2">
+                        <span class="text-sm font-bold">
+                            {{tournament.tournament_category}}
+                        </span>
+                        <span class="text-xs font-bold ml-2">{{tournament.tournament_name}}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
        
         <!-- End League name -->
         

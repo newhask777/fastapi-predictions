@@ -21,8 +21,8 @@ from datetime import date
 
 # define router
 router = APIRouter(
-    prefix='/home',
-    tags=['home'],
+    prefix='/events',
+    tags=['events'],
     responses={404: {"description": "Not found"}}
 )
 
@@ -42,7 +42,7 @@ def get_db():
 
 
 # router all
-@router.get('/all', response_class=HTMLResponse)
+@router.get('', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     print(dict(request.headers.items()))
     today = str(date.today())
@@ -55,9 +55,15 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
 
-    amateur = ' Amateur'
-
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments, "leagues": leagues, "countries": countries, "amateur": amateur})
+    type = 'all'
+    return templates.TemplateResponse("events.html", {
+        "request": request,
+          "games": games,
+            "tournaments": tournaments,
+              "leagues": leagues,
+                "countries": countries,
+                  "type":type
+                  })
 
 
 
@@ -66,8 +72,13 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
     print(id)
     game = db.query(models.Event).filter(models.Event.event_id == id).first()
-  
-    return templates.TemplateResponse("game.html", {"request": request, "game": game})
+
+    type = 'game'
+    return templates.TemplateResponse("game.html", {
+        "request": request,
+          "game": game,
+          "type": type
+          })
 
 
 
@@ -77,6 +88,6 @@ async def get_all(request: Request, td: str, db: Session = Depends(get_db)):
     games = db.query(models.Event).filter(models.Event.date == td).all()
     tournaments = db.query(models.Event).filter(models.Event.date == td).distinct(models.Event.tournament_name)
 
-    return templates.TemplateResponse("home.html", {"request": request, "games": games, "tournaments": tournaments})
+    return templates.TemplateResponse("events.html", {"request": request, "games": games, "tournaments": tournaments})
 
 

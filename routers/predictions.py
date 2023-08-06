@@ -46,7 +46,7 @@ def get_db():
 today = str(date.today())
 
 # router all
-@router.get(f'/', response_class=HTMLResponse)
+@router.get('/', response_class=HTMLResponse)
 async def get_all(request: Request, db: Session = Depends(get_db)):
 
     games = await Today.get_games(request, db)
@@ -77,7 +77,7 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
     for game in games:
         for k, v in game.odds.items():
             if k == game.prediction:
-                if v is not None and v > 1.9 and v < 2.0:
+                if v is not None and v > 1.7 and v < 1.8:
                     games_filtered_19.append(game)
 
     wons = [game for game in games_filtered_19 if game.status == 'won']
@@ -99,17 +99,7 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
             if won.prediction == k:
                 win_coef.append(v)
 
-    # for game in games:
-    #     for k,v in game.odds.items():
-    #         print(k)
-    #         if k == game.prediction:
-    #             if game.status == 'won':
-    #                 print(v)
-
-    #                 win_coef.append(v)
-
     cfplus = sum([c for c in win_coef])
-    # print(win_coef)
 
     win_clear = cfplus - w_count
     win_clear = round(win_clear, 2)
@@ -119,8 +109,8 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
-        # "games": games_filtered_19,
-        "games": games,
+        "games": games_filtered_19,
+        # "games": games,
         "tournamets": tournaments,
         "leagues": leagues,
         "federations": federations,

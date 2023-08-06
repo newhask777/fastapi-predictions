@@ -48,22 +48,19 @@ async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
 
     leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
-    league_games = db.query(models.Event).filter(models.Event.tournament_id == id).filter(models.Event.date == today).all()
+    games = db.query(models.Event).filter(models.Event.tournament_id == id).filter(models.Event.date == today).all()
 
     tournaments = db.query(models.Event).filter(models.Event.tournament_id == id).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
 
-    client_host = request.url
+    type = "country"
 
-    url = f'http://127.0.0.1:8000/country/{id}'
-
-    return templates.TemplateResponse("home.html", {
+    return templates.TemplateResponse("events.html", {
         "request": request,
-        "league_games": league_games,
+        "games": games,
         "tournaments": tournaments,
         "leagues": leagues,
         "countries": countries,
-        "client_host": client_host,
-        "url": url
+        "type": type
         })

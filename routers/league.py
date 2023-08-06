@@ -47,10 +47,17 @@ async def get_all(request: Request, id: int, db: Session = Depends(get_db)):
 
     leagues = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_name)
     
-    league_games = db.query(models.Event).filter(models.Event.tournament_unique_id == id).filter(models.Event.date == today).all()
+    games = db.query(models.Event).filter(models.Event.tournament_unique_id == id).filter(models.Event.date == today).all()
 
-    tournament = db.query(models.Event).filter(models.Event.tournament_unique_id == id).filter(models.Event.date == today).first()
+    tournaments = db.query(models.Event).filter(models.Event.tournament_unique_id == id).filter(models.Event.date == today).first()
 
     countries = db.query(models.Event).filter(models.Event.date == today).distinct(models.Event.tournament_category)
 
-    return templates.TemplateResponse("league.html", {"request": request, "league_games": league_games, "tournament": tournament, "leagues": leagues, "countries": countries})
+    type='league'
+    return templates.TemplateResponse("events.html", 
+                                      {"request": request,
+                                            "type": type,
+                                            "games": games,
+                                            "tournament": tournaments,
+                                            "leagues": leagues,
+                                            "countries": countries})

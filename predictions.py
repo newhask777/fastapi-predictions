@@ -11,7 +11,7 @@ import time
 db = SessionLocal() 
 
 # db.query(models.Prediction).delete()
-db.query(models.Prediction).filter(models.Prediction.date == "2023-08-02").delete()
+db.query(models.Prediction).filter(models.Prediction.date == "2023-08-06").delete()
 db.commit()
 
 today = str(date.today())
@@ -21,7 +21,7 @@ print(today)
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
 # querystring = {f"market":"classic","iso_date":{today}}
-querystring = {"market":"classic","iso_date":"2023-08-02"}
+querystring = {"market":"classic","iso_date":"2023-08-06"}
 
 headers = {
     # "X-RapidAPI-Key": "42fe1d95e8msh68f2a34f3ade683p172d0ejsn85f061cc437b",
