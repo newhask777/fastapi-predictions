@@ -5,16 +5,16 @@ from fastapi import HTTPException, status, Request
 from datetime import date
 
 
-class ByDateFederation:
+class ByDateCountry:
 
     # '''
     # ALL GAMES
     # '''
     @classmethod
-    async def get_games_by_date_federation(cls, request, federation, td, db):
+    async def get_games_by_date_country(cls, request, country, td, db):
         games = db.query(Prediction)\
         .filter(Prediction.date == td)\
-        .filter(Prediction.federation == federation).all()
+        .filter(Prediction.competition_cluster == country).all()
 
         if not games:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
@@ -27,9 +27,9 @@ class ByDateFederation:
     # ALL LEAGUES
     # '''
     @classmethod
-    async def get_leagues_by_date_federation(cls, request, federation, td, db):
+    async def get_leagues_by_date_country(cls, request, country, td, db):
         leagues = db.query(Prediction).filter(Prediction.date == td)\
-        .filter(Prediction.federation == federation)\
+        .filter(Prediction.competition_cluster == country)\
         .distinct(Prediction.competition_cluster)
 
         if not leagues:
@@ -43,9 +43,9 @@ class ByDateFederation:
     # ALL TOURNAMENTS
     # '''
     @classmethod
-    async def get_tournaments_by_date_federation(cls, request, federation, td, db):
+    async def get_tournaments_by_date_country(cls, request, country, td, db):
         tournaments = db.query(Prediction).filter(Prediction.date == td)\
-        .filter(Prediction.federation == federation)\
+        .filter(Prediction.competition_cluster == country)\
         .distinct(Prediction.competition_cluster)
 
         if not tournaments:
@@ -59,7 +59,7 @@ class ByDateFederation:
     # ALL FEDERATIONS
     # '''
     @classmethod
-    async def get_federations_by_date_federation(cls, request, federation, td, db):
+    async def get_federations_by_date_country(cls, request, td, db):
         federations = db.query(Prediction)\
         .filter(Prediction.date == td)\
         .distinct(Prediction.federation)

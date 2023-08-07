@@ -45,16 +45,16 @@ class ByCountry:
     # '''
     @classmethod
     async def get_tournaments_by_country(cls, request, country, db):
-        tournamets = db.query(Prediction)\
+        tournaments = db.query(Prediction)\
         .filter(Prediction.competition_cluster == country)\
         .filter(Prediction.date == cls.today)\
         .distinct(Prediction.competition_name)
 
-        if not tournamets:
+        if not tournaments:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
             detail=f'Tournamets not found')
         
-        return tournamets
+        return tournaments
     
     # '''
     # ALL FEDERATIONS

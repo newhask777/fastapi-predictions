@@ -31,7 +31,9 @@ class Today:
     '''
     @classmethod
     async def get_leagues(cls, request, db):
-        leagues = db.query(Prediction).filter(Prediction.date == cls.today).distinct(Prediction.competition_name)
+        leagues = db.query(Prediction).filter(Prediction.date == cls.today)\
+        .distinct(Prediction.competition_cluster)\
+        .distinct(Prediction.competition_name)
 
         if not leagues:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
@@ -45,13 +47,15 @@ class Today:
     '''
     @classmethod
     async def get_tournaments(cls, request, db):
-        tournamets = db.query(Prediction).filter(Prediction.date == cls.today).distinct(Prediction.competition_name)
+        tournaments = db.query(Prediction).filter(Prediction.date == cls.today)\
+        .distinct(Prediction.competition_cluster)\
+        .distinct(Prediction.competition_name)
 
-        if not tournamets:
+        if not tournaments:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
             detail=f'Tournaments not found')
         
-        return tournamets
+        return tournaments
 
 
     '''
@@ -59,7 +63,8 @@ class Today:
     '''
     @classmethod
     async def get_federations(cls, request, db):
-        federations = db.query(Prediction).filter(Prediction.date == cls.today).distinct(Prediction.federation)
+        federations = db.query(Prediction).filter(Prediction.date == cls.today)\
+        .distinct(Prediction.federation)
 
         if not federations:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,

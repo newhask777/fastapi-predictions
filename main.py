@@ -35,8 +35,8 @@ models.Base.metadata.create_all(bind=engine)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/logos", StaticFiles(directory="img-scraper"), name="logos")
 
-@app.get('/home')
+@app.get('/')
 async def root():
     
-    return {"data": "start"}
+     return RedirectResponse("http://127.0.0.1:8000/events")
     

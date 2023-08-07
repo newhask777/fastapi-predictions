@@ -12,40 +12,45 @@
                 {% endif %}               
         </div>
         <div>
-                {% if loses %}
-                loses: {{loses}}
+                {% if lost %}
+                loses: {{lost}}
         
                 {% endif %}
         </div>
+       
         <div>
-                {% if pred_1 %}
-                1: {{pred_1}}
+                {% if win_clear %}
+                win K: {{win_clear}}
         
                 {% endif %}
         </div>
+
         <div>
-                {% if cfplus %}
-                coef: {{cfplus}}
+                {% if profit %}
+                profit: {{profit}}
         
                 {% endif %}
         </div>
 
 </div>
-<!-- {{dict(request.headers.items())}} -->
 
-{% for tournament in tournamets %}
 
-{% include 'layouts/predictions/league_header.html' %}
+{% for tournament in tournaments %}
+
+        {% include 'layouts/predictions/league_header.html' %}
+
         <div id="cart_league_body" class="open">
-            {% for game in games %}
-                    {% if game.competition_name == tournament.competition_name %} 
-            
-                        
+                {% for game in games %}
+                        {% if game.competition_cluster == tournament.competition_cluster and game.competition_name == tournament.competition_name %} 
+                                        
                         {% include 'layouts/predictions/league_games.html' %}  
-        
-                    {% endif %}
-            {% endfor %}
+                        
+                {% endif %}
+        {% endfor %}
+
         </div>   
-{% endfor %}
+
+{% endfor %}    
+
 
 

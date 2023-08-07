@@ -41,7 +41,9 @@ class ByDate:
     '''
     @classmethod
     async def get_tournaments_by_date(cls, request: Request, dt: str, db: Session):
-        tournaments = db.query(Prediction).filter(Prediction.date == dt).distinct(Prediction.competition_name)
+        tournaments = db.query(Prediction).filter(Prediction.date == dt)\
+        .distinct(Prediction.competition_cluster)\
+        .distinct(Prediction.competition_name)
 
         if not tournaments:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
