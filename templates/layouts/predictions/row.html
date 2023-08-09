@@ -34,23 +34,43 @@
 
 </div>
 
+{% if type == 'all' or type == 'country' or type == 'date' %}
+        {% for tournament in tournaments %}
 
-{% for tournament in tournaments %}
+                {% include 'layouts/predictions/league_header.html' %}
 
-        {% include 'layouts/predictions/league_header.html' %}
+                <div id="cart_league_body" class="open">
+                        {% for game in games %}
+                                {% if game.competition_cluster == tournament.competition_cluster and game.competition_name == tournament.competition_name %} 
+                                                
+                                {% include 'layouts/predictions/league_games.html' %}  
+                                
+                        {% endif %}
+                {% endfor %}
 
-        <div id="cart_league_body" class="open">
-                {% for game in games %}
-                        {% if game.competition_cluster == tournament.competition_cluster and game.competition_name == tournament.competition_name %} 
-                                        
-                        {% include 'layouts/predictions/league_games.html' %}  
-                        
-                {% endif %}
-        {% endfor %}
+                </div>   
 
-        </div>   
+        {% endfor %}    
+{% endif %}
 
-{% endfor %}    
+{% if type == 'date-fede' %}
+        {% for tournament in tournaments %}
+
+                {% include 'layouts/predictions/league_header.html' %}
+
+                <div id="cart_league_body" class="open">
+                        {% for game in games %}
+                                {% if game.federation == tournament.federation and game.competition_cluster == tournament.competition_cluster %} 
+                                                
+                                {% include 'layouts/predictions/league_games.html' %}  
+                                
+                        {% endif %}
+                {% endfor %}
+
+                </div>   
+
+        {% endfor %}    
+{% endif %}
 
 
 

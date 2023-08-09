@@ -84,7 +84,7 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
     for game in games:
         for k, v in game.odds.items():
             if k == game.prediction:
-                if v is not None and v > 1.7 and v < 1.8:
+                if v is not None and v > 1.0 and v < 1.3:
                     games_filtered_19.append(game)
 
     for tournament in tournaments:
@@ -93,11 +93,11 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
                 tournaments_filtered_19.append(tournament)
 
 
-    wons = [game for game in games_filtered_19 if game.status == 'won']
-    lost = [game for game in games_filtered_19 if game.status == 'lost']
+    # wons = [game for game in games_filtered_19 if game.status == 'won']
+    # lost = [game for game in games_filtered_19 if game.status == 'lost']
 
-    # wons = [game for game in games if game.status == 'won']
-    # lost = [game for game in games if game.status == 'lost']
+    wons = [game for game in games if game.status == 'won']
+    lost = [game for game in games if game.status == 'lost']
 
     w_count = len(wons)
     l_count = len(lost)
@@ -158,7 +158,7 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
     win_clear = coef_plus - wons
     profit = win_clear - losts
 
-    type = 'date'
+    type = 'date-fede'
     temp = "predictions"
 
     return templates.TemplateResponse("pred-date.html", {
@@ -244,6 +244,28 @@ async def get_game(request: Request, dt: str, country: str, db: Session = Depend
     tournaments = await ByDateCountry.get_tournaments_by_date_country(request, country, dt, db)
     federations = await ByDateCountry.get_federations_by_date_country(request, dt, db)
 
+    wons = [game for game in games if game.status == 'won']
+    lost = [game for game in games if game.status == 'lost']
+
+    w_count = len(wons)
+    l_count = len(lost)
+
+    win_coef = []
+
+    for won in wons:
+        # print(won.odds)
+        for k, v in won.odds.items():
+            if won.prediction == k:
+                win_coef.append(v)
+
+    cfplus = sum([c for c in win_coef])
+
+    win_clear = cfplus - w_count
+    win_clear = round(win_clear, 2)
+
+    profit = win_clear - l_count
+    profit = round(profit, 2)
+
     type = 'date'
     temp = "predictions"
 
@@ -253,11 +275,12 @@ async def get_game(request: Request, dt: str, country: str, db: Session = Depend
         "tournaments": tournaments,
         "leagues": leagues,
         "federations": federations,
-        # "wons": wons,
-        # "lost": losts,
-        # "cfplus": win_clear,
-        # "cfminus": losts,
-        # "profit": profit,
+        "wons": w_count,
+        "lost": l_count,
+        "win_clear": win_clear,
+        "cfminus": l_count,
+        "profit": profit,
+        "profit": profit,
         "temp": temp,
         "type": type
         })
@@ -273,7 +296,7 @@ async def get_game(request: Request, federation: str, db: Session = Depends(get_
     federations = await ByFederation.get_federations_by_federation(request, federation, db)
 
     temp = "predictions"
-    type = 'federation'
+    type = "all"
 
     return templates.TemplateResponse("predictions.html", {
         "request": request,
