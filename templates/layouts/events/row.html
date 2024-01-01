@@ -19,43 +19,43 @@
 {% endif %}
 
 <!-- League -->
-{% if type == 'league'%}
-	{% include 'layouts/events/row/league_header.html' %}
+<!-- {% if type == 'league'%}
+	{% include 'layouts/events/row/league_header.html' %} -->
 
-	<div id="cart_league_body" class="open">
+	<!-- <div id="cart_league_body" class="open">
 
-		{% for game in games %}
+		{% for game in games %} -->
 		<!-- must be tournament name (league name or league id) -->
-			{% if game.tournament_name == tournament.tournament_name %}
+			<!-- {% if game.tournament_name == tournament.tournament_name %}
 
 				{% include 'layouts/events/row/league_games.html' %}
 
 			{% endif %}
 		{% endfor %}
-	</div>
+	</div> -->
 
-{% endif %}
+<!-- {% endif %} -->
 
 <!-- Country -->
-{% if type == 'country'%}
-	{% for tournament in tournaments %}
+<!-- {% if type == 'country'%}
+	{% for tournament in tournaments %} -->
 
-		{% include 'layouts/events/row/league_header.html' %}
+		<!-- {% include 'layouts/events/row/league_header.html' %}
 		<div id="cart_league_body" class="open">
 
-				{% for game in games %}
+				{% for game in games %} -->
 				<!-- must be tournamnet category (country) -->
-					{% if game.tournament_unique_id == tournament.tournament_unique_id %}
+					<!-- {% if game.tournament_unique_id == tournament.tournament_unique_id %}
 						{% include 'layouts/events/row/league_games.html' %}
 					{% endif %}
 
 			{% endfor %}
-		</div>
+		</div> -->
 
-	{% endfor %}
-{% endif %}
+	<!-- {% endfor %}
+{% endif %} -->
 
 
-{% if type == 'game'%}
+<!-- {% if type == 'game'%}
 
-{% endif %}
+{% endif %} -->

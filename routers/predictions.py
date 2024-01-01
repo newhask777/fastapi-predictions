@@ -27,7 +27,7 @@ from dao.predictions.ByDateCountry import ByDateCountry
 router = APIRouter(
     prefix='/predictions',
     tags=['predictions'],
-    responses={404: {"description": "Not found"}}
+    responses={404: {"description": "Not f found"}}
 )
 
 # database init
@@ -84,7 +84,7 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
     for game in games:
         for k, v in game.odds.items():
             if k == game.prediction:
-                if v is not None and v > 1.0 and v < 1.3:
+                if v is not None and v > 1.6 and v < 1.7:
                     games_filtered_19.append(game)
 
     for tournament in tournaments:
@@ -93,11 +93,11 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
                 tournaments_filtered_19.append(tournament)
 
 
-    # wons = [game for game in games_filtered_19 if game.status == 'won']
-    # lost = [game for game in games_filtered_19 if game.status == 'lost']
+    wons = [game for game in games_filtered_19 if game.status == 'won']
+    lost = [game for game in games_filtered_19 if game.status == 'lost']
 
-    wons = [game for game in games if game.status == 'won']
-    lost = [game for game in games if game.status == 'lost']
+    # wons = [game for game in games if game.status == 'won']
+    # lost = [game for game in games if game.status == 'lost']
 
     w_count = len(wons)
     l_count = len(lost)
@@ -125,10 +125,10 @@ async def get_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
     return templates.TemplateResponse("pred-date.html", {
         "request": request,
-        # "games": games_filtered_19,
-        # "tournaments": tournaments_filtered_19,
-        "games": games,
-        "tournaments": tournaments,
+        "games": games_filtered_19,
+        "tournaments": tournaments_filtered_19,
+        # "games": games,
+        # "tournaments": tournaments,
         "leagues": leagues,
         "federations": federations,
         "wons": w_count,
@@ -178,7 +178,7 @@ async def get_federation_by_date(request: Request, federation: str, td: str, db:
 
 
 # get single
-@router.get('/{id}', response_class=HTMLResponse)
+@router.get('/single/{id}', response_class=HTMLResponse)
 async def get_game(request: Request, id: int, db: Session = Depends(get_db)):
     today = str(date.today())
 

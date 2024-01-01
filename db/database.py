@@ -19,7 +19,7 @@ SQLITE
 POSTGRES
 '''
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://postgres:lara@localhost/football'
+SQLALCHEMY_DATABASE_URL = 'postgresql://hask777:lara@localhost/football'
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL

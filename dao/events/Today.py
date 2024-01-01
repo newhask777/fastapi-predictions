@@ -27,9 +27,9 @@ class Today:
         # for game in games:
         #     print(game.as_dict())
 
-        if not games:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-            detail=f'Predictions not found')
+        # if not games:
+        #     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+        #     detail=f'Predictions not found')
         
         return games
     
