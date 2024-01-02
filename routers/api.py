@@ -59,6 +59,7 @@ def object_as_dict(obj):
 @router.get('/predictions',)
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
+
     predictions = db.query(models.Prediction).filter(models.Prediction.date == today).all()
   
     return predictions
