@@ -19,20 +19,7 @@ SQLITE
 POSTGRES
 '''
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://hask777:lara@localhost/football'
-
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL
-)
-
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-'''
-MYSQL
-'''
-
-# SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://root:root@127.0.0.1:3306/todoapp'
+# SQLALCHEMY_DATABASE_URL = 'postgresql://hask777:lara@localhost:5432/football'
 
 # engine = create_engine(
 #     SQLALCHEMY_DATABASE_URL
@@ -40,3 +27,16 @@ MYSQL
 
 # SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # Base = declarative_base()
+
+'''
+MYSQL
+'''
+
+SQLALCHEMY_DATABASE_URL = 'mysql+pymysql://root:root@127.0.0.1:3306/pyfootball'
+
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL
+)
+
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()

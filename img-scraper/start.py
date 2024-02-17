@@ -11,7 +11,7 @@ import json
 wd = webdriver.Chrome()
 
 def download_image(download_path, url, file_name):
-    with open('../img-scraper/urls.json', 'w') as f:
+    with open('urls.json', 'w') as f:
         json.dump(url, f, indent=4, ensure_ascii=False)
 
     try:
@@ -39,7 +39,7 @@ def get_images(driver, delay, max_images):
 
     logos_urls = []
 
-    with open('../json/predictions.json', 'r') as f:
+    with open('json/predictions.json', 'r') as f:
         teams = json.load(f)  
 
 
@@ -87,7 +87,7 @@ def get_images(driver, delay, max_images):
                             continue
 
         for url in image_urls:
-            download_image(f"../static/logos/", url, team + ".png")
+            download_image(f"static/logos/", url, team + ".png")
 
     for team in teams['data']:
         team = team['away_team']
@@ -126,7 +126,7 @@ def get_images(driver, delay, max_images):
                         print(f"Found {len(image_urls)}")
 
         for url in image_urls:
-            download_image(f"../static/logos/", url, team + ".png")
+            download_image(f"static/logos/", url, team + ".png")
 
     with open('logos_urls.json', 'w') as f:
         json.dump(logos_urls, f, indent=4, ensure_ascii=False)
