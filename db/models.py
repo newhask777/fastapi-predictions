@@ -27,6 +27,7 @@ class Prediction(Base):
     date = Column(String(255))
     time = Column(String(255))
     last_update_at = Column(String(255))
+    coofficient = Column(String(255))
     odds = Column(JSON)
 
     def as_dict(self):

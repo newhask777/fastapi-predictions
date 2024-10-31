@@ -13,7 +13,7 @@ db = SessionLocal()
 today = str(date.today())
 
 # db.query(models.Prediction).delete()
-# db.query(models.Prediction).filter(models.Prediction.date == "2024-01-01").delete()
+# db.query(models.Prediction).filter(models.Prediction.date == "2024-07-07").delete()
 # db.query(models.Prediction).filter(models.Prediction.date == today).delete()
 # db.commit()
 
@@ -21,8 +21,8 @@ print(today)
 
 url = "https://football-prediction-api.p.rapidapi.com/api/v2/predictions"
 
-querystring = {f"market":"classic","iso_date":{today}}
-# querystring = {"market":"classic","iso_date":"2024-01-13"}
+# querystring = {f"market":"classic","iso_date":{today}}
+querystring = {"market":"classic","iso_date":"2024-10-30"}
 
 headers = {
     # "X-RapidAPI-Key": "42fe1d95e8msh68f2a34f3ade683p172d0ejsn85f061cc437b",
@@ -63,6 +63,7 @@ for event in events["data"]:
 	game.date = dated
 	game.time = time
 	game.last_update_at = event['last_update_at']
+	game.coofficient = [v for k,v in event['odds'].items() if event['prediction'] == k]
 	game.odds = event['odds']
         
 	db.add(game)

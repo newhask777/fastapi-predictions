@@ -18,6 +18,7 @@ import json
 import requests
 
 from dao.predictions.ByDate import ByDate
+from dao.statistics.Today.Today import Today
 
 from datetime import date
 
@@ -53,10 +54,8 @@ def object_as_dict(obj):
             for c in inspect(obj).mapper.column_attrs}
 
 
-
-
 # router predictions
-@router.get('/predictions',)
+@router.get('/predictions')
 async def get_all(request: Request, db: Session = Depends(get_db)):
     today = str(date.today())
 
@@ -79,69 +78,44 @@ async def get_games_by_date(request: Request, dt: str, db: Session = Depends(get
     return predictionsByDate
 
 
+@router.get('/predictions/date/statistic/{dt}')
+async def get_statistics_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
-# router events
-@router.get('/events',)
-async def get_all(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
-    events = db.query(models.Event).all()
+    stats = {}
 
-    return events
+    wins = await Today.wins_games_count(request, dt, db)
+    losts = await Today.losts_games_count(request, dt, db)
 
+    fede_wins_uefa = await Today.wins_by_date_uefa(request, dt, db)
+    fede_losts_uefa = await Today.losts_by_date_uefa(request, dt, db)
 
-# router events live
-@router.get('/events/live',)
-async def get_all(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
-    live = db.query(models.Event).filter(models.Event.status == 'inprogress').filter(models.Event.date == today).all()
+    fede_wins_concacaf = await Today.wins_by_date_concacaf(request, dt, db)
+    fede_losts_concacaf = await Today.losts_by_date_concacaf(request, dt, db)
 
-    return live
-
-
-# router events scheduled
-@router.get('/events/scheduled',)
-async def get_all(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
-    scheduled = db.query(models.Event).filter(models.Event.status == 'notstarted').filter(models.Event.date == today).all()
-
-    return scheduled
-
-
-# router events scheduled
-@router.get('/events/finished',)
-async def get_all(request: Request, db: Session = Depends(get_db)):
-    today = str(date.today())
-    finished = db.query(models.Event).filter(models.Event.status == 'finished').filter(models.Event.date == today).all()
-
-    return finished
+    fede_wins_caf = await Today.wins_by_date_caf(request, dt, db)
+    fede_losts_caf = await Today.losts_by_date_caf(request, dt, db)
 
 
 
-# # # router all
-# @router.get('/tournamnets',)
-# async def get_all(request: Request, db: Session = Depends(get_db)):
-#     url = 'https://api.sofascore.com/api/v1/config/unique-tournaments/BY'
+    # if not wins:
+    #     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+    #     detail=f'Games predictions for {date} not found')
 
-#     headers = {
-#         "authority": "api.sofascore.com",
-#         "accept": "*/*",
-#         "accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,pl-PL;q=0.6,pl;q=0.5",
-#         "cache-control": "max-age=0",
-#         "if-none-match": "W/^\^2c2d5bd32d^^",
-#         "origin": "https://www.sofascore.com",
-#         "referer": "https://www.sofascore.com/",
-#         "sec-ch-ua": "^\^Not.A/Brand^^;v=^\^8^^, ^\^Chromium^^;v=^\^114^^, ^\^Google",
-#         "sec-ch-ua-mobile": "?0",
-#         "sec-ch-ua-platform": "^\^Windows^^",
-#         "sec-fetch-dest": "empty",
-#         "sec-fetch-mode": "cors",
-#         "sec-fetch-site": "same-site",
-#         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
-#     }
+    stats['wins'] = wins
+    stats['losts'] = losts
 
-#     response = requests.request("GET", url, headers=headers).json()
-#     print(response)
+    stats['uefa_wins'] = fede_wins_uefa
+    stats['uefa_losts'] = fede_losts_uefa
 
-#     return response
+    stats['concacaf_wins'] = fede_wins_concacaf
+    stats['concacaf_losts'] = fede_losts_concacaf
+
+    stats['caf_wins'] = fede_wins_caf
+    stats['caf_losts'] = fede_losts_caf
+
+    return stats
+
+
+
 
 
