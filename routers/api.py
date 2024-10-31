@@ -17,10 +17,7 @@ from dao.statistics.date.DateStats import DateStats
 from dao.statistics.date.DateStatsFederation import DateStatsFederation
 
 import json
-
 from datetime import date
-
-
 
 
 # define router
@@ -62,7 +59,6 @@ async def get_all(request: Request, db: Session = Depends(get_db)):
 # router predictions by date
 @router.get('/predictions/date/{dt}',)
 async def get_games_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
-    # predictionsByDate = db.query(models.Prediction).filter(models.Prediction.date == dt).all()
 
     predictionsByDate = await ByDate.get_games_by_date(request, dt, db)
 
@@ -77,6 +73,7 @@ async def get_games_by_date(request: Request, dt: str, db: Session = Depends(get
 async def get_statistics_by_date(request: Request, dt: str, db: Session = Depends(get_db)):
 
     stats = {}
+    stats_list = []
 
     wins = await DateStats.wins_games_count(request, dt, db)
     losts = await DateStats.losts_games_count(request, dt, db)
@@ -115,11 +112,11 @@ async def get_statistics_by_date(request: Request, dt: str, db: Session = Depend
     stats['comnebol_wins'] = fede_wins_comnebol
     stats['comnebol_losts'] = fede_losts_comnebol
 
-    # stats = json.dumps(stats)
+    stats_list.append(stats)
 
-    # print(type(stats))
+    # json.dumps(stats_list)
 
-    return stats
+    return stats_list
 
 
 
