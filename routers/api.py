@@ -1,29 +1,26 @@
 import sys
 sys.path.append("..")
+
 # fastapi
 from starlette import status
-from starlette.responses import RedirectResponse
-from fastapi import Depends, APIRouter, Request, Form, HTTPException, status, Request
+from fastapi import Depends, APIRouter, Request, HTTPException
 # db
 from db import models
 from sqlalchemy import distinct, select, table, inspect
 
 from db.database import engine, SessionLocal
 from sqlalchemy.orm import Session
-from sqlalchemy.sql import func
-# html
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-import json
-import requests
 
+# classes
 from dao.predictions.ByDate import ByDate
-from dao.statistics.Today.Today import Today
+from dao.statistics.date.DateStats import DateStats
+from dao.statistics.date.DateStatsFederation import DateStatsFederation
+
+import json
 
 from datetime import date
 
-from datetime import date
-import time
+
 
 
 # define router
@@ -36,8 +33,6 @@ router = APIRouter(
 # database init
 models.Base.metadata.create_all(bind=engine)
 
-# enable templates
-templates = Jinja2Templates(directory="templates")
 
 # database connection
 def get_db():
@@ -83,23 +78,24 @@ async def get_statistics_by_date(request: Request, dt: str, db: Session = Depend
 
     stats = {}
 
-    wins = await Today.wins_games_count(request, dt, db)
-    losts = await Today.losts_games_count(request, dt, db)
+    wins = await DateStats.wins_games_count(request, dt, db)
+    losts = await DateStats.losts_games_count(request, dt, db)
 
-    fede_wins_uefa = await Today.wins_by_date_uefa(request, dt, db)
-    fede_losts_uefa = await Today.losts_by_date_uefa(request, dt, db)
+    fede_wins_uefa = await DateStatsFederation.wins_by_date_uefa(request, dt, db)
+    fede_losts_uefa = await DateStatsFederation.losts_by_date_uefa(request, dt, db)
 
-    fede_wins_concacaf = await Today.wins_by_date_concacaf(request, dt, db)
-    fede_losts_concacaf = await Today.losts_by_date_concacaf(request, dt, db)
+    fede_wins_concacaf = await DateStatsFederation.wins_by_date_concacaf(request, dt, db)
+    fede_losts_concacaf = await DateStatsFederation.losts_by_date_concacaf(request, dt, db)
 
-    fede_wins_caf = await Today.wins_by_date_caf(request, dt, db)
-    fede_losts_caf = await Today.losts_by_date_caf(request, dt, db)
+    fede_wins_caf = await DateStatsFederation.wins_by_date_caf(request, dt, db)
+    fede_losts_caf = await DateStatsFederation.losts_by_date_caf(request, dt, db)
 
+    fede_wins_afc = await DateStatsFederation.wins_by_date_afc(request, dt, db)
+    fede_losts_afc = await DateStatsFederation.losts_by_date_afc(request, dt, db)
 
+    fede_wins_comnebol = await DateStatsFederation.wins_by_date_comnebol(request, dt, db)
+    fede_losts_comnebol = await DateStatsFederation.losts_by_date_comnebol(request, dt, db)
 
-    # if not wins:
-    #     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-    #     detail=f'Games predictions for {date} not found')
 
     stats['wins'] = wins
     stats['losts'] = losts
@@ -112,6 +108,16 @@ async def get_statistics_by_date(request: Request, dt: str, db: Session = Depend
 
     stats['caf_wins'] = fede_wins_caf
     stats['caf_losts'] = fede_losts_caf
+
+    stats['afc_wins'] = fede_wins_afc
+    stats['afc_losts'] = fede_losts_afc
+
+    stats['comnebol_wins'] = fede_wins_comnebol
+    stats['comnebol_losts'] = fede_losts_comnebol
+
+    # stats = json.dumps(stats)
+
+    # print(type(stats))
 
     return stats
 

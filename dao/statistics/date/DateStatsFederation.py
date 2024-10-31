@@ -5,51 +5,8 @@ from fastapi import HTTPException, status, Request
 from datetime import date
 
 
-class Today:
+class DateStatsFederation:
 
-
-    # '''
-    # DAY WINS STATISTICS
-    # '''
-    @classmethod
-    async def wins_games_count(cls, request: Request, dt: str, db: Session):
-    
-        wins_count = []
-        games = db.query(Prediction).filter(Prediction.date == dt).all()
-       
-        if not games:
-            return ""
-        
-        if len(games) > 0:
-            for game in games:
-                if game.status == 'won':
-                    wins_count.append(game)
-
-        return len(wins_count)
-    
-
-    # '''
-    # DAY LOSTS STATISTICS 
-    # '''
-    @classmethod
-    async def losts_games_count(cls, request: Request, dt: str, db: Session):
-    
-        losts_count = []
-        games = db.query(Prediction).filter(Prediction.date == dt).all()
-       
-        if not games:
-            return ""
-        
-        if len(games) > 0:
-            for game in games:
-                if game.status == 'lost':
-                    losts_count.append(game)
-
-        return len(losts_count)
-    
-
-    # FEDERATIONS
-    
     # '''
     # DAY WINS STATISTICS BY UEFA
     # '''
@@ -149,6 +106,80 @@ class Today:
         games = db.query(Prediction)\
             .filter(Prediction.date == td)\
             .filter(Prediction.federation == "CAF")\
+            .filter(Prediction.status == "lost")\
+            .all()
+
+        if not games:
+            return ""
+            
+        return len(games)
+    
+
+
+    # '''
+    # DAY WINS STATISTICS BY AFC
+    # '''
+    @classmethod
+    async def wins_by_date_afc(cls, request, td, db):
+
+        games = db.query(Prediction)\
+            .filter(Prediction.date == td)\
+            .filter(Prediction.federation == "AFC")\
+            .filter(Prediction.status == "won")\
+            .all()
+
+        if not games:
+            return ""
+            
+        return len(games)
+    
+
+    # '''
+    # DAY LOSTS STATISTICS BY AFC
+    # '''
+    @classmethod
+    async def losts_by_date_afc(cls, request, td, db):
+
+        games = db.query(Prediction)\
+            .filter(Prediction.date == td)\
+            .filter(Prediction.federation == "AFC")\
+            .filter(Prediction.status == "lost")\
+            .all()
+
+        if not games:
+            return ""
+            
+        return len(games)
+    
+
+
+     # '''
+    # DAY WINS STATISTICS BY COMNEBOL
+    # '''
+    @classmethod
+    async def wins_by_date_comnebol(cls, request, td, db):
+
+        games = db.query(Prediction)\
+            .filter(Prediction.date == td)\
+            .filter(Prediction.federation == "CONMEBOL")\
+            .filter(Prediction.status == "won")\
+            .all()
+
+        if not games:
+            return ""
+            
+        return len(games)
+    
+
+    # '''
+    # DAY LOSTS STATISTICS BY COMNEBOL
+    # '''
+    @classmethod
+    async def losts_by_date_comnebol(cls, request, td, db):
+
+        games = db.query(Prediction)\
+            .filter(Prediction.date == td)\
+            .filter(Prediction.federation == "CONMEBOL")\
             .filter(Prediction.status == "lost")\
             .all()
 
